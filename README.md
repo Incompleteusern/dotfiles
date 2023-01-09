@@ -9,8 +9,12 @@ TODO:
     - https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
 - Redoeverything
 - Configs for desktop
-  - Replace rofi with wofi
-  - Config hyprland 
+  - Configure hyprland
+  - Configure Waybar based off flick0
+    - Temperature, CPU, Battery, Wifi/Network, Clock, Expand (Language, Emoji, Screenshot) on the right
+    - Wayspaces on the left
+    - Silly thing in the middle
+  - Rofi-emoji, Rofi-wifi-menu + merge active prs, Make a rofi language gui since why not
 - https://wiki.archlinux.org/title/Security#CPU
 - https://wiki.archlinux.org/title/Systemd#Basic_systemctl_usage
 - Hardware auto-recognition?
