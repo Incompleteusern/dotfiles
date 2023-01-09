@@ -11,9 +11,10 @@ TODO:
 - Configs for desktop
   - Configure hyprland
   - Configure Waybar based off flick0
-    - Temperature, CPU, Battery, Wifi/Network, Clock, Expand (Language, Emoji, Screenshot) on the right
+    - Language, Battery (CPU, Temperature when hover), Wifi/Network, Clock, Expand (Language, Emoji, Screenshot) on the right
     - Wayspaces on the left
-    - Silly thing in the middle
+    - MPR player in the middle: use flick0 then eventually integrate with spotify
+  - Configure Dunst
   - Rofi-emoji, Rofi-wifi-menu + merge active prs, Make a rofi language gui since why not
 - https://wiki.archlinux.org/title/Security#CPU
 - https://wiki.archlinux.org/title/Systemd#Basic_systemctl_usage
@@ -32,17 +33,14 @@ Installation Notes
 
 Desktop
 - Compositor | `hyprland-git`
-- Monitors?
 - Notification System | `dunst`
-- Configure?
+- Status Bars | `waybar-hyprland-git`
+
 - Pipewire | `pipewire pipewire-jack wireplumber`
 - Polkit | `polkit-kde-agent`
 - Status Bars | `waybar-hyprland-git`
-  - Configure?
-- Widgets | `eww-wayland`
-- Configure?
 - Wallpapers | `swww`
-- Configure? AI gen might be fun
+  - Configure? AI gen might be fun
 - App Launcher | `rofi-lbonn-wayland-git`
 - Display Manager | `sddm`
 
