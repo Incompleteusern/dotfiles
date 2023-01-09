@@ -1,3 +1,7 @@
+## Inspired by
+
+- https://github.com/scotus-1/dotfiles
+- https://github.com/flick0/dotfiles
 
 TODO:
 - Add dotfiles
