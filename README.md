@@ -20,17 +20,7 @@ Installation Notes
   - https://wiki.archlinux.org/title/Installation_guide
   - Right now, temporary android tether to set up and get driver
 - Processor Microcode | `intel_ucode`
-- Add wheel to sudoers file
-- `sed -i "s/#%wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL" /etc/sudoers`
 - Linux install | `linux linux-firmware`
-- Add colors to /etc/pacman.conf
-- `sed -i "s/#Color/Color" /etc/pacman.conf` 
-- Network Manager | `networkmanager`
-- Localhost resolution https://wiki.archlinux.org/title/Network_configuration#localhost_is_resolved_over_the_network
-- `echo -e "127.0.0.1        localhost\n::1              localhost" >> /etc/hosts`
-- Text Editor (nano) | `nano nano-syntax-highlighting`
-- Aur Helper (yay) | ` git base-devel`
-- `git clone https://aur.archlinux.org/yay.git; cd yay; makepkg -si; cd ..; rm -rf yay`
 
 Desktop
 - Compositor | `hyprland-git`
