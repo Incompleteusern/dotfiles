@@ -2,11 +2,14 @@
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Add wheel to sudoers
+# STANDARD INSTALLATION
+
+# Add wheel group to sudoers
 sed -i "s/#%wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL" /etc/sudoers
 
-# Add colors to /etc/pacman.conf
+# Add colors to /etc/pacman.conf 
 sed -i "s/#Color/Color" /etc/pacman.conf
+# cat ILoveCandy >> /etc/pacman.con
 
 # yay
 pacman -S git base-devel
@@ -16,12 +19,16 @@ makepkg -si
 cd ..
 rm -rf yay
 
-# network manager and add local host to /etc/hosts
+# network manager and add local host to /etc/hosts - https://wiki.archlinux.org/title/Network_configuration#localhost_is_resolved_over_the_network
 yay -S networkmanager
 echo -e "127.0.0.1        localhost\n::1              localhost" >> /etc/hosts
 
 # nano
 yay -S nano nano-syntax-highlighting
 
-# vim
+# SYMLINKING
+
+# .config
 ln -s ${BASEDIR}/config ~/.config
+
+# DESKTOP ENVIRONMENT
