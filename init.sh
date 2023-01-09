@@ -32,3 +32,6 @@ yay -S nano nano-syntax-highlighting
 ln -s ${BASEDIR}/config ~/.config
 
 # DESKTOP ENVIRONMENT
+
+# APPLICATIONS
+yay -S firefox
