@@ -18,9 +18,9 @@ TODO:
   - Rofi-emoji, Rofi-wifi-menu + merge active prs, Make a rofi language gui since why not
 - Gen Rec Step: Users and groups
 - Screensharing, App Launchers, App Clients, Color Pickers
-Man, zsh + ohmyzsh, 
-- SSH/GPG
-
+- Man
+- zsh + ohmyzsh, 
+- SSH/GPG for gh
 
 Installation Notes
 - Standard Installation
@@ -29,7 +29,10 @@ Installation Notes
 - Linux install | `linux linux-firmware`
 - Add user (after arch-chroot) 
   - `useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
+- Add wheel group to sudoers | `sudo`
+  - `sed -i "s/#%wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL" /etc/sudoers`
 - Processor Microcode | `intel_ucode`
+- Text Editor | `nano nano-syntax-highlighting`
 
 Desktop
 - Compositor | `hyprland-git`
@@ -45,7 +48,6 @@ Desktop
 - Display Manager | `sddm`
 
 - alacritty | `alacritty`
-
 
 Utilities
 
