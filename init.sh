@@ -15,6 +15,9 @@ ln -s ${BASEDIR}/config ~/.config
 
 # DESKTOP
 
+# hyprland
+yay -S --noconfirm hyprland-git dunst waybar-hyprland-git
+
 # pipewire
 yay -S --noconfirm pipewire pipewire-jack wireplumber
 
