@@ -70,10 +70,6 @@ TODO:
 # Desktop
 
 ## Manual
-- Compositor | `hyprland-git` 
-- Notification System | `dunst` 
-- Status Bars | `waybar-hyprland-git` 
-
 - Polkit | `polkit-kde-agent` 
 - Wallpapers | `swww` 
   - Configure? AI gen might be fun
@@ -83,6 +79,9 @@ TODO:
 - alacritty | `alacritty`
 
 ## Auto
+- Compositor | `hyprland-git` 
+- Notification System | `dunst` 
+- Status Bars | `waybar-hyprland-git`
 - Pipewire | `pipewire pipewire-jack wireplumber`
 
 # Utilities
