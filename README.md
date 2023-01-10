@@ -54,7 +54,7 @@ TODO:
 - Add user (after arch-chroot) 
   - `useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
 - Add wheel group to sudoers | `sudo`
-  - `sed -i "s/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL" /etc/sudoers`
+  - Uncomment `# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL:ALL) ALL`
 - Processor Microcode | `intel-ucode`
 - Text Editor | `nano nano-syntax-highlighting`
 - Network Manager | `networkmanager` and add local host to /etc/hosts
