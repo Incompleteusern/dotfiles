@@ -2,7 +2,7 @@
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# STANDARD INSTALLATION
+# INSTALLATION
 
 # Add wheel group to sudoers
 sed -i "s/#%wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL" /etc/sudoers
@@ -31,7 +31,9 @@ yay -S nano nano-syntax-highlighting
 # .config
 ln -s ${BASEDIR}/config ~/.config
 
-# DESKTOP ENVIRONMENT
+# DESKTOP
+
+# UTILITIES
 
 # APPLICATIONS
 yay -S firefox
