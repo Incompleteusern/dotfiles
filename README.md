@@ -55,7 +55,7 @@ TODO:
   - `useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
 - Add wheel group to sudoers | `sudo`
   - `sed -i "s/#%wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL" /etc/sudoers`
-- Processor Microcode | `intel_ucode`
+- Processor Microcode | `intel-ucode`
 - Text Editor | `nano nano-syntax-highlighting`
 - Network Manager | `networkmanager` and add local host to /etc/hosts
   - `echo -e "127.0.0.1        localhost\n::1              localhost" >> /etc/hosts`
