@@ -28,3 +28,5 @@ yay -S --noconfirm pipewire pipewire-jack wireplumber
 # firefox - prefer pipewire-jack by earlier
 yay -S --noconfirm firefox
 
+# discord
+yay -S --noconfirm discord_arch_electron
