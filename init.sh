@@ -23,8 +23,13 @@ ln -s ${BASEDIR}/config ~/.config
 
 # DESKTOP
 
+# pipewire
+yay -S --noconfirm pipewire pipewire-jack wireplumber
+
 # UTILITIES
 
 # APPLICATIONS
+
+# firefox - prefer pipewire-jack by earlier
 yay -S --noconfirm firefox
 
