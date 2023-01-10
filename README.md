@@ -5,10 +5,10 @@
 
 TODO:
 - Add dotfiles
+- Replace kitty with alacritty
 - Auto choose `pipewire-jack` for `firefox`
 - Add disk encryption
   - Do this in February when wifi-adapter is natively supported by udev
-- Redoeverything
 - Configs for desktop
   - Configure hyprland similar to flick0 for now
     - Set up
@@ -43,6 +43,7 @@ TODO:
 - zsh + ohmyzsh, 
 - SSH/GPG for gh
 - Customize firefox
+- Go through general preference
 
 # Installation
 
@@ -74,7 +75,6 @@ TODO:
 - Status Bars | `waybar-hyprland-git` 
 
 - Polkit | `polkit-kde-agent` 
-- Status Bars | `waybar-hyprland-git` 
 - Wallpapers | `swww` 
   - Configure? AI gen might be fun
 - App Launcher | `rofi-lbonn-wayland-git` 
