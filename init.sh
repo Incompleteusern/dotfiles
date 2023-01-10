@@ -4,14 +4,6 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # INSTALLATION
 
-# yay
-pacman -S git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd ..
-rm -rf yay
-
 # CONFIG
 
 # Add colors to /etc/pacman.conf 
