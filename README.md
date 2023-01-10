@@ -1,4 +1,4 @@
-## Inspired by
+## Based off
 
 - https://github.com/scotus-1/dotfiles
 - https://github.com/flick0/dotfiles
