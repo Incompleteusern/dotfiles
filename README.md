@@ -10,6 +10,7 @@ TODO:
   - Do this in February when wifi-adapter is natively supported by udev
 - Redoeverything
 - Configs for desktop
+  - Use XDG Desktop Portal?
   - Configure hyprland
   - Configure Waybar based off flick0
     - Language, Battery (CPU, Temperature when hover), Wifi/Network, Clock, Expand (Language, Emoji, Screenshot) on the right
