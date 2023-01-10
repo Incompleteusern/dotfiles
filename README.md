@@ -89,9 +89,9 @@ TODO:
 ## Auto
 
 # Applications
-- Discord | `webcord` or `discord_arch_electron` choose
 - Prism Launcher | `prismlauncher` TODO
 
 ## Manual
 ## Auto
 - Firefox | `firefox`
+- Discord | `discord_arch_electron`
