@@ -4,9 +4,6 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # INSTALLATION
 
-# Add wheel group to sudoers
-sed -i "s/#%wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL" /etc/sudoers
-
 # Add colors to /etc/pacman.conf 
 sed -i "s/#Color/Color" /etc/pacman.conf
 # cat ILoveCandy >> /etc/pacman.con
