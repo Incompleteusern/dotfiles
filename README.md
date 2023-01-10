@@ -46,21 +46,21 @@ TODO:
 # Desktop
 
 ## Manual
-- Compositor | `hyprland-git`
-- Notification System | `dunst`
-- Status Bars | `waybar-hyprland-git`
+- Compositor | `hyprland-git` 
+- Notification System | `dunst` 
+- Status Bars | `waybar-hyprland-git` 
 
-- Pipewire | `pipewire pipewire-jack wireplumber`
-- Polkit | `polkit-kde-agent`
-- Status Bars | `waybar-hyprland-git`
-- Wallpapers | `swww`
+- Polkit | `polkit-kde-agent` 
+- Status Bars | `waybar-hyprland-git` 
+- Wallpapers | `swww` 
   - Configure? AI gen might be fun
-- App Launcher | `rofi-lbonn-wayland-git`
-- Display Manager | `sddm`
+- App Launcher | `rofi-lbonn-wayland-git` 
+- Display Manager | `sddm` 
 
 - alacritty | `alacritty`
 
 ## Auto
+- Pipewire | `pipewire pipewire-jack wireplumber`
 
 # Utilities
 ## Manual
