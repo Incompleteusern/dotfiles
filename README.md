@@ -10,19 +10,39 @@ TODO:
   - Do this in February when wifi-adapter is natively supported by udev
 - Redoeverything
 - Configs for desktop
-  - Use XDG Desktop Portal?
-  - Configure hyprland
+  - Configure hyprland similar to flick0 for now
+    - Set up
+      - open firefox, terminal and discord on join
+      - exec-once dunst, waybar
+    - Visual
+        - catppuccin mocha
+    - Keybinds
+      - move window: left click
+      - resize window: right click
+      - open kitty: SUPER K
+      - killactive: SUPER Q
+      - exit: SUPER C
+      - togglefloating: SUPER 
+      - rofi -show run: SUPER SPACE
+      - pseudo: SUPER P
+      - movefocus, SUPER left/right/up/down
+      - workspaces, SUPER 1, .. 10
+      - movetoworkspace, ALT 1, .. 10
+      - increase and decrease workspace: SUPER - or +
+      - togglegroup: SUPER G
+      - changegroupactive: SUPER TAB
   - Configure Waybar based off flick0
     - Language, Battery (CPU, Temperature when hover), Wifi/Network, Clock, Expand (Language, Emoji, Screenshot) on the right
     - Wayspaces on the left
     - MPR player in the middle: use flick0 then eventually integrate with spotify
   - Configure Dunst
   - Rofi-emoji, Rofi-wifi-menu + merge active prs, Make a rofi language gui since why not
-- Gen Rec Step: Users and groups
 - Screensharing, App Launchers, App Clients, Color Pickers
+- Use XDG Desktop Portal?
 - Man
 - zsh + ohmyzsh, 
 - SSH/GPG for gh
+- Customize firefox
 
 # Installation
 
