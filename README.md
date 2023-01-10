@@ -36,6 +36,8 @@ TODO:
   - Configure Dunst
   - Rofi-emoji, Rofi-wifi-menu + merge active prs, Make a rofi language gui since why not
 - Screensharing, App Launchers, App Clients, Color Pickers
+- Rest of Desktop
+- Prism Launcher
 - Use XDG Desktop Portal?
 - Man
 - zsh + ohmyzsh, 
@@ -74,8 +76,7 @@ TODO:
 - Wallpapers | `swww` 
   - Configure? AI gen might be fun
 - App Launcher | `rofi-lbonn-wayland-git` 
-- Display Manager | `sddm` 
-
+- Display Manager | `sddm`
 - alacritty | `alacritty`
 
 ## Auto
@@ -89,9 +90,9 @@ TODO:
 ## Auto
 
 # Applications
-- Prism Launcher | `prismlauncher` TODO
-
 ## Manual
+- Prism Launcher | `prismlauncher`
+
 ## Auto
 - Firefox | `firefox`
 - Discord | `discord_arch_electron`
