@@ -23,9 +23,9 @@ TODO:
 - zsh + ohmyzsh, 
 - SSH/GPG for gh
 
-## Installation
+# Installation
 
-# Manual
+## Manual
 - Standard Installation
   - https://wiki.archlinux.org/title/Installation_guide
   - Right now, temporary android tether to set up and get driver rtw89 manually
@@ -39,13 +39,13 @@ TODO:
 - Network Manager | `networkmanager` and add local host to /etc/hosts
   - `echo -e "127.0.0.1        localhost\n::1              localhost" >> /etc/hosts`
 
-# Auto
+## Auto
 - Enable Color in /etc/pacman.conf
 - Symlink this .config to ~/config
 
-## Desktop
+# Desktop
 
-# Manual
+## Manual
 - Compositor | `hyprland-git`
 - Notification System | `dunst`
 - Status Bars | `waybar-hyprland-git`
@@ -60,16 +60,16 @@ TODO:
 
 - alacritty | `alacritty`
 
-# Auto
+## Auto
 
-## Utilities
-# Manual
-# Auto
+# Utilities
+## Manual
+## Auto
 
-## Applications
+# Applications
 - Discord | `webcord`
 - Prism Launcher | `prismlauncher` TODO
 
-# Manual
-# Auto
+## Manual
+## Auto
 - Firefox | `firefox`
