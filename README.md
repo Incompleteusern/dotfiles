@@ -25,11 +25,11 @@ Man, zsh + ohmyzsh,
 Installation Notes
 - Standard Installation
   - https://wiki.archlinux.org/title/Installation_guide
-  - Right now, temporary android tether to set up and get driver
-- Processor Microcode | `intel_ucode`
+  - Right now, temporary android tether to set up and get driver rtw89 manually
 - Linux install | `linux linux-firmware`
-- Add user (after arch-chroot) | 
-- `useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
+- Add user (after arch-chroot) 
+  - `useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
+- Processor Microcode | `intel_ucode`
 
 Desktop
 - Compositor | `hyprland-git`
