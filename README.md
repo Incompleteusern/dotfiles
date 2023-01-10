@@ -6,6 +6,7 @@
 TODO:
 - Add dotfiles
 - Add disk encryption
+  - Do this in February when wifi-adapter is natively supported by udev
 - Redoeverything
 - Configs for desktop
   - Configure hyprland
