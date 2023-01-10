@@ -28,6 +28,8 @@ Installation Notes
   - Right now, temporary android tether to set up and get driver
 - Processor Microcode | `intel_ucode`
 - Linux install | `linux linux-firmware`
+- Add user (after arch-chroot) | 
+- `useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
 
 Desktop
 - Compositor | `hyprland-git`
