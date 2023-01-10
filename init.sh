@@ -26,4 +26,5 @@ ln -s ${BASEDIR}/config ~/.config
 # UTILITIES
 
 # APPLICATIONS
-yay -S firefox
+yay -S --noconfirm firefox
+
