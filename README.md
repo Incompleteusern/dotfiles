@@ -5,6 +5,7 @@
 
 TODO:
 - Add dotfiles
+- Auto choose `pipewire-jack` for `firefox`
 - Add disk encryption
   - Do this in February when wifi-adapter is natively supported by udev
 - Redoeverything
@@ -22,7 +23,9 @@ TODO:
 - zsh + ohmyzsh, 
 - SSH/GPG for gh
 
-Installation Notes
+## Installation
+
+# Manual
 - Standard Installation
   - https://wiki.archlinux.org/title/Installation_guide
   - Right now, temporary android tether to set up and get driver rtw89 manually
@@ -33,8 +36,16 @@ Installation Notes
   - `sed -i "s/#%wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL" /etc/sudoers`
 - Processor Microcode | `intel_ucode`
 - Text Editor | `nano nano-syntax-highlighting`
+- Network Manager | `networkmanager` and add local host to /etc/hosts
+  - `echo -e "127.0.0.1        localhost\n::1              localhost" >> /etc/hosts`
 
-Desktop
+# Auto
+- Enable Color in /etc/pacman.conf
+- Symlink this .config to ~/config
+
+## Desktop
+
+# Manual
 - Compositor | `hyprland-git`
 - Notification System | `dunst`
 - Status Bars | `waybar-hyprland-git`
@@ -49,11 +60,16 @@ Desktop
 
 - alacritty | `alacritty`
 
-Utilities
+# Auto
 
+## Utilities
+# Manual
+# Auto
 
-
-Applications
-- Firefox | `firefox`
-- Discord | TODO decide which one to use
+## Applications
+- Discord | `webcord`
 - Prism Launcher | `prismlauncher` TODO
+
+# Manual
+# Auto
+- Firefox | `firefox`
