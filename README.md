@@ -15,22 +15,22 @@ TODO:
     - Visual
         - catppuccin mocha
     - Keybinds
-      - move window: left click
-      - resize window: right click
+      - move window: SUPER left click
+      - resize window: SUPER right click
       - open kitty: SUPER K
       - killactive: SUPER Q
       - exit: SUPER C
-      - togglefloating: SUPER 
-      - rofi -show run: SUPER SPACE
+      - togglefloating: SUPER F
+      - rofi -show run: SUPER TAB
       - pseudo: SUPER P
       - movefocus, SUPER left/right/up/down
       - workspaces, SUPER 1, .. 10
-      - movetoworkspace, ALT 1, .. 10
+      - movetoworkspace, SUPER ALT 1, .. 10
       - increase and decrease workspace: SUPER - or +
       - togglegroup: SUPER G
-      - changegroupactive: SUPER TAB
+      - changegroupactive: SUPER SPACE
   - Configure Waybar based off flick0
-    - Language, Battery (CPU, Temperature when hover), Wifi/Network, Clock, Expand (Language, Emoji, Screenshot) on the right
+    - Language, Wifi/Network, Clock, Battery, Expand (CPU, Temperature, Emoji, Screenshot) on the right
     - Wayspaces on the left
     - MPR player in the middle: use flick0 then eventually integrate with spotify
   - Configure Dunst
