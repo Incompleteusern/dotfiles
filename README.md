@@ -5,8 +5,7 @@
 
 TODO:
 - Add dotfiles
-  - Add bash script
-    - https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
+- Add disk encryption
 - Redoeverything
 - Configs for desktop
   - Configure hyprland
