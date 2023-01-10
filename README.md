@@ -59,6 +59,10 @@ TODO:
 - Text Editor | `nano nano-syntax-highlighting`
 - Network Manager | `networkmanager` and add local host to /etc/hosts
   - `echo -e "127.0.0.1        localhost\n::1              localhost" >> /etc/hosts`
+- yay | `git base-devel`
+  - ```
+    pacman -S git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay
+    ```
 
 ## Auto
 - Enable Color in /etc/pacman.conf
