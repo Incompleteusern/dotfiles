@@ -5,10 +5,8 @@
 
 TODO:
 - Add dotfiles
-- Replace kitty with alacritty
-- Auto choose `pipewire-jack` for `firefox`
-- Add disk encryption
-  - Do this in February when wifi-adapter is natively supported by udev
+- Replace `kitty` with `alacritty`
+- Add `pipewire-pulse`
 - Configs for desktop
   - Configure hyprland similar to flick0 for now
     - Set up
@@ -44,6 +42,8 @@ TODO:
 - SSH/GPG for gh
 - Customize firefox
 - Go through general preference
+- Add disk encryption
+  - Do this in February when wifi-adapter is natively supported by udev
 
 # Installation
 
