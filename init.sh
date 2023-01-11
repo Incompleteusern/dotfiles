@@ -19,7 +19,7 @@ cp -a ${BASEDIR}/config/ ~/.config/
 yay -S --noconfirm hyprland-git dunst waybar-hyprland-git swww
 
 # pipewire
-yay -S --noconfirm pipewire pipewire-jack wireplumber
+yay -S --noconfirm pipewire wireplumber pipewire-jack pipewire-pulse
 
 # UTILITIES
 
