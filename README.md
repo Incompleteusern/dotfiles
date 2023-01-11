@@ -18,8 +18,8 @@ TODO:
       - move window: SUPER left click
       - resize window: SUPER right click
       - open kitty: SUPER T
-      - killactive: SUPER Q
-      - exit: SUPER C
+      - killactive: SUPER C
+      - exit: SUPER Q
       - togglefloating: SUPER F
       - rofi -show run: SUPER TAB
       - pseudo: SUPER P
