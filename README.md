@@ -41,7 +41,6 @@ TODO:
 - Use XDG Desktop Portal?
 - Man
 - zsh + ohmyzsh, 
-- SSH/GPG for gh
 - Customize firefox
 - Go through general preference
 - Add disk encryption
@@ -64,7 +63,19 @@ TODO:
   - `echo -e "127.0.0.1        localhost\n::1              localhost" >> /etc/hosts`
 - yay | `git base-devel`
   - `pacman -S git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay`
-
+- git, ssh/gpg | `openssh github-cli`
+  - ```gh auth login
+       ssh-keygen -t ed25519 -C "$email"; ssh-add ~/.ssh/id_ed25519
+       gh ssh-key add ~/.ssh/id_ed25519.pub --title $hostname
+       git clone git@github.com:Incompleteusern/dotfiles.git
+       gpg --full-generate-key
+       gpg --list-secret-keys --keyid-format=long
+       git config --global user.signingkey $KEY
+       git config --global commit.gpgsign true
+       git config --global user.email "$email"
+       git config --global user.name "$name"
+  -
+   
 ## Auto
 - Enable Color in /etc/pacman.conf
 - Symlink this .config to ~/config
