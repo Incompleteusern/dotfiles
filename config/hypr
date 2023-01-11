@@ -18,11 +18,10 @@ monitor=,preferred,auto,1
 
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
-exec = $HOME/.config/hypr/scripts/init-wall
 exec-once = $HOME/.config/hypr/scripts/init
 
 # Execute your favorite apps at launch
-exec-once = waybar & kitty & discord & firefox
+exec-once = discord & firefox
 
 # Source a file (multi-file configs)
 source = ~/.config/hypr/mocha.conf
@@ -142,7 +141,7 @@ bind = $mainMod, X, togglefloating,
 bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod, S, togglesplit, # dwindle
 bind = $mainMod, M, centerwindow
-bind = $mainMod, F, fullscreen, 1
+bind = $mainMod, F, fullscreen, 0
 
 # Move focus with mainMod + arrow keys
 bind = $mainMod, left, movefocus, l
