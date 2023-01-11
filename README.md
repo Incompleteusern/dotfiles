@@ -5,6 +5,7 @@
 
 TODO:
 - Add dotfiles
+- Rename config to .config
 - Replace `kitty` with `alacritty`
 - Add screenshot functionality
 - Configs for desktop
