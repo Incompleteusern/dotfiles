@@ -18,7 +18,7 @@ TODO:
       - open kitty: SUPER T
       - rofi -show run: SUPER TAB
   - Configure Waybar based off flick0
-    - Language, Wifi/Network, Clock, Battery, Expand (CPU, Temperature, Emoji, Screenshot) on the right
+    - Wifi/Network, Clock, Volume, Battery, Expand (Emoji, Screenshot, Language)
     - Wayspaces on the left
     - MPR player in the middle: use flick0 then eventually integrate with spotify
   - Configure Dunst
