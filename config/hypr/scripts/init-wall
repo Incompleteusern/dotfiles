@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+swww init
+swww img ~/.config/hypr/wallpapers/sea.jpg --transition-type center

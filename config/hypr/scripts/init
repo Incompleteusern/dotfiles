@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+# notifications
+dunst &
+
+# wallpaper
+swww init
+swww img ~/.config/hypr/wallpapers/sea.jpg --transition-type center
+
+# waybar
+waybar -c $HOME/.config/waybar/config.json -s $HOME/.config/waybar/style.css &
