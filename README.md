@@ -75,10 +75,12 @@ TODO:
 
 # Desktop
 
-## Manual
+## TODO
 - Polkit | `polkit-kde-agent` 
 - App Launcher | `rofi-lbonn-wayland-git` 
 - Display Manager | `sddm`
+
+## Manual
 
 ## Auto
 - Compositor | `hyprland-git` 
@@ -87,15 +89,19 @@ TODO:
 - Status Bars | `waybar-hyprland-git`
 - Pipewire | `pipewire wireplumber pipewire-pulse pipewire-jack `
 - XDG Integration | `xdg-utils`
-- Terminal | `alacritty`
+- Terminal | `alacritty-git`
+- Application Client | `rofi-hyprland-git`
+
 # Utilities
 ## Manual
 ## Auto
 
 # Applications
-## Manual
+## TODO
 - Prism Launcher | `prismlauncher`
 
+
+## Manual
 ## Auto
 - Firefox | `firefox`
 - Discord | `discord_arch_electron`
