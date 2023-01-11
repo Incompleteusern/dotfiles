@@ -15,20 +15,8 @@ TODO:
     - Visual
         - catppuccin mocha
     - Keybinds
-      - move window: SUPER left click
-      - resize window: SUPER right click
       - open kitty: SUPER T
-      - killactive: SUPER C
-      - exit: SUPER Q
-      - togglefloating: SUPER F
       - rofi -show run: SUPER TAB
-      - pseudo: SUPER P
-      - movefocus, SUPER left/right/up/down
-      - workspaces, SUPER 1, .. 10
-      - movetoworkspace, SUPER ALT 1, .. 10
-      - increase and decrease workspace: SUPER - or +
-      - togglegroup: SUPER G
-      - changegroupactive: SUPER SPACE
   - Configure Waybar based off flick0
     - Language, Wifi/Network, Clock, Battery, Expand (CPU, Temperature, Emoji, Screenshot) on the right
     - Wayspaces on the left
@@ -45,6 +33,7 @@ TODO:
 - Go through general preference
 - Add disk encryption
   - Do this in February when wifi-adapter is natively supported by udev
+- Configure swww with script; AI gen might be fun
 
 # Installation
 
@@ -84,14 +73,13 @@ TODO:
 
 ## Manual
 - Polkit | `polkit-kde-agent` 
-- Wallpapers | `swww` 
-  - Configure? AI gen might be fun
 - App Launcher | `rofi-lbonn-wayland-git` 
 - Display Manager | `sddm`
 - alacritty | `alacritty`
 
 ## Auto
 - Compositor | `hyprland-git` 
+- Wallpapers | `swww` 
 - Notification System | `dunst` 
 - Status Bars | `waybar-hyprland-git`
 - Pipewire | `pipewire pipewire-jack wireplumber`
