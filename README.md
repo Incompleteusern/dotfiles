@@ -83,6 +83,7 @@ TODO:
 - Notification System | `dunst` 
 - Status Bars | `waybar-hyprland-git`
 - Pipewire | `pipewire wireplumber pipewire-pulse pipewire-jack `
+- XDG Integration | `xdg-utils`
 
 # Utilities
 ## Manual
