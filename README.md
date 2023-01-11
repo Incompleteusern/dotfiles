@@ -9,31 +9,29 @@ TODO:
 - Add screenshot functionality
 - Configs for desktop
   - Configure hyprland similar to flick0 for now
-    - Set up
-      - open firefox, terminal and discord on join
-      - exec-once dunst, waybar
-    - Visual
-        - catppuccin mocha
-    - Keybinds
-      - open kitty: SUPER T
-      - rofi -show run: SUPER TAB
+    - Wallpaper script time!!!!
   - Configure Waybar based off flick0
-    - Wifi/Network, Clock, Volume, Battery, Expand (Emoji, Screenshot, Language)
+    - Make a custom script to check for arch updates
+    - Wifi/Network (rofi-wifi-menu), Clock, Volume, Battery, Expand (Emoji, Screenshot, Language)
+        - Do CSS
     - Wayspaces on the left
+        - Do CSS
     - MPR player in the middle: use flick0 then eventually integrate with spotify
+        - Not a priority
   - Configure Dunst
   - Rofi-emoji, Rofi-wifi-menu + merge active prs, Make a rofi language gui since why not
+      - Configure Rofi (scary)
 - Screensharing, App Launchers, App Clients, Color Pickers
-- Rest of Desktop
+    - aka Configure Rest of Desktop
 - Prism Launcher
-- Use XDG Desktop Portal?
+- Decide whether to use XDG Desktop Portal?
 - Man
 - zsh + ohmyzsh, 
-- Customize firefox
-- Go through general preference
+- Customize firefox + fork mozilla? 
+- Go through general preference :SOB:
 - Add disk encryption
   - Do this in February when wifi-adapter is natively supported by udev
-- Configure swww with script; AI gen might be fun
+- AI gen might be fun for wall paper
 
 # Installation
 
@@ -51,7 +49,12 @@ TODO:
 - Network Manager | `networkmanager` and add local host to /etc/hosts
   - `echo -e "127.0.0.1        localhost\n::1              localhost" >> /etc/hosts`
 - yay | `git base-devel`
-  - `pacman -S git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay`
+  - ```pacman -S git base-devel
+       git clone https://aur.archlinux.org/yay.git
+       cd yay
+       makepkg -si 
+       cd .. 
+       rm -rf yay`
 - git, ssh/gpg | `openssh github-cli`
   - ```gh auth login
        ssh-keygen -t ed25519 -C "$email"; ssh-add ~/.ssh/id_ed25519
@@ -63,7 +66,6 @@ TODO:
        git config --global commit.gpgsign true
        git config --global user.email "$email"
        git config --global user.name "$name"
-  -
    
 ## Auto
 - Enable Color in /etc/pacman.conf
