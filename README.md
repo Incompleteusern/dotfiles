@@ -17,7 +17,7 @@ TODO:
     - Keybinds
       - move window: SUPER left click
       - resize window: SUPER right click
-      - open kitty: SUPER K
+      - open kitty: SUPER T
       - killactive: SUPER Q
       - exit: SUPER C
       - togglefloating: SUPER F
