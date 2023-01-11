@@ -10,10 +10,8 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 sed -i "s/#Color/Color" /etc/pacman.conf
 # cat ILoveCandy >> /etc/pacman.conf
 
-# SYMLINKS
-
-# hypr
-ln -s ${BASEDIR}/config/hypr ~/.config/hypr
+# COPY to .config
+cp -a ${BASEDIR}/config/ ~/.config/
 
 # DESKTOP
 
