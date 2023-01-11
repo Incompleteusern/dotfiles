@@ -16,7 +16,7 @@ cp -a ${BASEDIR}/config/ ~/.config/
 # DESKTOP
 
 # hyprland
-yay -S --noconfirm hyprland-git dunst waybar-hyprland-git
+yay -S --noconfirm hyprland-git dunst waybar-hyprland-git swww
 
 # pipewire
 yay -S --noconfirm pipewire pipewire-jack wireplumber
