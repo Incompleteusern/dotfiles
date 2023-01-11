@@ -6,7 +6,7 @@
 TODO:
 - Add dotfiles
 - Replace `kitty` with `alacritty`
-- Add `pipewire-pulse`
+- Add screenshot functionality
 - Configs for desktop
   - Configure hyprland similar to flick0 for now
     - Set up
@@ -82,7 +82,7 @@ TODO:
 - Wallpapers | `swww` 
 - Notification System | `dunst` 
 - Status Bars | `waybar-hyprland-git`
-- Pipewire | `pipewire pipewire-jack wireplumber`
+- Pipewire | `pipewire wireplumber pipewire-pulse pipewire-jack `
 
 # Utilities
 ## Manual
