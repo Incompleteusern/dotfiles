@@ -23,7 +23,8 @@ yay -S --noconfirm pipewire wireplumber pipewire-jack pipewire-pulse
 
 # UTILITIES
 
-yay -S -noconfirm neofetch
+# SILLY
+yay -S -noconfirm neofetch cbonsai
 
 # APPLICATIONS
 

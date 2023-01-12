@@ -93,12 +93,15 @@ TODO:
 # Utilities
 ## Manual
 ## Auto
-- neofetch | `neofetch`
 
+# Silly
+## Manual
+## Auto
+- neofetch | `neofetch`
+- cbonsai | `cbonsai-git`
 # Applications
 ## TODO
 - Prism Launcher | `prismlauncher`
-
 
 ## Manual
 ## Auto
