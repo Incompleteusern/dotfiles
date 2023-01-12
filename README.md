@@ -5,8 +5,7 @@
 
 TODO:
 - Add dotfiles
-- Rename config to .config
-- Replace `kitty` with `alacritty`
+- Worry about fonts
 - Add screenshot functionality
 - Configs for desktop
   - Configure hyprland similar to flick0 for now
