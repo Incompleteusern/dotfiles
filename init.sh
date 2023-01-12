@@ -24,7 +24,7 @@ yay -S --noconfirm pipewire wireplumber pipewire-jack pipewire-pulse
 # UTILITIES
 
 # SILLY
-yay -S -noconfirm neofetch cbonsai
+yay -S -noconfirm neofetch cbonsai donut.c
 
 # APPLICATIONS
 

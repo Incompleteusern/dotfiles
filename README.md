@@ -99,6 +99,7 @@ TODO:
 ## Auto
 - neofetch | `neofetch`
 - cbonsai | `cbonsai-git`
+- donut.c | `donut.c`
 # Applications
 ## TODO
 - Prism Launcher | `prismlauncher`
