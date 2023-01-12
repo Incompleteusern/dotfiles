@@ -23,10 +23,9 @@ yay -S --noconfirm pipewire wireplumber pipewire-jack pipewire-pulse
 
 # UTILITIES
 
+yay -S -noconfirm neofetch
+
 # APPLICATIONS
 
 # firefox - prefer pipewire-jack by earlier
-yay -S --noconfirm firefox
-
-# discord
-yay -S --noconfirm discord_arch_electron
+yay -S --noconfirm firefox  discord_arch_electron

@@ -95,6 +95,7 @@ TODO:
 # Utilities
 ## Manual
 ## Auto
+- neofetch | `neofetch`
 
 # Applications
 ## TODO
