@@ -85,11 +85,12 @@ TODO:
 - Compositor | `hyprland-git` 
 - Wallpapers | `swww` 
 - Notification System | `dunst` 
-- Status Bars | `waybar-hyprland-git`
+- Status Bars | `waybar-hyprland-git otf-font-awesome`
 - Pipewire | `pipewire wireplumber pipewire-pulse pipewire-jack `
 - XDG Integration | `xdg-utils`
 - Terminal | `alacritty-git`
 - Application Client | `rofi-hyprland-git`
+- Volume Control | `pamixer`
 
 # Utilities
 ## Manual
