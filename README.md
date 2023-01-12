@@ -7,6 +7,7 @@ TODO:
 - Add dotfiles
 - Worry about fonts
 - Add screenshot functionality
+- Change mouse or something idk
 - Configs for desktop
   - Configure hyprland similar to flick0 for now
     - Wallpaper script time!!!!
