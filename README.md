@@ -5,8 +5,7 @@
 
 TODO:
 - Add dotfiles
-- Rename config to .config
-- Replace `kitty` with `alacritty`
+- Worry about fonts
 - Add screenshot functionality
 - Configs for desktop
   - Configure hyprland similar to flick0 for now
@@ -20,7 +19,6 @@ TODO:
     - MPR player in the middle: use flick0 then eventually integrate with spotify
         - Not a priority
   - Configure Dunst
-  - Configure Alacritty
   - Rofi-emoji, Rofi-wifi-menu + merge active prs, Make a rofi language gui since why not
       - Configure Rofi (scary)
 - Screensharing, App Launchers, App Clients, Color Pickers
