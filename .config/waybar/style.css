@@ -245,15 +245,20 @@ label:focus {
     background-color: #45475a;
 }
 
-#network.disconnected{
+#network.disconnected {
     background: rgb(243,139,168);
     background: linear-gradient(45deg, rgba(243,139,168,1) 0%, rgba(250,179,135,1) 100%); 
     color: #fff;
     font-weight: bolder;
+    animation: gradient 15s ease infinite;
 }
 
-#network.linked, #network.wifi{
-    background-color: #a6e3a1 ;
+#network.linked, #network.wifi {
+    background: rgb(166,255,161);
+    background-size: 300% 300%;
+    background: linear-gradient(45deg, rgba(166,255,161,1) 0%, rgba(86,245,181,1) 100%);
+    /* background-color: #a6e3a1; */
+    animation: gradient 25s ease infinite;
 }
 
 #network.ethernet{
