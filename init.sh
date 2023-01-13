@@ -21,7 +21,8 @@ sed -i "s/#Color/Color" /etc/pacman.conf
 # cat ILoveCandy >> /etc/pacman.conf
 
 # COPY to .config
-cp -a ${BASEDIR}/config/ ~/.config/
+cp -R ${BASEDIR}/config/ ~/.config/
+cp -R ${BASEDIR}/scripts/ ~/scripts/
 
 # DESKTOP
 
