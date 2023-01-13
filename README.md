@@ -6,7 +6,7 @@
 TODO:
 - Add dotfiles
 - Worry about fonts
-- Add screenshot functionality
+- Add grimblast to auto
 - Configure neofetch
 - Change mouse or something idk
 - Configs for desktop
