@@ -82,7 +82,6 @@ TODO:
 - Display Manager | `sddm`
 
 ## Manual
-- Screenshotter | `grim slurp hyprctl wl-clipboard jq` (grimblast)
 
 ## Auto
 - Compositor | `hyprland-git` 
@@ -101,6 +100,7 @@ TODO:
 - neofetch | `neofetch`
 - libnotify | `libnotify`
 - fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra`
+- Screenshotter | `grim slurp hyprctl wl-clipboard jq` (grimblast)
 
 # Silly
 ## Manual
