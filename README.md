@@ -50,14 +50,7 @@ TODO:
 - Text Editor | `nano nano-syntax-highlighting`
 - Network Manager | `networkmanager` and add local host to /etc/hosts
   - `echo -e "127.0.0.1        localhost\n::1              localhost" >> /etc/hosts`
-- yay | `git base-devel`
-  - ```pacman -S git base-devel
-       git clone https://aur.archlinux.org/yay.git
-       cd yay
-       makepkg -si 
-       cd .. 
-       rm -rf yay`
-- git, ssh/gpg | `openssh github-cli`
+- git, ssh/gpg | `git openssh github-cli`
   - ```gh auth login
        ssh-keygen -t ed25519 -C "$email"; ssh-add ~/.ssh/id_ed25519
        gh ssh-key add ~/.ssh/id_ed25519.pub --title $hostname
@@ -68,11 +61,14 @@ TODO:
        git config --global commit.gpgsign true
        git config --global user.email "$email"
        git config --global user.name "$name"
-- add user/script to path
-  - ```echo "export PATH="${PATH}:/home/$user/scripts" >> ~/.bash_profile```
+
 ## Auto
 - Enable Color in /etc/pacman.conf
 - Symlink this .config to ~/config
+- yay | `base-devel`
+- add ~/script to path
+  - ```echo "export PATH="${PATH}:/home/$user/scripts" >> ~/.bash_profile```
+
 
 # Desktop
 
