@@ -82,7 +82,7 @@ TODO:
 - Display Manager | `sddm`
 
 ## Manual
-- Screenshotter | `grimblast`
+- Screenshotter | `grim slurp hyprctl wl-clipboard jq` (grimblast)
 
 ## Auto
 - Compositor | `hyprland-git` 
