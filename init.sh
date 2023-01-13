@@ -13,6 +13,7 @@ makepkg -si
 cd .. 
 rm -rf yay
 
+# add ~/scripts to path
 echo "export PATH=\"${PATH}:/home/${USER}/scripts\"" >> ~/.bash_profile
 
 # Add colors to /etc/pacman.conf 
