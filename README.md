@@ -61,6 +61,7 @@ TODO:
        git config --global commit.gpgsign true
        git config --global user.email "$email"
        git config --global user.name "$name"
+       echo "export GPG_TTY=\$(tty)" >> ~/.bash_profile
 
 ## Auto
 - Enable Color in /etc/pacman.conf
