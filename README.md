@@ -97,12 +97,15 @@ TODO:
 ## Manual
 ## Auto
 - neofetch | `neofetch`
+- libnotify | `libnotify`
+- fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra`
 
 # Silly
 ## Manual
 ## Auto
 - cbonsai | `cbonsai-git`
 - donut.c | `donut.c`
+- cmatrix | `cmatrix-git`
 # Applications
 ## TODO
 - Prism Launcher | `prismlauncher`
