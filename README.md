@@ -86,7 +86,7 @@ TODO:
 - Compositor | `hyprland-git` 
 - Wallpapers | `swww` 
 - Notification System | `dunst` 
-- Status Bars | `waybar-hyprland-git otf-font-awesome`
+- Status Bars | `waybar-hyprland-git otf-font-awesome wlr/workspaces`
 - Pipewire | `pipewire wireplumber pipewire-pulse pipewire-jack `
 - XDG Integration | `xdg-utils`
 - Terminal | `alacritty-git`
