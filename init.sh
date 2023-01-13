@@ -22,9 +22,10 @@ yay -S --noconfirm hyprland-git dunst waybar-hyprland-git swww xdg-utils alacrit
 yay -S --noconfirm pipewire wireplumber pipewire-jack pipewire-pulse
 
 # UTILITIES
+yay -S --noconfirm libnotify ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 
 # SILLY
-yay -S -noconfirm neofetch cbonsai donut.c
+yay -S -noconfirm neofetch cbonsai donut.c cmatrix-git
 
 # APPLICATIONS
 
