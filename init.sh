@@ -24,10 +24,16 @@ yay -S --noconfirm pipewire wireplumber pipewire-jack pipewire-pulse
 # UTILITIES
 yay -S --noconfirm libnotify ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 
+yay -S --noconfirm --grim slurp hyprctl wl-clipboard jq
+
+git clone https://github.com/hyprwm/contrib
+cp contrib/grimblast/grimblast ~/scripts
+rm -rf contrib
+
 # SILLY
 yay -S -noconfirm neofetch cbonsai donut.c cmatrix-git
 
 # APPLICATIONS
 
 # firefox - prefer pipewire-jack by earlier
-yay -S --noconfirm firefox  discord_arch_electron
+yay -S --noconfirm firefox discord_arch_electron
