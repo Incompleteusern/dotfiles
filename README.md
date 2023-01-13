@@ -68,7 +68,8 @@ TODO:
        git config --global commit.gpgsign true
        git config --global user.email "$email"
        git config --global user.name "$name"
-   
+- add user/script to path
+  - ```echo "export PATH="${PATH}:/home/$user/scripts" >> ~/.bash_profile```
 ## Auto
 - Enable Color in /etc/pacman.conf
 - Symlink this .config to ~/config
@@ -81,6 +82,7 @@ TODO:
 - Display Manager | `sddm`
 
 ## Manual
+- Screenshotter | `grimblast`
 
 ## Auto
 - Compositor | `hyprland-git` 
