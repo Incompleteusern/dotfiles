@@ -7,6 +7,7 @@ TODO:
 - Add dotfiles
 - Worry about fonts
 - Add screenshot functionality
+- Configure neofetch
 - Change mouse or something idk
 - Configs for desktop
   - Configure hyprland similar to flick0 for now
@@ -95,11 +96,11 @@ TODO:
 # Utilities
 ## Manual
 ## Auto
+- neofetch | `neofetch`
 
 # Silly
 ## Manual
 ## Auto
-- neofetch | `neofetch`
 - cbonsai | `cbonsai-git`
 - donut.c | `donut.c`
 # Applications
