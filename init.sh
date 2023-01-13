@@ -1,10 +1,19 @@
 #!/bin/bash
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+USER = whoami
 
 # INSTALLATION
 
-# CONFIG
+# yay
+pacman -S git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si 
+cd .. 
+rm -rf yay
+
+echo "export PATH=\"${PATH}:/home/${USER}/scripts\"" >> ~/.bash_profile
 
 # Add colors to /etc/pacman.conf 
 sed -i "s/#Color/Color" /etc/pacman.conf
