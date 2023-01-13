@@ -68,8 +68,6 @@ TODO:
 - Symlink this .config to ~/config
 - yay | `base-devel`
 - add ~/script to path
-  - ```echo "export PATH="${PATH}:/home/$user/scripts" >> ~/.bash_profile```
-
 
 # Desktop
 
