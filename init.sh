@@ -6,7 +6,7 @@ USER = whoami
 # INSTALLATION
 
 # yay
-pacman -S git base-devel
+pacman -S base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si 
