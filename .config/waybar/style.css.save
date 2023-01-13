@@ -1,7 +1,8 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "CartographCF Nerd Font", FontAwesome, Helvetica, Arial, Roboto, sans-serif;
-    font-size: 13px;
+    /* wild font order that somehow works afaik */
+    font-family: FontAwesome, Helvetica, Arial, MaterialIcons,  "Font Awesome 6 Free", Arial, Roboto, sans-serif;
+    font-size: 15px;
 }
 
 
@@ -55,6 +56,7 @@ window#waybar.chromium {
     box-shadow: rgba(0, 0, 0, 0.288) 2 2 5 2px;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
     padding-left: 20px;
+    padding-bottom: 3px;
     background: rgb(202,158,230);
     background: linear-gradient(45deg, rgba(202,158,230,1) 0%, rgba(245,194,231,1) 43%, rgba(180,190,254,1) 80%, rgba(137,180,250,1) 100%); 
     background-size: 300% 300%;
@@ -217,7 +219,6 @@ label:focus {
     background: linear-gradient(52deg, rgba(180,190,254,1) 0%, rgba(137,220,235,1) 32%, rgba(137,180,250,1) 72%, rgba(166,227,161,1) 100%); 
     background-size: 300% 300%;
     animation: gradient 20s ease infinite;
-    font-size: 8px;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
     /* background-color: #b4befe; */
     color: 	#fff;
