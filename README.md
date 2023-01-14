@@ -104,10 +104,9 @@ TODO:
 - donut.c | `donut.c`
 - cmatrix | `cmatrix-git`
 # Applications
-## TODO
-- Prism Launcher | `prismlauncher`
 
 ## Manual
 ## Auto
 - Firefox | `firefox`
 - Discord | `discord_arch_electron`
+- Prism Launcher | `prismlauncher`
