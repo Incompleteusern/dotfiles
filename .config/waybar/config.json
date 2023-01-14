@@ -85,7 +85,8 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-right": "~/.config/waybar/scripts/wifi-menu"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -103,8 +104,7 @@
             "portable": "",
             "car": "",
             "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+        }
     },
     "custom/media": {
         "format": "{icon} {}",
