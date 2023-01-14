@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Based off https://github.com/ericmurphyxyz/rofi-wifi-menu
+
 notify-send "Getting list of available Wi-Fi networks..."
 # Get a list of available wifi connections and morph it into a nice-looking list
 wifi_list=$(nmcli -t --fields "SECURITY,SSID,IN-USE" device wifi list | grep -vE '.+::')
