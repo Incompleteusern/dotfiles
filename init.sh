@@ -47,4 +47,4 @@ yay -S -noconfirm neofetch cbonsai donut.c cmatrix-git
 # APPLICATIONS
 
 # firefox - prefer pipewire-jack by earlier
-yay -S --noconfirm firefox discord_arch_electron
+yay -S --noconfirm firefox discord_arch_electron prismlauncher
