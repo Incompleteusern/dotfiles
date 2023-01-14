@@ -27,24 +27,24 @@ cp -R ${BASEDIR}/scripts/ ~/scripts/
 # DESKTOP
 
 # hyprland and friends
-yay -S --noconfirm hyprland-git dunst waybar-hyprland-git swww xdg-utils alacritty-git rofi-hyprland-git pamixer otf-font-awesome wlr/workspaces
+yay -S hyprland-git dunst waybar-hyprland-git swww-git xdg-utils alacritty-git rofi-lbonn-wayland-git pamixer otf-font-awesome ttf-meslo-nerd-font-powerlevel10k
 
 # pipewire
-yay -S --noconfirm pipewire wireplumber pipewire-jack pipewire-pulse
+yay -S pipewire wireplumber pipewire-jack pipewire-pulse
 
 # UTILITIES
-yay -S --noconfirm libnotify ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+yay -S libnotify ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git
 
-yay -S --noconfirm --grim slurp hyprctl wl-clipboard jq
+yay -S grim slurp wl-clipboard jq
 
 git clone https://github.com/hyprwm/contrib
 cp contrib/grimblast/grimblast ~/scripts
 rm -rf contrib
 
 # SILLY
-yay -S -noconfirm neofetch cbonsai donut.c cmatrix-git
+yay -S neofetch-git cbonsai donut.c cmatrix-git
 
 # APPLICATIONS
 
 # firefox - prefer pipewire-jack by earlier
-yay -S --noconfirm firefox discord_arch_electron prismlauncher
+yay -S firefox discord_arch_electron prismlauncher
