@@ -73,29 +73,28 @@ TODO:
 
 ## TODO
 - Polkit | `polkit-kde-agent` 
-- App Launcher | `rofi-lbonn-wayland-git` 
 - Display Manager | `sddm`
 
 ## Manual
 
 ## Auto
 - Compositor | `hyprland-git` 
-- Wallpapers | `swww` 
+- Wallpapers | `swww-git` 
 - Notification System | `dunst` 
-- Status Bars | `waybar-hyprland-git otf-font-awesome wlr/workspaces`
+- Status Bars | `waybar-hyprland-git otf-font-awesome ttf-meslo-nerd-font-powerlevel10k`
 - Pipewire | `pipewire wireplumber pipewire-pulse pipewire-jack `
-- XDG Integration | `xdg-utils`
+- XDG Integration | `xdg-utils xdg-desktop-portal-wlr`
 - Terminal | `alacritty-git`
-- Application Client | `rofi-hyprland-git`
+- App Launcher | `rofi-lbonn-wayland-git` 
 - Volume Control | `pamixer`
 
 # Utilities
 ## Manual
 ## Auto
-- neofetch | `neofetch`
+- neofetch | `neofetch-git`
 - libnotify | `libnotify`
-- fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra`
-- Screenshotter | `grim slurp hyprctl wl-clipboard jq` (grimblast)
+- fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git`
+- Screenshotter | `grim slurp wl-clipboard jq` (grimblast)
 
 # Silly
 ## Manual
