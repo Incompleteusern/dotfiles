@@ -6,7 +6,6 @@ USER = whoami
 # INSTALLATION
 
 # yay
-pacman -S base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si 
@@ -21,7 +20,7 @@ sed -i "s/#Color/Color" /etc/pacman.conf
 # cat ILoveCandy >> /etc/pacman.conf
 
 # COPY to .config
-cp -R ${BASEDIR}/config/ ~/.config/
+cp -R ${BASEDIR}/.config/ ~/.config/
 cp -R ${BASEDIR}/scripts/ ~/scripts/
 
 # DESKTOP
