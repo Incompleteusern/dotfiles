@@ -51,7 +51,8 @@ TODO:
 - Network Manager | `networkmanager` and add local host to /etc/hosts
   - `echo -e "127.0.0.1        localhost\n::1              localhost" >> /etc/hosts`
 - git, ssh/gpg | `git openssh github-cli`
-  - ```gh auth login
+  - ```
+       gh auth login
        ssh-keygen -t ed25519 -C "$email"; ssh-add ~/.ssh/id_ed25519
        gh ssh-key add ~/.ssh/id_ed25519.pub --title $hostname
        git clone git@github.com:Incompleteusern/dotfiles.git
