@@ -108,5 +108,5 @@ TODO:
 ## Manual
 ## Auto
 - Firefox | `firefox`
-- Discord | `discord_arch_electron`
+- Discord | `webcord`
 - Prism Launcher | `prismlauncher`
