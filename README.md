@@ -110,3 +110,4 @@ TODO:
 - Firefox | `firefox`
 - Discord | `webcord`
 - Prism Launcher | `prismlauncher`
+- Steam | `steam`
