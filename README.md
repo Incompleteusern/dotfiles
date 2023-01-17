@@ -63,6 +63,7 @@ TODO:
        git config --global user.email "$email"
        git config --global user.name "$name"
        echo "export GPG_TTY=\$(tty)" >> ~/.bash_profile
+       echo "export GPG_TTY=\$(tty)" >> ~/.profile
 
 ## Auto
 - Enable Color in /etc/pacman.conf
