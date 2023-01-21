@@ -82,7 +82,7 @@ TODO:
 ## Auto
 - Compositor | `hyprland-git` 
 - Wallpapers | `swww-git` 
-- Notification System | `dunst` 
+- Notification System | `dunst libnotify` 
 - Status Bars | `waybar-hyprland-git otf-font-awesome ttf-meslo-nerd-font-powerlevel10k`
 - Pipewire | `pipewire wireplumber pipewire-pulse pipewire-jack `
 - XDG Integration | `xdg-utils xdg-desktop-portal-wlr`
@@ -94,7 +94,7 @@ TODO:
 ## Manual
 ## Auto
 - neofetch | `neofetch-git`
-- libnotify | `libnotify`
+- brightness | `brightnessctl`
 - fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git`
 - Screenshotter | `grim slurp wl-clipboard jq` (grimblast)
 

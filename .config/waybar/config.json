@@ -8,7 +8,7 @@
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces"],
     "modules-center": [],
-    "modules-right": ["network", "backlight",  "pulseaudio", "temperature", "cpu", "battery", "clock"],
+    "modules-right": ["tray", "network", "backlight", "pulseaudio", "cpu", "battery", "clock"],
     // Modules configuration
     "wlr/workspaces": {
         "format": "{icon}",

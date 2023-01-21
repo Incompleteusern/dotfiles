@@ -26,13 +26,13 @@ cp -R ${BASEDIR}/scripts/ ~/scripts/
 # DESKTOP
 
 # hyprland and friends
-yay -S hyprland-git dunst waybar-hyprland-git swww-git xdg-utils alacritty-git rofi-lbonn-wayland-git pamixer otf-font-awesome ttf-meslo-nerd-font-powerlevel10k
+yay -S hyprland-git duns libnotifyt waybar-hyprland-git swww-git xdg-utils alacritty-git rofi-lbonn-wayland-git pamixer otf-font-awesome ttf-meslo-nerd-font-powerlevel10k
 
 # pipewire
 yay -S pipewire wireplumber pipewire-jack pipewire-pulse
 
 # UTILITIES
-yay -S libnotify ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git
+yay -S brightnessctl ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git
 
 yay -S grim slurp wl-clipboard jq
 
