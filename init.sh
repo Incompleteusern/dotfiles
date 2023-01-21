@@ -13,7 +13,7 @@ cd ..
 rm -rf yay
 
 # add ~/scripts to path
-echo "export PATH=\"${PATH}:/home/${USER}/scripts\"" >> ~/.bash_profile
+echo "export PATH=\"${PATH}:/home/${USER}/scripts\"" >> ~/.zshrc
 
 # Add colors to /etc/pacman.conf 
 sed -i "s/#Color/Color" /etc/pacman.conf
