@@ -14,21 +14,13 @@ TODO:
     - Wallpaper script time!!!!
   - Configure Waybar based off flick0
     - Make a custom script to check for arch updates
-    - Wifi/Network (rofi-wifi-menu), Clock, Volume, Battery, Expand (Emoji, Screenshot, Language)
-        - Do CSS
-    - Wayspaces on the left
-        - Do CSS
-    - MPR player in the middle: use flick0 then eventually integrate with spotify
-        - Not a priority
-  - Configure Dunst
-  - Rofi-emoji, Rofi-wifi-menu + merge active prs, Make a rofi language gui since why not
+    - Language
+    - Do CSS
+  - Make a rofi language gui since why not
       - Configure Rofi (scary)
 - Screensharing, App Launchers, App Clients, Color Pickers
     - aka Configure Rest of Desktop
-- Prism Launcher
 - Decide whether to use XDG Desktop Portal?
-- Man
-- zsh + ohmyzsh, 
 - Customize firefox + fork mozilla? 
 - Go through general preference :SOB:
 - Add disk encryption
