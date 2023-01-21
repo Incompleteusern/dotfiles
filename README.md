@@ -70,6 +70,7 @@ TODO:
 - Symlink this .config to ~/config
 - yay | `base-devel`
 - add ~/script to path
+- zshrc | `zsh`
 
 # Desktop
 
