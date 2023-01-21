@@ -12,6 +12,13 @@ makepkg -si
 cd .. 
 rm -rf yay
 
+# zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+gcl https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+gcl https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+gcl https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
+rm .bash_history .bash_logout .bash_profile .bashrc
+
 # add ~/scripts to path
 echo "export PATH=\"${PATH}:/home/${USER}/scripts\"" >> ~/.zshrc
 
