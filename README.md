@@ -116,8 +116,11 @@ TODO:
 # Applications
 
 ## Manual
+Use catpuccin mocha lavender for firefox and vscode
+
 ## Auto
 - Firefox | `firefox`
 - Discord | `webcord`
 - Prism Launcher | `prismlauncher`
 - Steam | `steam`
+- Vs Code | `visual-studio-code-bin`
