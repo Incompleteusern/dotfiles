@@ -33,7 +33,7 @@ elif [[ "$connected" =~ "disabled" ]]; then
 fi
 
 # Use rofi to select wifi network
-chosen_network=$(echo -e "$toggle\n$wifi_list" | rofi -dmenu -i -a "$currindex" -selected-row 1 -p "Wi-Fi SSID: " )
+chosen_network=$(echo -e "$toggle\n$wifi_list" | rofi -dmenu -i -a "$currindex" -selected-row 1 -p "Wi-Fi SSID" )
 # Get name of connection
 chosen_id=$(echo "${chosen_network:3}" | xargs)
 
@@ -53,10 +53,10 @@ else
 	saved_connections=$(nmcli -g NAME connection)
 	check_saved_connections=$(echo "$saved_connections" | grep -w "$chosen_id")
 	if [[ $check_saved_connections = "$chosen_id" ]]; then
-		nmcli connection up id "$chosen_id" | grep "successfully" || wifi_password=$(rofi -dmenu -p "Password: " ) && nmcli device wifi connect "$chosen_id" password "$wifi_password" | grep "successfully" && notify-send "Connection Established" "$success_message"
+		nmcli connection up id "$chosen_id" | grep "successfully" || wifi_password=$(rofi -dmenu -p "Password" ) && nmcli device wifi connect "$chosen_id" password "$wifi_password" | grep "successfully" && notify-send "Connection Established" "$success_message"
 	else
 		if [[ "$chosen_network" =~ "" ]]; then
-			wifi_password=$(rofi -dmenu -p "Password: " )
+			wifi_password=$(rofi -dmenu -p "Password" )
 		fi
 		nmcli device wifi connect "$chosen_id" password "$wifi_password" | grep "successfully" && notify-send "$success_message"
 	fi
