@@ -33,14 +33,38 @@ cp -R ${BASEDIR}/scripts/ ~/scripts/
 # DESKTOP
 
 # hyprland and friends
-yay -S hyprland-git duns libnotifyt waybar-hyprland-git swww-git xdg-utils alacritty-git rofi-lbonn-wayland-git pamixer otf-font-awesome ttf-meslo-nerd-font-powerlevel10k
+yay -S hyprland-git xdg-utils otf-font-awesome ttf-meslo-nerd-font-powerlevel10k
+
+# Bars
+yay -S waybar-hyprland-git
+
+# wallpapr
+yay -S swww-git
+
+# notifications
+yay -S dunstl ibnotify
+
+# App Launcher thing
+yay -S rofi-lbonn-wayland-git
+
+# terminal
+yay -S alacritty-git
+
+# desktop utilities
+yay -S brightnessctl pamixer
 
 # pipewire
 yay -S pipewire wireplumber pipewire-jack pipewire-pulse
 
 # UTILITIES
-yay -S brightnessctl ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git
 
+# fonts
+yay -S ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git
+
+# command line
+yay -S bat duf exa fzf fd httpie gping-git
+
+# screenshots
 yay -S grim slurp wl-clipboard jq
 
 git clone https://github.com/hyprwm/contrib
