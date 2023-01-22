@@ -9,9 +9,16 @@ TODO:
 - Add grimblast to auto
 - Configure neofetch
 - Change mouse or something idk
+- Do redshift
 - Configs for desktop
-  - Configure hyprland similar to flick0 for now
-    - Wallpaper script time!!!!
+  - Switch to eww from waybar
+    - recustomize
+  - rofi icons
+  - actually add rofi theme
+  - actually add oh-my-zsh theme
+  - redo dunst theme
+  - redo alacritty theme
+  - Wallpaper script time!!!!
   - Configure Waybar based off flick0
     - Make a custom script to check for arch updates
     - Language
