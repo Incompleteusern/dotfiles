@@ -26,9 +26,10 @@ echo "export PATH=\"${PATH}:/home/${USER}/scripts\"" >> ~/.zshrc
 sed -i "s/#Color/Color" /etc/pacman.conf
 # cat ILoveCandy >> /etc/pacman.conf
 
-# COPY to .config
+# Copy to .config
 cp -R ${BASEDIR}/.config/ ~/.config/
 cp -R ${BASEDIR}/scripts/ ~/scripts/
+cp -R ${BASEDIR}/.zshrc ~/.zshrc
 
 # DESKTOP
 

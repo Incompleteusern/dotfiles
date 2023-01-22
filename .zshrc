@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/scripts:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/scripts:$HOME/bin:/usr/local/bin:$HOME/.poetry/bin:$HOME/.local/bin:$PATH
 
 export GPG_TTY=$TTY
 
@@ -103,3 +103,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 eval $(thefuck --alias)
+
+alias cat=bat
+alias ls="exa -lah --group-directories-first"
+alias find=fd
+alias fuzzy=fzf
+alias ping=gping
+alias hibernate="systemctl hibernate"
+alias sleep="systemctl suspend"
+alias restart="reboot now"
+alias shutdown="shutdown now"
