@@ -4,22 +4,24 @@
 - https://github.com/flick0/dotfiles
 
 TODO:
-- Add dotfiles
 - Worry about fonts
 - Add grimblast to auto
 - Configure neofetch
 - Change mouse or something idk
 - Do redshift
+- Customize oh-my-fsh more
+  - actually add oh-my-zsh theme
 - Configs for desktop
   - Switch to eww from waybar
     - recustomize
   - rofi icons
   - actually add rofi theme
-  - actually add oh-my-zsh theme
   - redo dunst theme
   - redo alacritty theme
   - Wallpaper script time!!!!
-  - Configure Waybar based off flick0
+  - EWW
+    - Do which widgets I want first lol
+    - Try to supersede wifi menu with a widget
     - Make a custom script to check for arch updates
     - Language
     - Do CSS
@@ -97,6 +99,13 @@ TODO:
 - brightness | `brightnessctl`
 - fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git`
 - Screenshotter | `grim slurp wl-clipboard jq` (grimblast)
+- Command line
+  - Replace cat | `bat`
+  - Memory | `duf`
+  - Replace ls | `exa`
+  - Replace find | `fzf`, `fd`
+  - Requests | `httpie`
+  - Ping | `gping-git`
 
 # Silly
 ## Manual
