@@ -68,10 +68,6 @@ yay -S bat duf exa fzf fd httpie gping-git
 # screenshots
 yay -S grim slurp wl-clipboard jq
 
-git clone https://github.com/hyprwm/contrib
-cp contrib/grimblast/grimblast ~/scripts
-rm -rf contrib
-
 # SILLY
 yay -S neofetch-git cbonsai donut.c cmatrix-git
 
