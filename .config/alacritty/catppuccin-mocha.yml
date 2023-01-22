@@ -53,26 +53,26 @@ colors:
         cyan: "#94E2D5" # teal
         white: "#BAC2DE" # subtext1
 
-    # Bright colors - shift up by one
+    # Bright colors - shift up by 8 in each
     bright:
         black: "#585B70" # surface2
-        red: "#F49CB9" # red
-        green: "#B7F4B2" # green
-        yellow: "#FAF3BF" # yellow
-        blue: "#9AC5FB" # blue
-        magenta: "#F6D3F8" # pink
-        cyan: "#A5F3E6" # teal
-        white: "#DEE7F5" # text
+        red: "#FB93B0" # red
+        green: "#AEECA9" # green
+        yellow: "#FFEAB7" # yellow
+        blue: "#91BCFF" # blue
+        magenta: "#FDCAEF" # pink
+        cyan: "#9CEADD" # teal
+        white: "#E6EFFD" # text
 
-    # Dim colors - shift down by one
+    # Dim colors - shift down by 8 in each
     dim:
         black: "#313244" # surface0
-        red: "#E27A97" # red
-        green: "#95D290" # green
-        yellow: "#E8D19E" # yellow
-        blue: "#78A3E9" # blue
-        magenta: "#E4B1D6" # pink
-        cyan: "#83D1C4" # teal
+        red: "#EA83A0" # red
+        green: "#9EDB99" # green
+        yellow: "#F1DAA7" # yellow
+        blue: "#81ABF2" # blue
+        magenta: "#EDBADF" # pink
+        cyan: "#8CDACD" # teal
         white: "#A6ADC8" # subtext0
 
     indexed_colors:
