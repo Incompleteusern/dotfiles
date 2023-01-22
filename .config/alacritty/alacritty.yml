@@ -8,8 +8,8 @@
 #
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
-#import:
-#  - /path/to/alacritty.yml
+import:
+  - ~/.config/alacritty/catppuccin-mocha.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -184,12 +184,12 @@ window:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: false
 
-# Colors (Ocean Breeze)
-colors:
+# Colors (Tomorrow Night)
+#colors:
   # Default colors
-  primary:
-    background: '0x090707'
-    foreground: '0xa59179'
+  #primary:
+  #  background: '#1d1f21'
+  #  foreground: '#c5c8c6'
 
     # Bright and dim foreground colors
     #
@@ -281,26 +281,26 @@ colors:
   #  background: CellForeground
 
   # Normal colors
-  normal:
-    black:   '0x5d4544'
-    red:     '0x725a59'
-    green:   '0x4c6e77'
-    yellow:  '0x937067'
-    blue:    '0xc26b47'
-    magenta: '0xad5f33'
-    cyan:    '0xb48baa'
-    white:   '0x688d93'
+  #normal:
+  #  black:   '#1d1f21'
+  #  red:     '#cc6666'
+  #  green:   '#b5bd68'
+  #  yellow:  '#f0c674'
+  #  blue:    '#81a2be'
+  #  magenta: '#b294bb'
+  #  cyan:    '#8abeb7'
+  #  white:   '#c5c8c6'
 
   # Bright colors
-  bright:
-    black:   '0x627e83'
-    red:     '0x8d4430'
-    green:   '0xbc5d42'
-    yellow:  '0xe6c27f'
-    blue:    '0xe6917f'
-    magenta: '0xdbc494'
-    cyan:    '0xaec7cb'
-    white:   '0xe6ad7f'
+  #bright:
+  #  black:   '#666666'
+  #  red:     '#d54e53'
+  #  green:   '#b9ca4a'
+  #  yellow:  '#e7c547'
+  #  blue:    '#7aa6da'
+  #  magenta: '#c397d8'
+  #  cyan:    '#70c0b1'
+  #  white:   '#eaeaea'
 
   # Dim colors
   #
