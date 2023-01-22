@@ -5,7 +5,7 @@
 
 TODO:
 - Worry about fonts
-- Add grimblast to auto
+- Learn tmux
 - Configure neofetch
 - Change mouse or something idk
 - Do redshift
