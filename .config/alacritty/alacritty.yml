@@ -352,14 +352,14 @@ draw_bold_text_with_bright_colors: false
   #   - EaseOutExpo
   #   - EaseOutCirc
   #   - Linear
-  #animation: EaseOutExpo
+  # animation: EaseOutExpo
 
   # Duration of the visual bell flash in milliseconds. A `duration` of `0` will
   # disable the visual bell animation.
-  #duration: 0
+  # duration: 0
 
   # Visual bell animation color.
-  #color: '#ffffff'
+  # color: '#ffffff'
 
   # Bell Command
   #

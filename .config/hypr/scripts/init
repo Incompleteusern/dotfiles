@@ -12,5 +12,6 @@ swww img ~/.config/hypr/wallpapers/sea.jpg --transition-type center
 # waybar
 waybar -l trace -c $HOME/.config/waybar/config.json -s $HOME/.config/waybar/style.css &
 
-# redshift
-redshift &
+# goofy ah protonvpn shit - see https://www.reddit.com/r/ProtonVPN/comments/vgki46/connecting_to_proton_vpn_stuck_in_arch_linux_with/
+gnome-keyring-daemon --start
+nm-applet &
