@@ -124,3 +124,4 @@ Use catpuccin mocha lavender for firefox and vscode
 - Prism Launcher | `prismlauncher`
 - Steam | `steam`
 - Vs Code | `visual-studio-code-bin`
+- VPN | `openvpn protonvpn-gui`
