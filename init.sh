@@ -69,7 +69,7 @@ yay -S bat duf exa fzf fd httpie gping-git
 yay -S grim slurp wl-clipboard jq
 
 # SILLY
-yay -S neofetch-git cbonsai donut.c cmatrix-git
+yay -S neofetch-git cbonsai donut.c cmatrix-git aalib
 
 # APPLICATIONS
 
