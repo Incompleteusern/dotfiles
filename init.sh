@@ -43,7 +43,7 @@ yay -S waybar-hyprland-git
 yay -S swww-git
 
 # notifications
-yay -S dunstl ibnotify
+yay -S dunst libnotify
 
 # App Launcher thing
 yay -S rofi-lbonn-wayland-git
