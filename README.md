@@ -8,9 +8,8 @@ TODO:
 - Learn tmux
 - Configure neofetch
 - Change mouse or something idk
-- Do redshift
+- Do redshift alternative
 - Customize oh-my-fsh more
-  - actually add oh-my-zsh theme
 - Configs for desktop
   - Switch to eww from waybar
     - recustomize
@@ -113,7 +112,6 @@ TODO:
 - cbonsai | `cbonsai-git`
 - donut.c | `donut.c`
 - cmatrix | `cmatrix-git`
-- aalib | `aalib`
 # Applications
 
 ## Manual
