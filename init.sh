@@ -74,4 +74,8 @@ yay -S neofetch-git cbonsai donut.c cmatrix-git aalib
 # APPLICATIONS
 
 # firefox - prefer pipewire-jack by earlier
-yay -S firefox webcord prismlauncher steam visual-studio-code-bin
+yay -S firefox prismlauncher steam visual-studio-code-bin
+
+yay -S discord_arch_electron betterdiscordctl
+
+betterdiscordctl install

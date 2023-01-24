@@ -117,11 +117,11 @@ TODO:
 # Applications
 
 ## Manual
-Use catpuccin mocha lavender for firefox and vscode
+Use catpuccin mocha lavender for firefox and vscode, catpuccin mocha for bd
 
 ## Auto
 - Firefox | `firefox`
-- Discord | `webcord`
+- Discord | `discord_arch_electron betterdiscordctl`
 - Prism Launcher | `prismlauncher`
 - Steam | `steam`
 - Vs Code | `visual-studio-code-bin`
