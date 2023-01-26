@@ -47,6 +47,7 @@ TODO:
 - Add wheel group to sudoers | `sudo`
   - Uncomment `# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL:ALL) ALL`
 - Processor Microcode | `intel-ucode`
+- Grub Hook `grub-hook`
 - Text Editor | `nano nano-syntax-highlighting`
 - Network Manager | `networkmanager` and add local host to /etc/hosts
   - `echo -e "127.0.0.1        localhost\n::1              localhost" >> /etc/hosts`
@@ -112,6 +113,7 @@ TODO:
 - cbonsai | `cbonsai-git`
 - donut.c | `donut.c`
 - cmatrix | `cmatrix-git`
+
 # Applications
 
 ## Manual
