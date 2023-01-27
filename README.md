@@ -122,6 +122,7 @@ TODO:
 ## Manual
 Use catpuccin mocha lavender for firefox and vscode, catpuccin mocha for bd
 Use `cups` for printer stuff.
+Enable firefox hardware acceleration, reopen tabs on close
 
 ## Auto
 - Firefox | `firefox`
