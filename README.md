@@ -42,7 +42,7 @@ TODO:
   - https://wiki.archlinux.org/title/Installation_guide
   - Right now, temporary android tether to set up and get driver rtw89 manually
 - Linux install | `linux linux-firmware`
-- Reflector | `reflector`
+- Mirror management | `reflector`
   - Set US as country
   - Enable `reflector.tiemr`
 - Add user (after arch-chroot) 
@@ -65,14 +65,15 @@ TODO:
        git config --global user.name "$name"
        echo "export GPG_TTY=\$(tty)" >> ~/.bash_profile
        echo "export GPG_TTY=\$(tty)" >> ~/.profile
-
+- Network Manager | `networkmanager` and enable service
+- 
 ## Auto
 - Enable Color and ParallelDownloads in /etc/pacman.conf
 - yay | `base-devel`
 - add ~/script to path
 - zshrc | `zsh`
-- Clean pacman cache weekly | `paccache`
-- Network Manager | `networkmanager` and add local host to /etc/hosts
+- Pacman Utils | `paccache pacgraph`
+- Add local host to /etc/hosts
   - `echo -e "127.0.0.1        localhost\n::1              localhost" >> /etc/hosts`
 
 # Desktop
@@ -80,6 +81,7 @@ TODO:
 ## TODO
 - Polkit | `polkit-kde-agent` 
 - Display Manager | `sddm`
+- 
 
 ## Manual
 
