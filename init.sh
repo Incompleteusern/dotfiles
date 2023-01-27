@@ -19,6 +19,14 @@ gcl https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-
 gcl https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
 rm .bash_history .bash_logout .bash_profile .bashrc
 
+# paccache
+systemctl enable paccache.timer
+
+# networkmanager
+echo "127.0.0.1        localhost" >> /etc/hosts
+echo "::1              localhost" >> /etc/hosts
+
+
 # add ~/scripts to path
 echo "export PATH=\"${PATH}:/home/${USER}/scripts\"" >> ~/.zshrc
 
