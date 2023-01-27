@@ -13,7 +13,6 @@ TODO:
 - Configs for desktop
   - Switch to eww from waybar
     - recustomize
-  - rofi icons
   - actually add rofi theme
   - redo dunst theme
   - redo alacritty theme
@@ -93,7 +92,7 @@ TODO:
 - Pipewire | `pipewire wireplumber pipewire-pulse pipewire-jack `
 - XDG Integration | `xdg-utils xdg-desktop-portal-wlr`
 - Terminal | `alacritty-git`
-- App Launcher | `rofi-lbonn-wayland-git` 
+- App Launcher | `rofi-lbonn-wayland-git papirus-icon-theme-git sif-git` 
 - Volume Control | `pamixer`
 
 # Utilities
@@ -101,7 +100,7 @@ TODO:
 ## Auto
 - neofetch | `neofetch-git`
 - brightness | `brightnessctl`
-- fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git`
+- fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git ttf-symbola`
 - screenshots | `grim slurp wl-clipboard jq` (grimblast)
 - cli
   - Replace cat | `bat`

@@ -49,14 +49,14 @@ yay -S hyprland-git xdg-utils otf-font-awesome ttf-meslo-nerd-font-powerlevel10k
 # bars
 yay -S waybar-hyprland-git
 
-# wallpapr
+# wallpaper
 yay -S swww-git
 
 # notifications
 yay -S dunst libnotify
 
-# App Launcher thing
-yay -S rofi-lbonn-wayland-git
+# app launcher thing
+yay -S rofi-lbonn-wayland-git papirus-icon-theme-git sif-git
 
 # terminal
 yay -S alacritty-git
@@ -70,7 +70,7 @@ yay -S pipewire wireplumber pipewire-jack pipewire-pulse
 # UTILITIES
 
 # fonts
-yay -S ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git
+yay -S ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git ttf-symbola
 
 # command line
 yay -S bat duf exa fzf fd httpie gping-git
