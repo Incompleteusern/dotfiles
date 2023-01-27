@@ -49,6 +49,7 @@ TODO:
 - Processor Microcode | `intel-ucode`
 - Grub Hook `grub-hook`
 - Text Editor | `nano nano-syntax-highlighting`
+- Clean pacman cache weekly `paccache`
 - Network Manager | `networkmanager` and add local host to /etc/hosts
   - `echo -e "127.0.0.1        localhost\n::1              localhost" >> /etc/hosts`
 - git, ssh/gpg | `git openssh github-cli`
@@ -118,6 +119,7 @@ TODO:
 
 ## Manual
 Use catpuccin mocha lavender for firefox and vscode, catpuccin mocha for bd
+Use `cups` for printer stuff.
 
 ## Auto
 - Firefox | `firefox`
