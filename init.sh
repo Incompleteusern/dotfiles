@@ -45,7 +45,7 @@ cp -R ${BASEDIR}/.zshrc ~/.zshrc
 # hyprland and friends
 yay -S hyprland-git xdg-utils otf-font-awesome ttf-meslo-nerd-font-powerlevel10k
 
-# Bars
+# bars
 yay -S waybar-hyprland-git
 
 # wallpapr
@@ -76,6 +76,12 @@ yay -S bat duf exa fzf fd httpie gping-git
 
 # screenshots
 yay -S grim slurp wl-clipboard jq
+
+# power
+yay -S tlp tlp-rdw
+systemctl enable tlp.service 
+systemctl enable NetworkManager-dispatcher.service
+systemctl mask systemd-rfkill.service systemd-rfkill.socket
 
 # SILLY
 yay -S neofetch-git cbonsai donut.c cmatrix-git aalib
