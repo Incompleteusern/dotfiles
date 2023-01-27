@@ -100,14 +100,15 @@ TODO:
 - neofetch | `neofetch-git`
 - brightness | `brightnessctl`
 - fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git`
-- Screenshotter | `grim slurp wl-clipboard jq` (grimblast)
-- Command line
+- screenshots | `grim slurp wl-clipboard jq` (grimblast)
+- cli
   - Replace cat | `bat`
   - Memory | `duf`
   - Replace ls | `exa`
   - Replace find | `fzf`, `fd`
   - Requests | `httpie`
   - Ping | `gping-git`
+- power | `tlp tlp-rdw`
 
 # Silly
 ## Manual
