@@ -24,6 +24,7 @@ echo "export PATH=\"${PATH}:/home/${USER}/scripts\"" >> ~/.zshrc
 
 # Add colors to /etc/pacman.conf 
 sed -i "s/#Color/Color" /etc/pacman.conf
+sed -i "s/#ParallelDownloads/ParallelDownloads" /etc/pacman.conf
 # cat ILoveCandy >> /etc/pacman.conf
 
 # Copy to .config
