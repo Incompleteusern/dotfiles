@@ -112,5 +112,7 @@ alias ping=gping
 alias hibernate="systemctl hibernate"
 alias sleep="systemctl suspend"
 alias restart="reboot now"
-alias rm="rm -i"
+
+# Get this to stop being so annoying
+#alias rm="rm -i"
 alias shutdown="shutdown now"
