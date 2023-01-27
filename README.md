@@ -47,11 +47,7 @@ TODO:
 - Add wheel group to sudoers | `sudo`
   - Uncomment `# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL:ALL) ALL`
 - Processor Microcode | `intel-ucode`
-- Grub Hook `grub-hook`
 - Text Editor | `nano nano-syntax-highlighting`
-- Clean pacman cache weekly `paccache`
-- Network Manager | `networkmanager` and add local host to /etc/hosts
-  - `echo -e "127.0.0.1        localhost\n::1              localhost" >> /etc/hosts`
 - git, ssh/gpg | `git openssh github-cli`
   - ```
        gh auth login
@@ -68,11 +64,13 @@ TODO:
        echo "export GPG_TTY=\$(tty)" >> ~/.profile
 
 ## Auto
-- Enable Color in /etc/pacman.conf
-- Symlink this .config to ~/config
+- Enable Color and ParallelDownloads in /etc/pacman.conf
 - yay | `base-devel`
 - add ~/script to path
 - zshrc | `zsh`
+- Clean pacman cache weekly | `paccache`
+- Network Manager | `networkmanager` and add local host to /etc/hosts
+  - `echo -e "127.0.0.1        localhost\n::1              localhost" >> /etc/hosts`
 
 # Desktop
 
