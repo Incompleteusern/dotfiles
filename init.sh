@@ -19,7 +19,8 @@ gcl https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-
 gcl https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
 rm .bash_history .bash_logout .bash_profile .bashrc
 
-# paccache
+# pacman utils
+yay -S pacgraph
 systemctl enable paccache.timer
 
 # networkmanager
