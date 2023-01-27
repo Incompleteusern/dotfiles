@@ -42,6 +42,9 @@ TODO:
   - https://wiki.archlinux.org/title/Installation_guide
   - Right now, temporary android tether to set up and get driver rtw89 manually
 - Linux install | `linux linux-firmware`
+- Reflector | `reflector`
+  - Set US as country
+  - Enable `reflector.tiemr`
 - Add user (after arch-chroot) 
   - `useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
 - Add wheel group to sudoers | `sudo`
