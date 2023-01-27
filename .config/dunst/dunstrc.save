@@ -30,10 +30,10 @@
     height = 300
 
     # Position the notification in the top right corner
-    origin = top-right
+    origin = top-left
 
     # Offset from the origin
-    offset = 10x50
+    offset = 20x20
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -61,7 +61,7 @@
     progress_bar_max_width = 300
 
     # Corner radius for the progress bar. 0 disables rounded corners.
-    progress_bar_corner_radius = 5
+    progress_bar_corner_radius = 0
 
 
     # Show how many messages are currently hidden (because of

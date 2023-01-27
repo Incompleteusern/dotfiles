@@ -13,7 +13,6 @@ TODO:
 - Configs for desktop
   - Switch to eww from waybar
     - recustomize
-  - actually add rofi theme
   - redo dunst theme
   - redo alacritty theme
   - Wallpaper script time!!!!
@@ -23,8 +22,6 @@ TODO:
     - Make a custom script to check for arch updates
     - Language
     - Do CSS
-  - Make a rofi language gui since why not
-      - Configure Rofi (scary)
 - Screensharing, App Launchers, App Clients, Color Pickers
     - aka Configure Rest of Desktop
 - Decide whether to use XDG Desktop Portal?
@@ -92,7 +89,7 @@ TODO:
 - Pipewire | `pipewire wireplumber pipewire-pulse pipewire-jack `
 - XDG Integration | `xdg-utils xdg-desktop-portal-wlr`
 - Terminal | `alacritty-git`
-- App Launcher | `rofi-lbonn-wayland-git papirus-icon-theme-git sif-git` 
+- App Launcher | `rofi-lbonn-wayland-git papirus-icon-theme-git sif-git ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd` 
 - Volume Control | `pamixer`
 
 # Utilities
