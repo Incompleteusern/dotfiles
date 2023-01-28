@@ -25,6 +25,7 @@ TODO:
     - Make a custom script to check for arch updates
     - Language
     - Do CSS
+- Write a python script to handle bundling other repos in this
 - Screensharing, App Launchers, App Clients, Color Pickers
     - aka Configure Rest of Desktop
 - Decide whether to use XDG Desktop Portal?
