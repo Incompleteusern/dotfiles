@@ -115,6 +115,7 @@ TODO:
 - cbonsai | `cbonsai-git`
 - donut.c | `donut.c`
 - cmatrix | `cmatrix-git`
+- sl | `sl`
 
 # Applications
 
