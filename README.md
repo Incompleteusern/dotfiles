@@ -1,7 +1,10 @@
-## Based off
+## Thanks to
 
-- https://github.com/scotus-1/dotfiles
-- https://github.com/flick0/dotfiles
+https://github.com/scotus-1/dotfiles for format and what to use xd
+https://github.com/flick0/dotfiles for various configs
+https://github.com/catppuccin for the pastel theming
+
+## TODO
 
 TODO:
 - Worry about fonts
