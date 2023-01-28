@@ -23,6 +23,7 @@ cp -r ~/.config/rofi ${BASEDIR}/.config/
 cp -r ~/.config/waybar ${BASEDIR}/.config/
 cp -r ~/.config/cava ${BASEDIR}/.config/
 cp -r ~/.config/rofi ${BASEDIR}/.config/
+cp -r ~/.config/neofetch ${BASEDIR}/.config/
 
 cp -ar ~/scripts/ ${BASEDIR}/
 cp -ar ~/.zshrc ${BASEDIR}/
