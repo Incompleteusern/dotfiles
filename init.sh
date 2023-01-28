@@ -90,8 +90,14 @@ yay -S neofetch-git cbonsai donut.c cmatrix-git aalib
 # APPLICATIONS
 
 # firefox - prefer pipewire-jack by earlier
-yay -S firefox prismlauncher steam visual-studio-code-bin
+yay -S firefox 
 
+# others
+yay -S prismlauncher steam visual-studio-code-bin
+
+# discord
 yay -S discord_arch_electron betterdiscordctl
-
 betterdiscordctl install
+
+# spotify
+yay -S spotify spotifywm spotify-adblock-git
