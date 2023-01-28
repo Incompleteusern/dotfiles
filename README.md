@@ -130,3 +130,4 @@ Enable firefox hardware acceleration, reopen tabs on close
 - Steam | `steam`
 - Vs Code | `visual-studio-code-bin`
 - VPN | `openvpn protonvpn-gui`
+- Spotify |`spotify spotifywm spotify-adblock-git`
