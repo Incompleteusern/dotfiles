@@ -85,7 +85,7 @@ systemctl enable NetworkManager-dispatcher.service
 systemctl mask systemd-rfkill.service systemd-rfkill.socket
 
 # SILLY
-yay -S neofetch-git cbonsai donut.c cmatrix-git aalib
+yay -S neofetch-git cbonsai donut.c cmatrix-git sl
 
 # APPLICATIONS
 
