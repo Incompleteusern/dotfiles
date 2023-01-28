@@ -30,6 +30,7 @@ TODO:
 - Add disk encryption
   - Do this in February when wifi-adapter is natively supported by udev
 - AI gen might be fun for wall paper
+- Stop bundling other people's github repos, add a way to install froms ource
 
 # Installation
 
