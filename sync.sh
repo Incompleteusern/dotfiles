@@ -1,11 +1,21 @@
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# Remove old
 rm -r ${BASEDIR}/.config
 rm -r ${BASEDIR}/scripts
 rm -r ${BASEDIR}/.zshrc
 
 mkdir ${BASEDIR}/.config
 
+# Update grimblast
+gcl https://github.com/hyprwm/contrib
+cd contrib
+cp grimblast ~/scripts/
+cd ..
+rm -rf contrib
+
+
+# Copy files
 cp -r ~/.config/alacritty ${BASEDIR}/.config/
 cp -r ~/.config/dunst ${BASEDIR}/.config/
 cp -r ~/.config/hypr ${BASEDIR}/.config/
