@@ -96,7 +96,7 @@ yay -S firefox
 yay -S prismlauncher steam visual-studio-code-bin
 
 # discord
-yay -S discord_arch_electron betterdiscordctl
+yay -S discord-electron-bin discord-screenaudio betterdiscordctl
 betterdiscordctl install
 
 # spotify
