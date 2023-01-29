@@ -137,7 +137,7 @@ Enable firefox hardware acceleration, reopen tabs on close
 
 ## Auto
 - Firefox | `firefox`
-- Discord | `discord_arch_electron betterdiscordctl`
+- Discord | `discord-electron-bin discord-screenaudio betterdiscordctl`
 - Prism Launcher | `prismlauncher`
 - Steam | `steam`
 - Vs Code | `visual-studio-code-bin`
