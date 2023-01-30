@@ -55,24 +55,23 @@ TODO:
 - Three partitions
   - Make root, user, and swap partitions using `cblsk` (TODO make using fblsk in the future LOL)
   - Set up encryption
-    - https://wiki.archlinux.org/title/Dm-crypt/Device_encryption
-    - Find 
+   - https://wiki.archlinux.org/title/Dm-crypt/Device_encryption
+   - ```
+        # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/root_partition
+        # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/user_partition
+        # cryptsetup open /dev/root_partition cryptroot
+        # cryptsetup open /dev/user_partition crypthome
+     ```
+     - Unmount, Close and remount to make sure that everything is working smoothly
+   - Mount and make file systems
     - ```
-         # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/root_partition
-         # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/user_partition
-         # cryptsetup open /dev/root_partition cryptroot
-         # cryptsetup open /dev/user_partition crypthome
-      ```
-      - Unmount, Close and remount to make sure that everything is working smoothly
-    - Mount and make file systems
-      - ```
-         # mkfs.ext4 /dev/mapper/cryptroot
-         # mkfs.ext4 /dev/mapper/crypthome
-         # mkswap /dev/swap_partition
+          # mkfs.ext4 /dev/mapper/cryptroot
+          # mkfs.ext4 /dev/mapper/crypthome
+          # mkswap /dev/swap_partition
 
-         # mount /dev/mapper/cryptroot /mnt
-         # mount /dev/mapper/crypthome /mnt/home
-         # swapon /dev/swap_partition
+          # mount /dev/mapper/cryptroot /mnt
+          # mount /dev/mapper/crypthome /mnt/home
+          # swapon /dev/swap_partition
       ```
 - `chroot`
   - ```
@@ -80,34 +79,34 @@ TODO:
         # export PS1="(chroot) ${PS1}"
     ```
   - More encryption BS
-    - Disk Encryption
-      - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
-      - Configure `/etc/mkinitcpio.conf`, and note `systemd keyboard sd-vconsole sd-encrypt` presence
-        - ```
-              HOOKS=(base systemd keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
-          ```
+   - Disk Encryption
+    - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
+     - Configure `/etc/mkinitcpio.conf`, and add or note `systemd keyboard sd-vconsole sd-encrypt` presence
+      - ```
+             HOOKS=(base systemd keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
+        ```
       - Create `/etc/crypttab.initramfs` and add the following where `ROOT_UUID` is `lsblk -dno UUID /dev/root_partition`. Do the same
         for the user partition similarily
-        - ```
-              cryptroot  UUID=ROOT_UUID  -  password-echo=no,x-systemd.device-timeout=0,timeout=0,no-read-workqueue,no-write-workqueue
-          ```
-    - Swap Encryption
-      - https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption and https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption#UUID_and_LABEL
-        - Turn off the swap partition and create a bogus file system
-          ```
-              swapoff /dev/sdX3
-              mkfs.ext2 -F -F -L cryptswap /dev/sdX3 1M
-          ```
-        - Add in `/etc/crypttab` where `SWAP_UUID` is `lsblk -dno UUID /dev/swap_partition`
-          ```
-              # <name>   <device>         <password>   <options>
-              cryptswap  UUID=SWAP_UUID  /dev/urandom  swap,offset=2048
-          ```
-        - Change the UUID in `/etc/fstab` to a /swap
-          ```
-              # <filesystem>    <dir>  <type>  <options>  <dump>  <pass>
-              /dev/mapper/swap  none   swap    defaults   0       0
-          ```
+       - ```
+             cryptroot  UUID=ROOT_UUID  -  password-echo=no,x-systemd.device-timeout=0,timeout=0,no-read-workqueue,no-write-workqueue
+         ```
+   - Swap Encryption
+    - https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption and https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption#UUID_and_LABEL
+     - Turn off the swap partition and create a bogus file system
+       ```
+           swapoff /dev/sdX3
+           mkfs.ext2 -F -F -L cryptswap /dev/sdX3 1M
+       ```
+      - Add in `/etc/crypttab` where `SWAP_UUID` is `lsblk -dno UUID /dev/swap_partition`
+       ```
+           # <name>   <device>         <password>   <options>
+           cryptswap  UUID=SWAP_UUID  /dev/urandom  swap,offset=2048
+       ```
+     - Change the UUID in `/etc/fstab` to a /swap
+       ```
+           # <filesystem>    <dir>  <type>  <options>  <dump>  <pass>
+           /dev/mapper/swap  none   swap    defaults   0       0
+       ```
 
 - Linux install | `linux linux-firmware`
 - Processor Microcode | `intel-ucode`
