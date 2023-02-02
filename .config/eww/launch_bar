@@ -1,0 +1,25 @@
+#!/bin/bash
+
+## Files and cmd
+FILE="/tmp/eww_launch.xyz"
+EWW="eww -c $HOME/.config/eww/bar"
+
+## Run eww daemon if not running already
+if [[ ! `pidof eww` ]]; then
+	${EWW} daemon
+	sleep 1
+fi
+
+## Open widgets 
+run_eww() {
+	${EWW} open-many bar
+}
+
+## Launch or close widgets accordingly
+if [[ ! -f "$FILE" ]]; then
+	touch "$FILE"
+	${EWW} open-many bar
+else
+	${EWW} close-all && killall eww
+	rm "$FILE"
+fi

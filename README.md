@@ -2,7 +2,9 @@
 
 - https://github.com/scotus-1/dotfiles for format and what to use xd
 - https://github.com/flick0/dotfiles for various configs
-- https://github.com/catppuccin for the pastel theming
+- https://github.com/Saimoomedits/eww-widgets for the top bar, modified for catppuccin theming
+- https://github.com/catppuccin for the pastel theming over basically everything I can touch
+  - For rofi, deathmonde is used
 - https://wiki.archlinux.org/title/User:Bai-Chiang/Installation_notes for extended installation notes
 
 ## INFO
@@ -15,8 +17,7 @@ These dotfiles come with three terrible scripts as of last updated:
 ## TODO
 
 TODO:
-- Add networkmanager_dmenu config and sync
-- Worry about fonts
+- Remove old wifi-menu and waybar, add eww and networkmanager-dmenu fully
 - Learn tmux
 - Change mouse or something idk
 - Do redshift alternative
@@ -24,12 +25,9 @@ TODO:
 - Configs for desktop
   - Switch to eww from waybar
     - recustomize
-  - redo dunst theme
-  - redo alacritty theme
   - Wallpaper script time!!!!
   - EWW
     - Do which widgets I want first lol
-    - Try to supersede wifi menu with a widget
     - Make a custom script to check for arch updates
     - Language
     - Do CSS

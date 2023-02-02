@@ -17,6 +17,8 @@ cp -r ~/.config/waybar ${BASEDIR}/.config/
 cp -r ~/.config/cava ${BASEDIR}/.config/
 cp -r ~/.config/rofi ${BASEDIR}/.config/
 cp -r ~/.config/neofetch ${BASEDIR}/.config/
+cp -r ~/.config/networkmanager-dmenu ${BASEDIR}/.config/
+cp -r ~/.config/eww ${BASEDIR}/.config/
 
 cp -ar ~/scripts/ ${BASEDIR}/
 cp -ar ~/.zshrc ${BASEDIR}/

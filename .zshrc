@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/scripts:$HOME/bin:/usr/local/bin:$HOME/.poetry/bin:$HOME/.local/bin:$PATH
+export PATH=$HOME/scripts:$HOME/bin:/usr/local/bin:$HOME/.poetry/bin:$HOME/.local/bin:$PATH:~/gcc-arm-none-eabi-8-2019-q3-update/bin/
 
 export GPG_TTY=$TTY
 
@@ -112,6 +112,7 @@ alias ping=gping
 alias hibernate="systemctl hibernate"
 alias sleep="systemctl suspend"
 alias restart="reboot now"
+alias sl="sl -e"
 
 # Get this to stop being so annoying
 #alias rm="rm -i"
