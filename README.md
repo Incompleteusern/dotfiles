@@ -15,6 +15,8 @@ These dotfiles come with three terrible scripts as of last updated:
 ## TODO
 
 TODO:
+- Add networkmanager_dmenu config and sync
+- Worry about fonts
 - Learn tmux
 - Change mouse or something idk
 - Do redshift alternative
@@ -162,7 +164,7 @@ TODO:
 - Pipewire | `pipewire wireplumber pipewire-pulse pipewire-jack `
 - XDG Integration | `xdg-utils xdg-desktop-portal-wlr`
 - Terminal | `alacritty-git`
-- App Launcher | `rofi-lbonn-wayland-git papirus-icon-theme-git sif-git ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd` 
+- App Launcher | `rofi-lbonn-wayland-git papirus-icon-theme-git sif-git networkmanager-dmenu-git ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd` 
 - Volume Control | `pamixer`
 
 # Utilities

@@ -56,7 +56,7 @@ yay -S swww-git
 yay -S dunst libnotify
 
 # app launcher thing
-yay -S rofi-lbonn-wayland-git papirus-icon-theme-git sif-git ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd
+yay -S rofi-lbonn-wayland-git papirus-icon-theme-git sif-git networkmanager-dmenu-git ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd
 
 # terminal
 yay -S alacritty-git
