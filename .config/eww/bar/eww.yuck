@@ -2,8 +2,8 @@
 (defpoll clock_time :interval "5m" "date +\%I")
 (defpoll clock_minute :interval "5s" "date +\%M")
 (defpoll clock_date :interval "10h" "date '+%d/%m'")
-(defpoll volume_percent :interval "3s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defpoll mic_percent :interval "3s" "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll volume_percent :interval "3s" "pamixer --get-volume")
+(defpoll mic_percent :interval "3s" "pactl get-source-volume @DEFAULT_SOURCE@  | awk '{gsub(\"\%\", \"\"); print $5}'")
 (defpoll brightness_percent :interval "5s" "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
 (defpoll battery :interval "15s" "./scripts/battery --bat")
 (defpoll battery_status :interval "1m" "./scripts/battery --bat-st")
@@ -117,9 +117,9 @@
 			  :value volume_percent
 			  :orientation "h"
 			  :tooltip "${volume_percent}%"
-			  :max 100
+			  :max 101
 			  :min 0
-			  :onchange "amixer -D pulse sset Master {}%" )))))
+			  :onchange "pamixer --set-volume {}" )))))
 
 (defwidget bright []
   (eventbox :onhover "${eww} update br_reveal=true" :onhoverlost "${eww} update br_reveal=false"
@@ -132,7 +132,7 @@
 			  :value brightness_percent
 			  :orientation "h"
 			  :tooltip "${brightness_percent}%"
-			  :max 100
+			  :max 101
 			  :min 0
 			  :onchange "brightnessctl set {}%" )))))
 
@@ -296,9 +296,9 @@
 	(scale    :value volume_percent
               :space-evenly "false"
 			  :orientation "h"
-			  :onchange "amixer -D pulse sset Master {}%" 
+			  :onchange "pamixer --set-volume {}" 
               :tooltip "volume on ${volume_percent}%"
-			  :max 100
+			  :max 101
 			  :min 0))))
             (label :text "" :class "audio_sep" :halign "center")
 	(box :halign "v" :space-evenly "false" :hexpand "false" :vexpand "false"
@@ -310,8 +310,8 @@
               :space-evenly "false"
 			  :orientation "h"
               :tooltip "mic on ${mic_percent}%"
-			  :onchange "amixer -D pulse sset Capture {}%" 
-			  :max 100
+			  :onchange "pactl set-source-volume @DEFAULT_SOURCE@ {}%" 
+			  :max 101
 			  :min 0))))))
 
 (defwindow audio_ctl
@@ -351,7 +351,7 @@
 					(button :class "music_btn_play" :onclick "~/.config/eww/bar/scripts/music_info --toggle" song_status)
 					(button :class "music_btn_next" :onclick "~/.config/eww/bar/scripts/music_info --next" ""))
 				(box :class "music_bar" :halign "center" :vexpand "false" :hexpand "false" :space-evenly "false"
-					(scale :onscroll "mpc -q seek {}" :min 0 :active "true" :max 100 :value current_status)))))
+					(scale :onscroll "mpc -q seek {}" :min 0 :active "true" :max 101 :value current_status)))))
 
 
 ;;  music
@@ -361,4 +361,5 @@
         :focusable false
         :exclusive true
 			     				(music_pop))
+
 
