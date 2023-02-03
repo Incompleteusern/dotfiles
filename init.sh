@@ -100,4 +100,4 @@ yay -S discord-electron-bin discord-screenaudio betterdiscordctl
 betterdiscordctl install
 
 # spotify
-yay -S spotify spotifywm spotify-adblock-git
+yay -S spotify spotifywm spotify-adblock-git spicetify
