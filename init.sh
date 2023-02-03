@@ -44,10 +44,10 @@ cp -R ${BASEDIR}/.zshrc ~/.zshrc
 # DESKTOP
 
 # hyprland and friends
-yay -S hyprland-git xdg-utils otf-font-awesome ttf-meslo-nerd-font-powerlevel10k
+yay -S hyprland-git xdg-utils
 
 # bars
-yay -S waybar-hyprland-git
+yay -S eww-wayland-git
 
 # wallpaper
 yay -S swww-git
