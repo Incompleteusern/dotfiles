@@ -13,7 +13,6 @@ cp -r ~/.config/alacritty ${BASEDIR}/.config/
 cp -r ~/.config/dunst ${BASEDIR}/.config/
 cp -r ~/.config/hypr ${BASEDIR}/.config/
 cp -r ~/.config/rofi ${BASEDIR}/.config/
-cp -r ~/.config/waybar ${BASEDIR}/.config/
 cp -r ~/.config/cava ${BASEDIR}/.config/
 cp -r ~/.config/rofi ${BASEDIR}/.config/
 cp -r ~/.config/neofetch ${BASEDIR}/.config/
