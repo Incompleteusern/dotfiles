@@ -18,6 +18,7 @@ cp -r ~/.config/rofi ${BASEDIR}/.config/
 cp -r ~/.config/neofetch ${BASEDIR}/.config/
 cp -r ~/.config/networkmanager-dmenu ${BASEDIR}/.config/
 cp -r ~/.config/eww ${BASEDIR}/.config/
+cp -r ~/.config/fcitx5 ${BASEDIR}/.config/
 
 cp -r ~/scripts/ ${BASEDIR}/
 cp -r ~/.zshrc ${BASEDIR}/
