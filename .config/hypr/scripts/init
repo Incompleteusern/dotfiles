@@ -9,9 +9,6 @@ dunst &
 swww init
 swww img ~/.config/hypr/wallpapers/sea.jpg --transition-type center
 
-# waybar
-# waybar -l trace -c $HOME/.config/waybar/config.json -s $HOME/.config/waybar/style.css &
-
 # eww
 . $HOME/.config/eww/launch_bar
 
@@ -19,4 +16,5 @@ swww img ~/.config/hypr/wallpapers/sea.jpg --transition-type center
 gnome-keyring-daemon --start
 nm-applet &
 
+# enable font managing thing
 fcitx5 &
