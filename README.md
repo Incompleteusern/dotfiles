@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/58920010/216636702-fb4d38fa-3e54-4649-81c9-735dbab1ed8a.png)
+
 ## Thanks to
 
 - https://github.com/scotus-1/dotfiles for format and what to use xd
