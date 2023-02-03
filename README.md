@@ -180,6 +180,7 @@ TODO:
   - Requests | `httpie`
   - Ping | `gping-git`
 - power | `tlp tlp-rdw`
+- spotify management | `playerctl`
 
 # Silly
 ## Manual
