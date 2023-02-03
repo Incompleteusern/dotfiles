@@ -2,7 +2,7 @@
 
 - https://github.com/scotus-1/dotfiles for format and what to use xd
 - https://github.com/flick0/dotfiles for various configs
-- https://github.com/Saimoomedits/eww-widgets for the top bar, modified for catppuccin theming
+- https://github.com/Saimoomedits/eww-widgets for the top bar, modified for catppuccin theming, hyprland and spotify 
 - https://github.com/catppuccin for the pastel theming over basically everything I can touch
   - For rofi, deathmonde is used
 - https://wiki.archlinux.org/title/User:Bai-Chiang/Installation_notes for extended installation notes
