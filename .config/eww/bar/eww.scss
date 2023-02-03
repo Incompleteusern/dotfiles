@@ -315,14 +315,13 @@ calendar:indeterminate {
 	color: $text;
 	font-size : 20px;
 	font-weight : bold;
-	margin : 20px 0px 0px -15px;
+        margin: 5px 0px 0px 0px;
 }
 
 .music_artist {
 	color: $subtext0;
 	font-size : 16px;
 	font-weight : normal;
-	margin : 0px 0px 0px 0px;
 }
 
 .music_btn_prev, .music_btn_play, .music_btn_next {

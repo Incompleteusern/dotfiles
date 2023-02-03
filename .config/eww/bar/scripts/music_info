@@ -2,12 +2,11 @@
 # scripts by adi1090x
 
 ## Get data
-STATUS="$(playerctl status)"
-MUSIC_DIR="$HOME/Music"
+TMP_DIR="$HOME/.cache/eww"
 
 ## Get status
 get_status() {
-	if [[ $STATUS == *"Playing"* ]]; then
+	if [[ $(playerctl status) == *"Playing"* ]]; then
 		echo ""
 	else
 		echo "奈"
@@ -18,44 +17,47 @@ get_status() {
 get_song() {
 	song=`playerctl metadata "xesam:title"`
 	if [[ -z "$song" ]]; then
-		echo "Offline"
+		echo "No Song"
 	else
 		echo "$song"
-	fi
+	fi	
 }
 
 ## Get artist
 get_artist() {
 	artist=`playerctl metadata "xesam:artist"`
 	if [[ -z "$artist" ]]; then
-		echo ""
+		echo "No Artist"
 	else
 		echo "$artist"
-	fi
+	fi	
 }
 
 ## Get time
 get_time() {
 	atime=`echo 'print $(($(playerctl position) * 100000000 / $(playerctl metadata "mpris:length")))' | zsh`
-        atime=$(printf "%0.0f\n" "$atime")
         if [[ -z "$atime" ]]; then
-                echo "10"
+                echo "0"
         else
                 echo "$atime"
         fi
-
 }
 
 ## Get cover
 get_cover() {
-	# cover=`playerctl metadata "mpris:artUrl"`
+	cover=`playerctl metadata "mpris:artUrl"`
 
 	# Check if the file has a embbeded album art
 	if [[ -z "$cover" ]]; then
-		echo "$cover"
-	else
 		echo "images/music.png"
-	fi
+	else
+                id=$(sha1sum <<< "$cover")
+                tmp_temp_path="$TMP_DIR/$id.png"
+                if [ ! -e "$tmp_temp_path" ]; then
+                    curl -sf --create-dirs  "$cover" --output "$tmp_temp_path"
+                fi
+                echo "$tmp_temp_path" 
+        fi
 }
 
 ## Set position
@@ -71,10 +73,10 @@ elif [[ "$1" == "--time" ]]; then
 	get_time
 elif [[ "$1" == "--cover" ]]; then
 	get_cover
-# elif [[ "$1" == "--toggle" ]]; then
-#	mpxc -q toggle
-# elif [[ "$1" == "--next" ]]; then
-#	{ mpxc -q next; get_cover; }
-# elif [[ "$1" == "--prev" ]]; then
-#	{ mpxc -q prev; get_cover; }
+elif [[ "$1" == "--toggle" ]]; then
+	playerctl play-pause
+elif [[ "$1" == "--next" ]]; then
+	playerctl next
+elif [[ "$1" == "--prev" ]]; then
+	playerctl previous
 fi
