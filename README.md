@@ -195,7 +195,7 @@ TODO:
 # Applications
 
 ## Manual
-Use catpuccin mocha lavender for firefox and vscode, catpuccin mocha for bd
+Use catpuccin mocha lavender for firefox, vscode, bd, and spicetify.
 Use `cups` for printer stuff.
 Enable firefox hardware acceleration, reopen tabs on close
 
@@ -206,4 +206,4 @@ Enable firefox hardware acceleration, reopen tabs on close
 - Steam | `steam`
 - Vs Code | `visual-studio-code-bin`
 - VPN | `openvpn protonvpn-gui`
-- Spotify |`spotify spotifywm spotify-adblock-git`
+- Spotify |`spotify spotifywm spotify-adblock-git spicetify`
