@@ -22,8 +22,9 @@
 (defpoll ESSID_WLAN :interval "5s" "~/.config/eww/bar/scripts/wifi --ESSID")
 (defpoll WLAN_ICON :interval "5s" "~/.config/eww/bar/scripts/wifi --ICON")
 
-(defpoll song :interval "5s" "~/.config/eww/bar/scripts/music_info --song")
+(defpoll song :interval "3s" "~/.config/eww/bar/scripts/music_info --song")
 (defpoll song_artist :interval "3s"  "~/.config/eww/bar/scripts/music_info --artist")
+(defpoll song_album :interval "3s"  "~/.config/eww/bar/scripts/music_info --album")
 (defpoll current_status :interval "1s"  "~/.config/eww/bar/scripts/music_info --time")
 (defpoll song_status :interval "3s"  "~/.config/eww/bar/scripts/music_info --status")
 (defpoll cover_art :interval "10s"  "~/.config/eww/bar/scripts/music_info --cover")
@@ -159,9 +160,9 @@
 			      :reveal music_reveal
 			      :duration "350ms"
             (box :vexpand "false" :hexpand "false" :oreintation "h"
-                      (button :class "song_btn_prev" :onclick "~/.config/eww/bar/scripts/music_info --prev; ${eww} update song=\"`~/.config/eww/bar/scripts/music_info --song`\" song_artist=\"`~/.config/eww/bar/scripts/music_info --artist`\" cover_art=\"`~/.config/eww/bar/scripts/music_info --cover`\"" "")
+                      (button :class "song_btn_prev" :onclick "~/.config/eww/bar/scripts/music_info --prev; ${eww} update song=\"`~/.config/eww/bar/scripts/music_info --song`\" song_artist=\"`~/.config/eww/bar/scripts/music_info --artist`\" song_album=\"`~/.config/eww/bar/scripts/music_info --album`\" cover_art=\"`~/.config/eww/bar/scripts/music_info --cover`\"" "")
 					(button :class "song_btn_play" :onclick "~/.config/eww/bar/scripts/music_info --toggle; ${eww} update song_status=\"`~/.config/eww/bar/scripts/music_info --status`\"" song_status)
-					(button :class "song_btn_next" :onclick "~/.config/eww/bar/scripts/music_info --next; ${eww} update song=\"`~/.config/eww/bar/scripts/music_info --song`\" song_artist=\"`~/.config/eww/bar/scripts/music_info --artist`\" cover_art=\"`~/.config/eww/bar/scripts/music_info --cover`\";" ""))))))
+					(button :class "song_btn_next" :onclick "~/.config/eww/bar/scripts/music_info --next; ${eww} update song=\"`~/.config/eww/bar/scripts/music_info --song`\" song_artist=\"`~/.config/eww/bar/scripts/music_info --artist`\" song_album=\"`~/.config/eww/bar/scripts/music_info --album`\" cover_art=\"`~/.config/eww/bar/scripts/music_info --cover`\";" ""))))))
 
 (defwidget left []
 	(box :orientation "h" 
@@ -353,13 +354,14 @@
 (defwidget music_pop []
 		(box :class "music_pop" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
 			(box :class "music_cover_art" :vexpand "false" :hexpand "false" :style "background-image: url('${cover_art}');")
-			(box :orientation "v" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+			(box :orientation "v" :spacing 10 :space-evenly "false" :vexpand "false" :hexpand "false"
 				(label :halign "center" :class "music" :wrap "true" :limit-width 20 :text song)
 				(label :halign "center" :class "music_artist" :wrap "true" :limit-width 20 :text song_artist)
+        (label :halign "center" :class "music_album" :wrap "true" :limit-width 20 :text song_album)
 				(box :orientation "h" :spacing 15 :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
-					(button :class "music_btn_prev" :onclick "~/.config/eww/bar/scripts/music_info --prev; ${eww} update song=\"`~/.config/eww/bar/scripts/music_info --song`\" song_artist=\"`~/.config/eww/bar/scripts/music_info --artist`\" cover_art=\"`~/.config/eww/bar/scripts/music_info --cover`\"" "")
+					(button :class "music_btn_prev" :onclick "~/.config/eww/bar/scripts/music_info --prev; ${eww} update song=\"`~/.config/eww/bar/scripts/music_info --song`\" song_artist=\"`~/.config/eww/bar/scripts/music_info --artist`\" song_album=\"`~/.config/eww/bar/scripts/music_info --album`\" cover_art=\"`~/.config/eww/bar/scripts/music_info --cover`\"" "")
 					(button :class "music_btn_play" :onclick "~/.config/eww/bar/scripts/music_info --toggle; ${eww} update song_status=\"`~/.config/eww/bar/scripts/music_info --status`\"" song_status)
-					(button :class "music_btn_next" :onclick "~/.config/eww/bar/scripts/music_info --next; ${eww} update song=\"`~/.config/eww/bar/scripts/music_info --song`\" song_artist=\"`~/.config/eww/bar/scripts/music_info --artist`\" cover_art=\"`~/.config/eww/bar/scripts/music_info --cover`\"" ""))
+					(button :class "music_btn_next" :onclick "~/.config/eww/bar/scripts/music_info --next; ${eww} update song=\"`~/.config/eww/bar/scripts/music_info --song`\" song_artist=\"`~/.config/eww/bar/scripts/music_info --artist`\" song_album=\"`~/.config/eww/bar/scripts/music_info --album`\" cover_art=\"`~/.config/eww/bar/scripts/music_info --cover`\"" ""))
 				(box :class "music_bar" :halign "center" :vexpand "false" :hexpand "false" :space-evenly "false"
 					(scale :onchange "~/.config/eww/bar/scripts/music_info --position {}" :min 0 :max 100 :value current_status)))))
 

@@ -319,9 +319,15 @@ calendar:indeterminate {
 }
 
 .music_artist {
-	color: $subtext0;
-	font-size : 16px;
-	font-weight : normal;
+	color: $subtext1;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.music_album {
+        color: $subtext0;
+        font-size: 14px;
+        font-style: italic;
 }
 
 .music_btn_prev, .music_btn_play, .music_btn_next {
