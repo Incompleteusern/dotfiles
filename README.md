@@ -158,7 +158,7 @@ TODO:
 - Compositor | `hyprland-git` 
 - Wallpapers | `swww-git` 
 - Notification System | `dunst libnotify` 
-- Status Bars | `waybar-hyprland-git otf-font-awesome ttf-meslo-nerd-font-powerlevel10k`
+- Status Bars | `eww-wayland-git`
 - Pipewire | `pipewire wireplumber pipewire-pulse pipewire-jack `
 - XDG Integration | `xdg-utils xdg-desktop-portal-wlr`
 - Terminal | `alacritty-git`
