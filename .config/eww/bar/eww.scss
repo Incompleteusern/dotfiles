@@ -28,15 +28,14 @@ $crust: #11111b;
 /** EWW.SCSS
 Created by saimoom **/
 *{
-	all: unset;
-	font-family: feather;
-	font-family: DaddyTimeMono NF;
+    all: unset;
 }
 
 /** General **/
 .bar_class {
     background-color: $base;
     border-radius: 16px;
+    font-family: JetBrains Mono;
 }
 .module {
     margin: 0px 0px 0px 0px;
@@ -49,6 +48,7 @@ tooltip.background {
     font-size: 18;
     border-radius: 10px;
     color: $text;
+    font-family: JetBrains Mono;
 }
 
 tooltip label {
@@ -182,27 +182,27 @@ background-color: $mantle;
 	color: $sky;
 	font-size : 18px;
 	font-weight : bold;
-	margin : 3px 5px 0px 0px;
+	margin : 3px 0px 0px 0px;
 }
 
 .song_btn_play {
+        all: unset;
 	color: $mauve;
 	font-size : 28px;
 	margin : 3px 0px 0px 5px;
-
+        font-family: Iosevka Nerd Font;
 }
 
 
 .song_btn_prev, .song_btn_next {
 	color: $lavender;
 	font-size : 24px;
-	margin : 3px 0px 0px 5px;
-
+	margin : 3px 0px 0px 12px;
 }
 // Calendar
 .cal {
   background-color: $mantle;
-  font-family: JetBrainsMono Nerd Font;
+  font-family: JetBrainsMono Nerd Font, JetBrains Mono;
   font-size: 18px;
   font-weight: normal;
 
@@ -270,6 +270,7 @@ calendar:indeterminate {
 .sys_win {
     background-color: $mantle;
     border-radius: 16px;
+    font-family: JetBrains Mono;
 }
 .sys_bat {
   color: $green;
@@ -299,6 +300,7 @@ calendar:indeterminate {
 .music_pop {
     background-color: $mantle;
 	border-radius: 16px;
+    font-family: JetBrains Mono;
 }
 
 .music_cover_art {
@@ -331,25 +333,21 @@ calendar:indeterminate {
 }
 
 .music_btn_prev, .music_btn_play, .music_btn_next {
+        all: unset;
 	font-family: Iosevka Nerd Font;
 }
-.music_btn_prev {
+
+.music_btn_prev, .music_btn_next {
 	color: $lavender;
-	font-size : 32px;
+	font-size : 16px;
 	font-weight : normal;
-	margin: 0px 0px 0px 0px;
+	margin: 0px 6px 0px 6px;
 }
 .music_btn_play {
 	color: $mauve;
 	font-size : 48px;
 	font-weight : normal;
-	margin: 0px 0px 0px 0px;
-}
-.music_btn_next {
-	color: $lavender;
-	font-size : 32px;
-	font-weight : normal;
-	margin: 0px 0px 0px 0px;
+	margin: 0px 12px 0px 0px;
 }
 
 .music_bar scale trough highlight {
