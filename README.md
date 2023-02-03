@@ -25,8 +25,6 @@ TODO:
 - Do redshift alternative
 - Customize oh-my-fsh more
 - Configs for desktop
-  - Switch to eww from waybar
-    - recustomize
   - Wallpaper script time!!!!
   - EWW
     - Do which widgets I want first lol
@@ -118,6 +116,7 @@ TODO:
 - Mirror management | `reflector`
   - Set US as country
   - Enable `reflector.timer`
+  - TODO automate that shit
 - Add user
   - `# useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
 - Add wheel group to sudoers | `sudo`
@@ -134,7 +133,6 @@ TODO:
        $ git config --global commit.gpgsign true
        $ git config --global user.email "$email"
        $ git config --global user.name "$name"
-       $ echo "export GPG_TTY=\$(tty)" >> ~/.zshrc
 - Network Manager | `networkmanager` and enable service
 - Run `init.sh`
 
@@ -165,14 +163,20 @@ TODO:
 - XDG Integration | `xdg-utils xdg-desktop-portal-wlr`
 - Terminal | `alacritty-git`
 - App Launcher | `rofi-lbonn-wayland-git papirus-icon-theme-git sif-git networkmanager-dmenu-git ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd` 
-- Volume Control | `pamixer`
+- Font Input | `fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx-gtk fcitx5-pinyin-zhwiki fcitx5-qt`
+
 
 # Utilities
 ## Manual
+- Order Chinese as priority for Noto CJK
+  - https://wiki.archlinux.org/title/Localization/Simplified_Chinese#Chinese_characters_displayed_as_variant_(Japanese)_glyphs
+  - TODO automate that shit
+
 ## Auto
 - neofetch | `neofetch-git`
-- brightness | `brightnessctl`
+- Desktop Control | `brightnessctl`
 - fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git ttf-symbola`
+  - Set Chinese as font priority
 - screenshots | `grim slurp wl-clipboard jq` (grimblast)
 - cli
   - Replace cat | `bat`
@@ -182,7 +186,8 @@ TODO:
   - Requests | `httpie`
   - Ping | `gping-git`
 - power | `tlp tlp-rdw`
-- spotify management | `playerctl`
+- spotify integration | `playerctl`
+- volume control | `pamixer`
 
 # Silly
 ## Manual
@@ -195,9 +200,10 @@ TODO:
 # Applications
 
 ## Manual
-Use catpuccin mocha lavender for firefox, vscode, bd, and spicetify.
-Use `cups` for printer stuff.
-Enable firefox hardware acceleration, reopen tabs on close
+- Use catpuccin mocha lavender for firefox, vscode, bd, and spicetify.
+  - TODO automate that shit
+- Use `cups` for printer stuff.
+- Enable firefox hardware acceleration, reopen tabs on close
 
 ## Auto
 - Firefox | `firefox`

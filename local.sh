@@ -19,5 +19,6 @@ cp -r ~/.config/neofetch ${BASEDIR}/.config/
 cp -r ~/.config/networkmanager-dmenu ${BASEDIR}/.config/
 cp -r ~/.config/eww ${BASEDIR}/.config/
 
-cp -ar ~/scripts/ ${BASEDIR}/
-cp -ar ~/.zshrc ${BASEDIR}/
+cp -r ~/scripts/ ${BASEDIR}/
+cp -r ~/.zshrc ${BASEDIR}/
+cp -r ~/.fonts ${BASEDIR}/

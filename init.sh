@@ -40,6 +40,7 @@ cat ILoveCandy >> /etc/pacman.conf
 cp -R ${BASEDIR}/.config/ ~/.config/
 cp -R ${BASEDIR}/scripts/ ~/scripts/
 cp -R ${BASEDIR}/.zshrc ~/.zshrc
+cp -R ${BASEDIR}/.fonts ~/.fonts
 
 # DESKTOP
 
