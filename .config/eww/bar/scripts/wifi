@@ -6,12 +6,12 @@ essid=$(nmcli c | grep wlp2s0 | awk '{print ($1)}')
 if [ $status ] ; then
     icon=""
     text=""
-    col="#575268"
+    col="#f38ba8"
 
 else
     icon=""
     text="${essid}"
-    col="#a1bdce"
+    col="#94e2d5"
 fi
 
 

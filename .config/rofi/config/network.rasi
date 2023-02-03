@@ -81,11 +81,11 @@ case-indicator {
 listview {
     background-color:               @BG;
     columns:                        1;
-    lines:			                4;
     spacing:                        4px;
     cycle:                          true;
     dynamic:                        true;
     layout:                         vertical;
+
 }
 
 mainbox {

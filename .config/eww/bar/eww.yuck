@@ -1,10 +1,10 @@
-;; Variables
+ ;; Variables
 (defpoll clock_time :interval "5m" "date +\%I")
 (defpoll clock_minute :interval "5s" "date +\%M")
 (defpoll clock_date :interval "10h" "date '+%d/%m'")
-(defpoll volume_percent :interval "3s" "pamixer --get-volume")
-(defpoll mic_percent :interval "3s" "pactl get-source-volume @DEFAULT_SOURCE@  | awk '{gsub(\"\%\", \"\"); print $5}'")
-(defpoll brightness_percent :interval "5s" "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+(defpoll volume_percent :interval "1s" "pamixer --get-volume")
+(defpoll mic_percent :interval "1s" "pactl get-source-volume @DEFAULT_SOURCE@  | awk '{gsub(\"\%\", \"\"); print $5}'")
+(defpoll brightness_percent :interval "1s" "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
 (defpoll battery :interval "15s" "./scripts/battery --bat")
 (defpoll battery_status :interval "1m" "./scripts/battery --bat-st")
 (defpoll memory :interval "15s" "scripts/memory")
@@ -16,24 +16,26 @@
 (defvar music_reveal false)
 (defvar wifi_rev false)
 (defvar time_rev false)
-(deflisten workspace "scripts/workspace")
+(deflisten workspaces :initial "[]" "bash ~/.config/hypr/scripts/get-workspaces")
+(deflisten current_workspace :initial "1" "bash ~/.config/hypr/scripts/get-active-workspace")
 
 (defvar eww "eww -c $HOME/.config/eww/bar")
 
 
-(defpoll COL_WLAN :interval "1m" "~/.config/eww/bar/scripts/wifi --COL")
-(defpoll ESSID_WLAN :interval "1m" "~/.config/eww/bar/scripts/wifi --ESSID")
-(defpoll WLAN_ICON :interval "1m" "~/.config/eww/bar/scripts/wifi --ICON")
+(defpoll COL_WLAN :interval "5s" "~/.config/eww/bar/scripts/wifi --COL")
+(defpoll ESSID_WLAN :interval "5s" "~/.config/eww/bar/scripts/wifi --ESSID")
+(defpoll WLAN_ICON :interval "5s" "~/.config/eww/bar/scripts/wifi --ICON")
 
 
-(defpoll song :interval "2s"  "~/.config/eww/bar/scripts/music_info --song")
-(defpoll song_artist :interval "2s"  "~/.config/eww/bar/scripts/music_info --artist")
+(defpoll song :interval "4s"  "~/.config/eww/bar/scripts/music_info --song")
+(defpoll song_artist :interval "4s"  "~/.config/eww/bar/scripts/music_info --artist")
 (defpoll current_status :interval "1s"  "~/.config/eww/bar/scripts/music_info --time")
-(defpoll song_status :interval "2s"  "~/.config/eww/bar/scripts/music_info --status")
-(defpoll cover_art :interval "2s"  "~/.config/eww/bar/scripts/music_info --cover")
+(defpoll song_status :interval "4s"  "~/.config/eww/bar/scripts/music_info --status")
+(defpoll cover_art :interval "4s"  "~/.config/eww/bar/scripts/music_info --cover")
 
-(defpoll calendar_day :interval "20h" "date '+%d'")
-(defpoll calendar_year :interval "20h" "date '+%Y'")
+(defpoll calendar_day :interval "1h" "date '+%d'")
+(defpoll calendar_month :interval "1h" "date '+%m'")
+(defpoll calendar_year :interval "1h" "date '+%Y'")
 
 ;; widgets
 
@@ -41,19 +43,29 @@
   (eventbox :onhover "${eww} update wifi_rev=true"
 			  :onhoverlost "${eww} update wifi_rev=false"
 		(box :vexpand "false" :hexpand "false" :space-evenly "false"
-				(button :class "module-wif" :onclick "networkmanager_dmenu" :wrap "false" :limit-width 12 :style "color: ${COL_WLAN};" WLAN_ICON)
+				(button :class "module-wif" :onclick "networkmanager_dmenu &" :wrap "false" :limit-width 12 :style "color: ${COL_WLAN};" WLAN_ICON)
 	(revealer :transition "slideright"
 			  :reveal wifi_rev
 			  :duration "350ms"
-	(label    :class "module_essid"
-			  :text ESSID_WLAN
+	(button    :class "module_essid"
 			  :orientation "h"
+                          :onclick "networkmanager_dmenu &"
+                          ESSID_WLAN
 			  )))))
 
-
 (defwidget workspaces []
-  (literal :content workspace))
-
+  (eventbox :onscroll "bash ~/.config/hypr/scripts/change-active-workspace {} ${current_workspace}" :class "workspaces-widget"
+    (box :class "workspaces" :space-evenly true
+      (for workspace in workspaces
+        (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+          (box :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+            (label :text "${workspace.id}")
+            )
+          )
+        )
+      )
+    )
+  )
 
 (defwidget bat []
 		(box :class "bat_module" :vexpand "false" :hexpand "false" 
@@ -64,7 +76,6 @@
                 :class "iconbat"
                 :limit-width 2
                 :tooltip "battery on ${battery}%"
-                :show_truncated false
                 :onclick "$HOME/.config/eww/bar/scripts/pop system"
                 :wrap false
                 ""))))
@@ -80,7 +91,6 @@
                 :limit-width 2
                 :tooltip "using ${memory}% ram"
                 :onclick "$HOME/.config/eww/bar/scripts/pop system"
-                :show_truncated false
                 :wrap false
                 ""))))
 
@@ -139,8 +149,8 @@
 
 
 	;;  Music 
-(defwidget music [] 
-  (eventbox :onhover "${eww} update music_reveal=true"
+   (defwidget music [] 
+    (eventbox :onhover "${eww} update music_reveal=true"
 			  :onhoverlost "${eww} update music_reveal=false"
 		(box :class "module-2" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false" 
 			(box :class "song_cover_art" :vexpand "false" :hexpand "false" :style "background-image: url('${cover_art}');")
@@ -148,12 +158,10 @@
 	    (revealer :transition "slideright"
 			      :reveal music_reveal
 			      :duration "350ms"
-          (box :vexpand "false" :hexpand "false" :oreintation "h" 
-                    (button :class "song_btn_prev" :onclick "~/.config/eww/bar/scripts/music_info --prev" "")
+            (box :vexpand "false" :hexpand "false" :oreintation "h" 
+                      (button :class "song_btn_prev" :onclick "~/.config/eww/bar/scripts/music_info --prev" "")
 					(button :class "song_btn_play" :onclick "~/.config/eww/bar/scripts/music_info --toggle" song_status)
 					(button :class "song_btn_next" :onclick "~/.config/eww/bar/scripts/music_info --next" ""))))))
-
-
 
 (defwidget left []
 	(box :orientation "h" 
@@ -195,9 +203,9 @@
 
 (defwindow bar
           :geometry (geometry :x "0%"
-                       :y "9px"
+                       :y "10px"
                        :width "97%"
-                       :height "15px"
+                       :height "40px"
                        :anchor "top center")
           :stacking "fg"
           :monitor 0
@@ -214,26 +222,26 @@
             (label :text ""
                 :class "sys_icon_bat"
                 :limit-width 2
-                :show_truncated false
+                
                 :wrap false))
             (box :orientation "v" :space-evenly "false" :spacing 0 :hexpand "false" :vexpand "false"
             (label :text "battery"
                 :halign "start"
                 :class "sys_text_bat"
                 :limit-width 9
-                :show_truncated false
+                
                 :wrap false)
             (label :text "${battery}%"
                 :halign "start"
                 :class "sys_text_bat_sub"
                 :limit-width 22
-                :show_truncated false
+                
                 :wrap false)
             (label :text "${battery_status}"
                 :halign "start"
                 :class "sys_text_bat_sub"
                 :limit-width 22
-                :show_truncated false
+                
                 :wrap false)))
             (label :text "" :class "sys_sep" :halign "center")
   (box :class "sys_mem_box" :orientation "h" :space-evenly "false" :halign "start"
@@ -243,7 +251,7 @@
             (label :text ""
                 :class "sys_icon_mem"
                 :limit-width 2
-                :show_truncated false
+                
                 :wrap false
                 :angle 0.0))
             (box :orientation "v" :space-evenly "false" :spacing 0 :hexpand "false" :vexpand "false"
@@ -251,26 +259,27 @@
                 :halign "start"
                 :class "sys_text_mem"
                 :limit-width 9
-                :show_truncated false
+                
                 :wrap false)
             (label :text "${memory_used_mb} | ${memory_total_mb}mb "
                 :halign "start"
                 :class "sys_text_mem_sub"
                 :limit-width 22
-                :show_truncated false
+                
                 :wrap false)
             (label :text "${memory_free_mb}mb free"
                 :halign "start"
                 :class "sys_text_mem_sub"
                 :limit-width 22
-                :show_truncated false
+                
                 :wrap false)))))
 
 (defwidget cal []
 	(box :class "cal" :orientation "v"
 	(box :class "cal-in"
 	(calendar :class "cal" 
-			  :day calendar_day 
+			  :day calendar_day
+                          :month calendar_month 
 			  :year calendar_year))))
 
 (defwindow calendar
@@ -351,15 +360,12 @@
 					(button :class "music_btn_play" :onclick "~/.config/eww/bar/scripts/music_info --toggle" song_status)
 					(button :class "music_btn_next" :onclick "~/.config/eww/bar/scripts/music_info --next" ""))
 				(box :class "music_bar" :halign "center" :vexpand "false" :hexpand "false" :space-evenly "false"
-					(scale :onscroll "mpc -q seek {}" :min 0 :active "true" :max 101 :value current_status)))))
-
+					(scale :onchange "~/.config/eww/bar/scripts/music_info --position {}" :min 0 :max 100 :value current_status)))))
 
 ;;  music
 		(defwindow music_win :stacking "fg" :focusable "false" :screen 1
 			    :geometry (geometry :x "0" :y "7%" :width 428 :height 104 :anchor "top center")
         :monitor 0
-        :focusable false
-        :exclusive true
-			     				(music_pop))
+					(music_pop))
 
 
