@@ -76,6 +76,9 @@ yay -S ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra 
 # command line
 yay -S bat duf exa fzf fd httpie gping-git
 
+# system info
+yay -S htop neofetch-git duf
+
 # screenshots
 yay -S grim slurp wl-clipboard jq
 
