@@ -27,31 +27,27 @@ TODO:
 - Configs for desktop
   - Wallpaper script time!!!!
   - EWW
-    - Do which widgets I want first lol
-    - Make a custom script to check for arch updates
-    - Language
-    - Do CSS
+    - Add customization if mute
+    - Finish spotify integration using --follow
 - Write a python script to handle bundling other repos in this
 - Screensharing, App Launchers, App Clients, Color Pickers
     - aka Configure Rest of Desktop
-- Decide whether to use XDG Desktop Portal?
 - Customize firefox + fork mozilla? 
 - Go through general preference :SOB:
 - Add disk encryption
   - https://wiki.archlinux.org/title/Dm-crypt/Device_encryption with sector-size
   - Do this in February when wifi-adapter is natively supported by udev
 - AI gen might be fun for wall paper
-- Stop bundling other people's github repos, add a way to install froms ource
 - dhcpcd, blueman and wpa_supplicant?
 
 # Installation
 
 ## Manual
 ### Pre-Boot
-- Make sure Secure Boot is disabled
+- Disable Secure Boot/Check it is disabled
   - `# bootctl status | grep "Secure Boot"`
-- Clean up boot options using `efibootmgr` as necessary
 - Right now, temporary android tether to set up and get driver rtw89 manually
+- TODO hibernation with swap support
 - Three partitions
   - Make root, user, and swap partitions using `cblsk` (TODO make using fblsk in the future LOL)
   - Set up encryption
@@ -78,7 +74,7 @@ TODO:
         # arch-chroot /mnt
         # export PS1="(chroot) ${PS1}"
     ```
-  - More encryption BS
+  - Setup automatic encryption
    - Disk Encryption
      - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
      - Configure `/etc/mkinitcpio.conf`, and add or note `systemd keyboard sd-vconsole sd-encrypt` presence
@@ -89,8 +85,9 @@ TODO:
          for the user partition similarily
        - ```
              cryptroot  UUID=ROOT_UUID  -  password-echo=no,x-systemd.device-timeout=0,timeout=0,no-read-workqueue,no-write-workqueue
+             cryptuser  UUID=USER_UUID  -  password-echo=no,x-systemd.device-timeout=0,timeout=0,no-read-workqueue,no-write-workqueue
          ```
-   - Swap Encryption
+   - Swap Encryption (TODO update to encryption friendly method, use TPM)
      - https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption and https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption#UUID_and_LABEL
      - Turn off the swap partition and create a bogus file system
        - ```
@@ -107,10 +104,15 @@ TODO:
            # <filesystem>    <dir>  <type>  <options>  <dump>  <pass>
            /dev/mapper/swap  none   swap    defaults   0       0
          ```
-
 - Linux install | `linux linux-firmware`
 - Processor Microcode | `intel-ucode`
 - Text Editor | `nano nano-syntax-highlighting`
+- Install grub
+  - `https://wiki.archlinux.org/title/GRUB#UEFI_systems`
+  - Use `/boot` as mount point
+  - Use `osprober`
+  - Clean Up Boot Options
+    - `efibootmgr` can list and remove them as necessary
 
 ## Post-Boot
 - Mirror management | `reflector`
