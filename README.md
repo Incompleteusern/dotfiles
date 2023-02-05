@@ -119,6 +119,7 @@ TODO:
           initrd  /initramfs-linux.img
           options root=/dev/mapper/cryptroot rw 
       - ```
+      - Same for fallback
   - Use `/boot` as mount point
   - Use the already present UEFI partition
 - Clean Up Boot Options
