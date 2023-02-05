@@ -7,7 +7,7 @@
 - https://github.com/Saimoomedits/eww-widgets for the top bar, modified for catppuccin theming, hyprland and spotify 
 - https://github.com/catppuccin for the pastel theming over basically everything I can touch
   - For rofi, deathmonde is used
-- https://wiki.archlinux.org/title/User:Bai-Chiang/Installation_notes for extended installation notes
+- https://wiki.archlinux.org/title/User:Bai-Chiang/Installation_notes and https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6 for extended installation notes over encryption and so forth
 
 ## INFO
 
@@ -47,7 +47,6 @@ TODO:
 - Disable Secure Boot/Check it is disabled
   - `# bootctl status | grep "Secure Boot"`
 - Right now, temporary android tether to set up and get driver rtw89 manually
-- TODO hibernation with swap support
 - Three partitions
   - Make root, user, and swap partitions using `cblsk` (TODO make using fblsk in the future LOL)
   - Set up encryption
@@ -74,45 +73,45 @@ TODO:
         # arch-chroot /mnt
         # export PS1="(chroot) ${PS1}"
     ```
-  - Setup automatic encryption
-   - Disk Encryption
-     - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
-     - Configure `/etc/mkinitcpio.conf`, and add or note `systemd keyboard sd-vconsole sd-encrypt` presence
-       - ```
-              HOOKS=(base systemd keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
-         ```
-       - Create `/etc/crypttab.initramfs` and add the following where `ROOT_UUID` is `lsblk -dno UUID /dev/root_partition`. Do the same
-         for the user partition similarily
-       - ```
-             cryptroot  UUID=ROOT_UUID  -  password-echo=no,x-systemd.device-timeout=0,timeout=0,no-read-workqueue,no-write-workqueue
-             cryptuser  UUID=USER_UUID  -  password-echo=no,x-systemd.device-timeout=0,timeout=0,no-read-workqueue,no-write-workqueue
-         ```
-   - Swap Encryption (TODO update to encryption friendly method, use TPM)
-     - https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption and https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption#UUID_and_LABEL
-     - Turn off the swap partition and create a bogus file system
-       - ```
-          (chroot) # swapoff /dev/sdX3
-          (chroot) # mkfs.ext2 -F -F -L cryptswap /dev/sdX3 1M
-         ```
-       - Add in `/etc/crypttab` where `SWAP_UUID` is `lsblk -dno UUID /dev/swap_partition`
-         ```
-           # <name>   <device>         <password>   <options>
-           cryptswap  UUID=SWAP_UUID  /dev/urandom  swap,offset=2048
-         ```
-       - Change the UUID in `/etc/fstab` to a /swap
-         ```
-           # <filesystem>    <dir>  <type>  <options>  <dump>  <pass>
-           /dev/mapper/swap  none   swap    defaults   0       0
-         ```
+ - Disk Encryption
+   - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
+   - Configure `/etc/mkinitcpio.conf`, and add or note `systemd keyboard sd-vconsole sd-encrypt` presence
+     - ```
+            HOOKS=(base systemd keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
+       ```
+     - Create `/etc/crypttab.initramfs` and add the following where `ROOT_UUID` is `lsblk -dno UUID /dev/root_partition`. Do the same for the user partition similarily
+     - ```
+           cryptroot  UUID=ROOT_UUID  -  password-echo=no,x-systemd.device-timeout=0,timeout=0,no-read-workqueue,no-write-workqueue
+           cryptuser  UUID=USER_UUID  -  password-echo=no,x-systemd.device-timeout=0,timeout=0,no-read-workqueue,no-write-workqueue
+       ```
+ - Swap Encryption and Hibernation (TODO update to hibernation friendly method, use TPM)
+   - TODO hibernation
+   - https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption and https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption#UUID_and_LABEL
+   - Turn off the swap partition and create a bogus file system
+     - ```
+        (chroot) # swapoff /dev/sdX3
+        (chroot) # mkfs.ext2 -F -F -L cryptswap /dev/sdX3 1M
+       ```
+     - Add in `/etc/crypttab` where `SWAP_UUID` is `lsblk -dno UUID /dev/swap_partition`
+       ```
+         # <name>   <device>         <password>   <options>
+         cryptswap  UUID=SWAP_UUID  /dev/urandom  swap,offset=2048
+       ```
+     - Change the UUID in `/etc/fstab` to a /swap
+       ```
+         # <filesystem>    <dir>  <type>  <options>  <dump>  <pass>
+         /dev/mapper/swap  none   swap    defaults   0       0
+       ```
 - Linux install | `linux linux-firmware`
 - Processor Microcode | `intel-ucode`
 - Text Editor | `nano nano-syntax-highlighting`
 - Install grub
   - `https://wiki.archlinux.org/title/GRUB#UEFI_systems`
   - Use `/boot` as mount point
-  - Use `osprober`
-  - Clean Up Boot Options
-    - `efibootmgr` can list and remove them as necessary
+  - Use the already present UEFI partition
+  - Use `osprober` for adding window if necessary
+- Clean Up Boot Options
+  - `efibootmgr` can list and remove them as necessary
 
 ## Post-Boot
 - Mirror management | `reflector`
