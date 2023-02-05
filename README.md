@@ -111,6 +111,14 @@ TODO:
   - Text Editor | `nano nano-syntax-highlighting`
 - Systemd-boot
   - `https://wiki.archlinux.org/title/Systemd-boot`
+    - Add in 
+      - ```
+          title   Arch Linux
+          linux   /vmlinuz-linux
+          initrd  /intel-ucode.img
+          initrd  /initramfs-linux.img
+          options root=/dev/mapper/cryptroot rw 
+      - ```
   - Use `/boot` as mount point
   - Use the already present UEFI partition
 - Clean Up Boot Options
