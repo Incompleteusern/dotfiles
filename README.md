@@ -104,9 +104,11 @@ TODO:
          # <filesystem>    <dir>  <type>  <options>  <dump>  <pass>
          /dev/mapper/swap  none   swap    defaults   0       0
        ```
-- Linux install | `linux linux-firmware`
-- Processor Microcode | `intel-ucode`
-- Text Editor | `nano nano-syntax-highlighting`
+- `pacstrap` the following
+  - `pacstrap /mnt base base-devel linux linux-firmware nano sudo intel-ucode` 
+  - Linux install | `linux linux-firmware`
+  - Processor Microcode | `intel-ucode`
+  - Text Editor | `nano nano-syntax-highlighting`
 - Systemd-boot
   - `https://wiki.archlinux.org/title/Systemd-boot`
   - Use `/boot` as mount point
