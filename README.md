@@ -111,7 +111,7 @@ TODO:
   - Text Editor | `nano nano-syntax-highlighting`
 - Systemd-boot
   - `https://wiki.archlinux.org/title/Systemd-boot`
-    - Add in 
+    - Add in at `/boot/loader/entries/arch.conf`
       - ```
           title   Arch Linux
           linux   /vmlinuz-linux
