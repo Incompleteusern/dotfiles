@@ -19,7 +19,7 @@ These dotfiles come with three terrible scripts as of last updated:
 ## TODO
 
 TODO:
-- Remove old wifi-menu and waybar, add eww and networkmanager-dmenu fully
+- Swap hibernation encryption support based on https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6#known-issues
 - Learn tmux
 - Change mouse or something idk
 - Do redshift alternative
@@ -173,14 +173,12 @@ TODO:
   - TODO automate that shit
 
 ## Auto
-- neofetch | `neofetch-git`
 - Desktop Control | `brightnessctl`
 - fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git ttf-symbola`
   - Set Chinese as font priority
 - screenshots | `grim slurp wl-clipboard jq` (grimblast)
 - cli
   - Replace cat | `bat`
-  - Memory | `duf`
   - Replace ls | `exa`
   - Replace find | `fzf`, `fd`
   - Requests | `httpie`
@@ -188,7 +186,7 @@ TODO:
 - power | `tlp tlp-rdw`
 - spotify integration | `playerctl`
 - volume control | `pamixer`
-
+- System Information | `htop neofetch-git duf`
 # Silly
 ## Manual
 ## Auto
