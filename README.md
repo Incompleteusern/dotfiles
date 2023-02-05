@@ -120,6 +120,7 @@ TODO:
           options root=/dev/mapper/cryptroot rw 
       - ```
       - Same for fallback
+      - Install `systemd-boot-pacman-hook`
   - Use `/boot` as mount point
   - Use the already present UEFI partition
 - Clean Up Boot Options
