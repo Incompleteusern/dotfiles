@@ -107,11 +107,10 @@ TODO:
 - Linux install | `linux linux-firmware`
 - Processor Microcode | `intel-ucode`
 - Text Editor | `nano nano-syntax-highlighting`
-- Install grub
-  - `https://wiki.archlinux.org/title/GRUB#UEFI_systems`
+- Systemd-boot
+  - `https://wiki.archlinux.org/title/Systemd-boot`
   - Use `/boot` as mount point
   - Use the already present UEFI partition
-  - Use `osprober` for adding window if necessary
 - Clean Up Boot Options
   - `efibootmgr` can list and remove them as necessary
 
