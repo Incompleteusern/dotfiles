@@ -6,7 +6,7 @@ TMP_DIR="$HOME/.cache/eww"
 
 ## Get status
 get_status() {
-	if [[ $(playerctl -p spotify status) == *"Playing"* ]]; then
+	if [[ $(playerctl status) == *"Playing"* ]]; then
 		echo ""
 	else
 		echo "奈"
@@ -15,7 +15,7 @@ get_status() {
 
 ## Get song
 get_song() {
-	song=`playerctl -p spotify metadata "xesam:title"`
+	song=`playerctl -p spotify,firefox metadata "xesam:title"`
 	if [[ -z "$song" ]]; then
 		echo "No Song"
 	else
@@ -25,7 +25,7 @@ get_song() {
 
 ## Get artist
 get_artist() {
-	artist=`playerctl -p spotify metadata "xesam:artist"`
+	artist=`playerctl -p spotify,firefox metadata "xesam:artist"`
 	if [[ -z "$artist" ]]; then
 		echo "No Artist"
 	else
@@ -35,7 +35,7 @@ get_artist() {
 
 ## Get album
 get_album() {
-        album=`playerctl -p spotify metadata "xesam:album"`
+        album=`playerctl -p spotify,firefox metadata "xesam:album"`
         if [[ -z "$album" ]]; then
                 echo "No Album"
         else
@@ -45,7 +45,7 @@ get_album() {
 
 ## Get time
 get_time() {
-	atime=$(echo 'print $(($(playerctl -p spotify position) * 100000000 / $(playerctl -p spotify metadata "mpris:length")))' | zsh)
+	atime=$(echo 'print $(($(playerctl -p spotify,firefox position) * 100000000 / $(playerctl -p spotify,firefox metadata "mpris:length")))' | zsh)
         if [[ -z "$atime" ]]; then
                 echo "0.0"
         else
@@ -55,13 +55,13 @@ get_time() {
 
 ## Set time
 set_time() {
-        new_time=$(printf 'echo $((%f * $(playerctl -p spotify metadata "mpris:length") / 100000000.0))\n' "$1" | zsh)
-        playerctl -p spotify position "$new_time"
+        new_time=$(printf 'echo $((%f * $(playerctl -p spotify,firefox metadata "mpris:length") / 100000000.0))\n' "$1" | zsh)
+        playerctl -p spotify,firefox position "$new_time"
 }
 
 ## Get cover
 get_cover() {
-	cover=`playerctl -p spotify metadata "mpris:artUrl"`
+	cover=`playerctl -p spotify,firefox metadata "mpris:artUrl"`
 
 	# Check if the file has a embbeded album art
 	if [[ -z "$cover" ]]; then
@@ -73,7 +73,6 @@ get_cover() {
                 if [[ ! -e "$tmp_temp_path" ]]; then
                     curl -sf --create-dirs  "$cover" --output "$tmp_temp_path"
                 fi
-
         fi
 }
 
@@ -95,9 +94,9 @@ elif [[ "$1" == "--position" ]]; then
 elif [[ "$1" == "--cover" ]]; then
 	get_cover
 elif [[ "$1" == "--toggle" ]]; then
-	playerctl -p spotify play-pause
+	playerctl play-pause
 elif [[ "$1" == "--next" ]]; then
-	playerctl -p spotify next
+	playerctl next
 elif [[ "$1" == "--prev" ]]; then
-	playerctl -p spotify previous
+	playerctl previous
 fi

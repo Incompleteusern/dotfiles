@@ -29,7 +29,7 @@
 (defpoll song_status :interval "3s"  "~/.config/eww/bar/scripts/music_info --status")
 (defpoll cover_art :interval "10s"  "~/.config/eww/bar/scripts/music_info --cover")
 
-(defpoll clock_time :interval "5m" "date +\%I")
+(defpoll clock_time :interval "1m" "date +\%I")
 (defpoll clock_minute :interval "1s" "date +\%M")
 (defpoll clock_date :interval "1min" "date '+%d/%m'")
 (defpoll calendar_day :interval "1min" "date '+%d'")

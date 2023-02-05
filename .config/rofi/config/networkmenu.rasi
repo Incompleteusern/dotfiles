@@ -50,7 +50,7 @@ entry {
     placeholder-color:              @FG;
     expand:                         true;
     horizontal-align:               0;
-    placeholder:                    "";
+    placeholder:                    "Search...";
     blink:                          true;
     border:                  	    0px 0px 2px 0px;
     border-color:                   @BDR;
@@ -81,7 +81,6 @@ case-indicator {
 listview {
     background-color:               @BG;
     columns:                        1;
-    lines:			                7;
     spacing:                        4px;
     cycle:                          true;
     dynamic:                        true;
@@ -99,7 +98,7 @@ element {
     background-color:               @BG;
     text-color:                     @FG;
     orientation:                    horizontal;
-    border-radius:                  4px;
+    border-radius:                  10px;
     padding:                        6px 6px 6px 6px;
 }
 
@@ -123,20 +122,18 @@ element normal.urgent,
 element alternate.urgent {
     background-color:               @UGT;
     text-color:                     @FG;
-    border-radius:                  9px;
 }
 
 element normal.active,
 element alternate.active {
     background-color:               @BGA;
-    text-color:                     @FG;
+    text-color:                     @BG;
 }
 
 element selected {
-    background-color:               @BGA;
-    text-color:                     @SEL;
+    background-color:               @IMG;
+    text-color:                     @BG;
     border:                  	    0px 0px 0px 0px;
-    border-radius:                  10px;
     border-color:                   @BDR;
 }
 
@@ -146,6 +143,6 @@ element selected.urgent {
 }
 
 element selected.active {
-    background-color:               @BGA;
-    color:                          @FG;
+    background-color:               @ON;
+    color:                          @BG;
 }
