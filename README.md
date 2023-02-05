@@ -136,6 +136,7 @@ TODO:
        $ git config --global user.name "$name"
 - Network Manager | `networkmanager` and enable service
 - Run `init.sh`
+- Make closing lid initiate sleep
 
 ## Auto
 - Enable Color, ILoveCandy and ParallelDownloads in /etc/pacman.conf
