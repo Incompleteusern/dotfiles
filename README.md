@@ -7,7 +7,7 @@
 - https://github.com/Saimoomedits/eww-widgets for the top bar, modified for catppuccin theming, hyprland and spotify 
 - https://github.com/catppuccin for the pastel theming over basically everything I can touch
   - For rofi, deathmonde is used
-- https://wiki.archlinux.org/title/User:Bai-Chiang/Installation_notes and https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6 for extended installation notes over encryption and so forth
+- https://wiki.archlinux.org/title/User:Bai-Chiang/Installation_notes and https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6 and https://gist.github.com/michaelb081988/0e3f1bbd3bb04fb34c0726e28da2a934 for extended installation notes over encryption and so forth
 
 ## INFO
 
@@ -21,6 +21,8 @@ These dotfiles come with three terrible scripts as of last updated:
 TODO:
 - Swap hibernation encryption support based on https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6#known-issues
 - Learn tmux
+- TODO renable secure boot support
+- TODO switch to systemd-boot sometime
 - Change mouse or something idk
 - Do redshift alternative
 - Customize oh-my-fsh more
