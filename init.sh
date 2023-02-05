@@ -56,6 +56,12 @@ yay -S swww-git
 # notifications
 yay -S dunst libnotify
 
+# session locker
+yay -S swaylockd swaylock-effects-git swayidle-git
+
+# font input
+yay -S fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx-gtk fcitx5-pinyin-zhwiki fcitx5-qt
+
 # app launcher thing
 yay -S rofi-lbonn-wayland-git papirus-icon-theme-git sif-git networkmanager-dmenu-git ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd
 
