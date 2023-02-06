@@ -49,80 +49,81 @@ TODO:
 - Disable Secure Boot/Check it is disabled
   - `# bootctl status | grep "Secure Boot"`
 - Right now, temporary android tether to set up and get driver rtw89 manually
-- Three partitions
+- Three partitions and encryption
   - Make root, user, and swap partitions using `cblsk` (TODO make using fblsk in the future LOL)
-  - Set up encryption
-    - https://wiki.archlinux.org/title/Dm-crypt/Device_encryption
-    - ```
-         # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/root_partition
-         # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/user_partition
-         # cryptsetup open /dev/root_partition cryptroot
-         # cryptsetup open /dev/user_partition crypthome
-      ```
-      - Unmount, Close and remount to make sure that everything is working smoothly
-    - Mount and make file systems
-      - ```
-          # mkfs.ext4 /dev/mapper/cryptroot
-          # mkfs.ext4 /dev/mapper/crypthome
-          # mkswap /dev/swap_partition
-
-          # mount /dev/mapper/cryptroot /mnt
-          # mount /dev/mapper/crypthome /mnt/home
-          # swapon /dev/swap_partition
-        ```
-- chroot into shell
-  - ```
-        # arch-chroot /mnt
-        # export PS1="(chroot) ${PS1}"
+  - https://wiki.archlinux.org/title/Dm-crypt/Device_encryption
+  ```
+     # cryptsetup benchmark
+     # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/root_partition
+     # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/user_partition
+     # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/disk/by-partlabel/cryptswap
+     
+     # cryptsetup luksHeaderBackup /dev/root_partition --header-backup-file /mnt/backupcrypt/root.img
+     # cryptsetup luksHeaderBackup /dev/user_partition --header-backup-file /mnt/backupcrypt/user.img
+     
+     # cryptsetup open /dev/root_partition cryptroot
+     # cryptsetup open /dev/user_partition cryptuser
+     # cryptsetup open /dev/swap_partition cryptswap
+  ```
+  - Unmount, Close and remount to make sure that everything is working smoothly
+  - Mount and make file systems
     ```
- - Disk Encryption
-   - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
-   - Configure `/etc/mkinitcpio.conf`, and add or note `systemd keyboard sd-vconsole sd-encrypt` presence
-     - ```
-            HOOKS=(base systemd keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
-       ```
-     - Create `/etc/crypttab.initramfs` and add the following where `ROOT_UUID` is `lsblk -dno UUID /dev/root_partition`. Do the same for the user partition similarily
-     - ```
-           cryptroot  UUID=ROOT_UUID  -  password-echo=no,x-systemd.device-timeout=0,timeout=0,no-read-workqueue,no-write-workqueue
-           cryptuser  UUID=USER_UUID  -  password-echo=no,x-systemd.device-timeout=0,timeout=0,no-read-workqueue,no-write-workqueue
-       ```
- - Swap Encryption and Hibernation (TODO update to hibernation friendly method, use TPM)
-   - TODO hibernation
-   - https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption and https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption#UUID_and_LABEL
-   - Turn off the swap partition and create a bogus file system
-     - ```
-        (chroot) # swapoff /dev/sdX3
-        (chroot) # mkfs.ext2 -F -F -L cryptswap /dev/sdX3 1M
-       ```
-     - Add in `/etc/crypttab` where `SWAP_UUID` is `lsblk -dno UUID /dev/swap_partition`
-       ```
-         # <name>   <device>         <password>   <options>
-         cryptswap  UUID=SWAP_UUID  /dev/urandom  swap,offset=2048
-       ```
-     - Change the UUID in `/etc/fstab` to a /swap
-       ```
-         # <filesystem>    <dir>  <type>  <options>  <dump>  <pass>
-         /dev/mapper/swap  none   swap    defaults   0       0
-       ```
+      # mkfs.ext4 /dev/mapper/cryptroot
+      # mkfs.ext4 /dev/mapper/cryptuser
+      # mkswap /dev/mapper/cryptswap
+            
+      # mount /dev/mapper/cryptroot /mnt
+      # mount /dev/mapper/cryptuser /mnt/home
+      # swapon /dev/mapper/cryptswap
+    ```
+- Chroot
+  - ```
+      # arch-chroot /mnt
+      # export PS1="(chroot) ${PS1}"
+    ```
+- Disk Encryption
+ - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
+ - Configure `/etc/mkinitcpio.conf`, and add `systemd keyboard sd-vconsole sd-encrypt` presence
+  ```
+    HOOKS=(base udev systemd keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
+  ```
+   - Create `/etc/crypttab.initramfs` and add the following where `ROOT_UUID` is `lsblk -dno UUID /dev/root_partition`. Do the same for the user partition similarily
+- Swap Encryption and Hibernation | `tpm2-tss tpm2-tools` (TODO update to hibernation friendly method, use TPM)
+  - Configure `/etc/mkinitcpio.conf`, and add `resume` after `udev`
+  - Check `cat /sys/class/tpm/tpm0/tpm_version_major` has `2`
+  - List available TPMs at `systemd-cryptenroll --tpm2-device=list`
+  - Enroll key with `systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0,7 /dev/disk/by-partlabel/cryptswap`
+  - Test that it works with `/usr/lib/systemd/systemd-cryptsetup attach swap /dev/disk/by-partlabel/cryptswap - tpm2-device=auto`
+- Regenerate initramfs
 - `pacstrap` the following
   - `pacstrap /mnt base base-devel linux linux-firmware nano sudo intel-ucode` 
   - Linux install | `linux linux-firmware`
   - Processor Microcode | `intel-ucode`
   - Text Editor | `nano nano-syntax-highlighting`
+  - Network Manager | `networkmanager` and enable service
+  - Secure boot tool | `sbctl`
 - Systemd-boot
-  - `https://wiki.archlinux.org/title/Systemd-boot`
-    - Add in at `/boot/loader/entries/arch.conf`
-      - ```
-          title   Arch Linux
-          linux   /vmlinuz-linux
-          initrd  /intel-ucode.img
-          initrd  /initramfs-linux.img
-          options root=/dev/mapper/cryptroot rw 
-      - ```
-      - Same for fallback
-      - Install `systemd-boot-pacman-hook`
-  - Use `/boot` as mount point
+  - https://wiki.archlinux.org/title/Systemd-boot
+  - Use `/boot` as mount point and run `bootctl install`
+  - Add in at `/boot/loader/entries/arch.conf`
+    ```
+      title   Arch Linux
+      linux   /vmlinuz-linux
+      initrd  /intel-ucode.img
+      initrd  /initramfs-linux.img
+      options rd.luks.name=ROOT_UUID=cryptroot root=/dev/mapper/cryptroot rd.luks.name=USER_UUID=cryptuser rd.luks.name=SWAP_UUID=cryptswap rd.luks.options=SWAP_UUID=tpm2-device=auto resume=/dev/mapper/cryptswap rw quiet splash acpi_backlight=vendor
+    ```
+   - Same for fallback
   - Use the already present UEFI partition
+- Secure Boot
+  - https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#sbctl
+  - Verify with `sbctl status`
+  - `sbctl create-keys`
+  - `sbctl enroll-keys -m` and check status again
+  - Sign files from `sbctl verify` with `sbctl sign -s /path/to/file`
+  - Check everything works with `sbctl status`
+  - Add pacman hooks from https://wiki.archlinux.org/title/Systemd-boot#pacman_hook
+  - Re-enable Secure Boot
 - Clean Up Boot Options
   - `efibootmgr` can list and remove them as necessary
 
@@ -132,25 +133,24 @@ TODO:
   - Enable `reflector.timer`
   - TODO automate that shit
 - Add user
-  - `# useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
+  `# useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
 - Add wheel group to sudoers | `sudo`
   - Uncomment `# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL:ALL) ALL`
 - git, ssh/gpg | `git openssh github-cli`
-  - ```
-       $ gh auth login
-       $ ssh-keygen -t ed25519 -C "$email"; ssh-add ~/.ssh/id_ed25519
-       $ gh ssh-key add ~/.ssh/id_ed25519.pub --title $hostname
-       $ git clone git@github.com:Incompleteusern/dotfiles.git
-       $ gpg --full-generate-key
-       $ gpg --list-secret-keys --keyid-format=long
-       $ git config --global user.signingkey $KEY
-       $ git config --global commit.gpgsign true
-       $ git config --global user.email "$email"
-       $ git config --global user.name "$name"
-- Network Manager | `networkmanager` and enable service
+  ```
+     $ gh auth login
+     $ ssh-keygen -t ed25519 -C "$email"; ssh-add ~/.ssh/id_ed25519
+     $ gh ssh-key add ~/.ssh/id_ed25519.pub --title $hostname
+     $ git clone git@github.com:Incompleteusern/dotfiles.git
+     $ gpg --full-generate-key
+     $ gpg --list-secret-keys --keyid-format=long
+     $ git config --global user.signingkey $KEY 
+     $ git config --global commit.gpgsign true
+     $ git config --global user.email "$email"
+     $ git config --global user.name "$name"
 - Run `init.sh`
 - Make closing lid initiate sleep
-
+- 
 ## Auto
 - Enable Color, ILoveCandy and ParallelDownloads in /etc/pacman.conf
 - yay | `base-devel`
