@@ -21,6 +21,10 @@ cp -r ~/.config/eww ${BASEDIR}/.config/
 cp -r ~/.config/fcitx5 ${BASEDIR}/.config/
 cp -r ~/.config/htop ${BASEDIR}/.config/
 
-cp -r ~/scripts/ ${BASEDIR}/
-cp -r ~/.zshrc ${BASEDIR}/
-cp -r ~/.fonts ${BASEDIR}/
+cp -r  ~/scripts/ ${BASEDIR}/
+cp  ~/.zshrc ${BASEDIR}/
+cp -r  ~/.fonts ${BASEDIR}/
+
+cp  /etc/sddm.conf.d/sddm.conf ${BASEDIR}/.sddm
+cp  /usr/share/wayland-sessions/hyprland-wrapped.desktop ${BASEDIR}/.sddm
+cp -r /usr/share/sddm/themes/sugar-dark ${BASEDIR}/.sddm

@@ -42,6 +42,13 @@ cp -R ${BASEDIR}/scripts/ ~/scripts/
 cp -R ${BASEDIR}/.zshrc ~/.zshrc
 cp -R ${BASEDIR}/.fonts ~/.fonts
 
+sudo mkdir --parents /etc/sddm.conf.d
+sudo mkdir --parents /usr/share/wayland-sessions
+sudo mkdir --parents /usr/share/sddm/themes/
+sudo cp ${BASEDIR}/.sddm/sddm.conf /etc/sddm.conf.d/sddm.conf
+sudo cp ${BASEDIR}/.sddm/hyprland-wrapped.dekstop /usr/share/wayland-sessions/hyprland-wrapped.desktop
+sudo cp ${BASEDIR}/.sddm/sugar-dark /usr/share/sddm/themes
+
 # DESKTOP
 
 # hyprland and friends

@@ -1,0 +1,102 @@
+#!/bin/bash
+# scripts by adi1090x
+
+## Get data
+TMP_DIR="$HOME/.cache/eww"
+
+## Get status
+get_status() {
+	if [[ $(playerctl status) == *"Playing"* ]]; then
+		echo ""
+	else
+		echo "奈"
+	fi
+}
+
+## Get song
+get_song() {
+	song=`playerctl -p spotify,firefox metadata "xesam:title"`
+	if [[ -z "$song" ]]; then
+		echo "No Song"
+	else
+		echo "$song"
+	fi	
+}
+
+## Get artist
+get_artist() {
+	artist=`playerctl -p spotify,firefox metadata "xesam:artist"`
+	if [[ -z "$artist" ]]; then
+		echo "No Artist"
+	else
+		echo "$artist"
+	fi	
+}
+
+## Get album
+get_album() {
+        album=`playerctl -p spotify,firefox metadata "xesam:album"`
+        if [[ -z "$album" ]]; then
+                echo "No Album"
+        else
+                echo "$album"
+        fi
+}
+
+## Get time
+get_time() {
+	atime=$(echo 'print $(($(playerctl -p spotify,firefox position) * 100000000 / $(playerctl -p spotify,firefox metadata "mpris:length")))' | zsh)
+        if [[ -z "$atime" ]]; then
+                echo "0.0"
+        else
+                echo "$atime"
+        fi
+}
+
+## Set time
+set_time() {
+        new_time=$(printf 'echo $((%f * $(playerctl -p spotify,firefox metadata "mpris:length") / 100000000.0))\n' "$1" | zsh)
+        playerctl -p spotify,firefox position "$new_time"
+}
+
+## Get cover
+get_cover() {
+	cover=`playerctl -p spotify,firefox metadata "mpris:artUrl"`
+
+	# Check if the file has a embbeded album art
+	if [[ -z "$cover" ]]; then
+		echo "images/music.png"
+	else
+                id=$(sha1sum <<< "$cover")
+                tmp_temp_path="$TMP_DIR/${id::-4}.png"
+                echo "$tmp_temp_path" 
+                if [[ ! -e "$tmp_temp_path" ]]; then
+                    curl -sf --create-dirs  "$cover" --output "$tmp_temp_path"
+                fi
+        fi
+}
+
+## Set position
+
+## Execute accordingly
+if [[ "$1" == "--song" ]]; then
+	get_song
+elif [[ "$1" == "--artist" ]]; then
+	get_artist
+elif [[ "$1" == "--album" ]]; then
+        get_album
+elif [[ "$1" == "--status" ]]; then
+	get_status
+elif [[ "$1" == "--time" ]]; then
+	get_time
+elif [[ "$1" == "--position" ]]; then
+        set_time "$2"
+elif [[ "$1" == "--cover" ]]; then
+	get_cover
+elif [[ "$1" == "--toggle" ]]; then
+	playerctl play-pause
+elif [[ "$1" == "--next" ]]; then
+	playerctl next
+elif [[ "$1" == "--prev" ]]; then
+	playerctl previous
+fi
