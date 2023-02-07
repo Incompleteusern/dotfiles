@@ -76,24 +76,13 @@ TODO:
       # mount /dev/mapper/cryptuser /mnt/home
       # swapon /dev/mapper/cryptswap
     ```
+- Generate fstab
+  - Use `/dev/mapper/cryptswap swap swap defaults 0 0` for swap
 - Chroot
   - ```
       # arch-chroot /mnt
       # export PS1="(chroot) ${PS1}"
     ```
-- Disk Encryption
-  - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
-  - Configure `/etc/mkinitcpio.conf`, and add `systemd keyboard sd-vconsole sd-encrypt` presence
-  ```
-    HOOKS=(base udev systemd keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
-  ```
-- Swap Encryption and Hibernation | `tpm2-tss tpm2-tools` (TODO update to hibernation friendly method, use TPM)
-  - Configure `/etc/mkinitcpio.conf`, and add `resume` after `udev`
-  - Check `cat /sys/class/tpm/tpm0/tpm_version_major` has `2`
-  - List available TPMs at `systemd-cryptenroll --tpm2-device=list`
-  - Enroll key with `systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0,7 /dev/disk/by-partlabel/cryptswap`
-  - Test that it works with `/usr/lib/systemd/systemd-cryptsetup attach swap /dev/disk/by-partlabel/cryptswap - tpm2-device=auto`
-- Regenerate initramfs
 - `pacstrap` the following
   - `pacstrap /mnt base base-devel linux linux-firmware nano sudo intel-ucode` 
   - Linux install | `linux linux-firmware`
@@ -113,7 +102,7 @@ TODO:
       options rd.luks.name=ROOT_UUID=cryptroot root=/dev/mapper/cryptroot rd.luks.name=USER_UUID=cryptuser rd.luks.name=SWAP_UUID=cryptswap rd.luks.options=SWAP_UUID=tpm2-device=auto resume=/dev/mapper/cryptswap rw quiet splash acpi_backlight=vendor
     ```
    - Same for fallback
-  - Use the already present UEFI partition
+  - Use the already present UEFI partition, if there
 - Secure Boot
   - https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#sbctl
   - Verify with `sbctl status`
@@ -123,6 +112,20 @@ TODO:
   - Check everything works with `sbctl status`
   - Add pacman hooks from https://wiki.archlinux.org/title/Systemd-boot#pacman_hook
   - Re-enable Secure Boot
+- Disk Encryption
+  - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
+  - Configure `/etc/mkinitcpio.conf`, and add `systemd keyboard sd-vconsole sd-encrypt` presence
+  ```
+    HOOKS=(base udev systemd keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
+  ```
+- Swap Encryption and Hibernation | `tpm2-tss tpm2-tools` (TODO update to hibernation friendly method, use TPM)
+  - Configure `/etc/mkinitcpio.conf`, and add `resume` after `udev`
+  - Check `cat /sys/class/tpm/tpm0/tpm_version_major` has `2`
+  - List available TPMs at `systemd-cryptenroll --tpm2-device=list`
+  - Enroll key with `systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0,7 /dev/swap_partition`
+  - Test that it works with `/usr/lib/systemd/systemd-cryptsetup attach swap /dev/swap_partition - tpm2-device=auto`
+- Generate initramfs
+
 - Clean Up Boot Options
   - `efibootmgr` can list and remove them as necessary
 
@@ -149,7 +152,7 @@ TODO:
      $ git config --global user.name "$name"
 - Run `init.sh`
 - Make closing lid initiate sleep
-- 
+
 ## Auto
 - Enable Color, ILoveCandy and ParallelDownloads in /etc/pacman.conf
 - yay | `base-devel`
