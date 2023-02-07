@@ -56,7 +56,7 @@ TODO:
      # cryptsetup benchmark
      # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/root_partition
      # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/user_partition
-     # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/disk/by-partlabel/cryptswap
+     # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/swap_partition
      
      # cryptsetup luksHeaderBackup /dev/root_partition --header-backup-file /mnt/backupcrypt/root.img
      # cryptsetup luksHeaderBackup /dev/user_partition --header-backup-file /mnt/backupcrypt/user.img
