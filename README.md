@@ -82,12 +82,11 @@ TODO:
       # export PS1="(chroot) ${PS1}"
     ```
 - Disk Encryption
- - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
- - Configure `/etc/mkinitcpio.conf`, and add `systemd keyboard sd-vconsole sd-encrypt` presence
+  - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
+  - Configure `/etc/mkinitcpio.conf`, and add `systemd keyboard sd-vconsole sd-encrypt` presence
   ```
     HOOKS=(base udev systemd keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
   ```
-   - Create `/etc/crypttab.initramfs` and add the following where `ROOT_UUID` is `lsblk -dno UUID /dev/root_partition`. Do the same for the user partition similarily
 - Swap Encryption and Hibernation | `tpm2-tss tpm2-tools` (TODO update to hibernation friendly method, use TPM)
   - Configure `/etc/mkinitcpio.conf`, and add `resume` after `udev`
   - Check `cat /sys/class/tpm/tpm0/tpm_version_major` has `2`
