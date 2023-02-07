@@ -50,34 +50,34 @@ TODO:
   - `# bootctl status | grep "Secure Boot"`
 - Right now, temporary android tether to set up and get driver rtw89 manually
 - Three partitions and encryption
-  - Make root, user, and swap partitions using `cblsk` (TODO make using fblsk in the future LOL)
+  - Make root, user, and swap partitions using `cblsk` and part labels `cryptroot`, `cryptuser`, and `cryptswap` (TODO make using fblsk in the future LOL)
   - https://wiki.archlinux.org/title/Dm-crypt/Device_encryption
   ```
      # cryptsetup benchmark
-     # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/root_partition
-     # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/user_partition
-     # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/swap_partition
+     # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/disk/by-partlabel/cryptroot
+     # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/disk/by-partlabel/cryptuser
+     # cryptsetup --type luks2 --verify-passphrase --sector-size 4096 --verbose luksFormat /dev/disk/by-partlabel/cryptswap
      
-     # cryptsetup luksHeaderBackup /dev/root_partition --header-backup-file /mnt/backupcrypt/root.img
-     # cryptsetup luksHeaderBackup /dev/user_partition --header-backup-file /mnt/backupcrypt/user.img
+     # cryptsetup luksHeaderBackup /dev/disk/by-partlabel/cryptroot --header-backup-file /mnt/backupcrypt/root.img
+     # cryptsetup luksHeaderBackup /dev/disk/by-partlabel/cryptuser --header-backup-file /mnt/backupcrypt/user.img
      
-     # cryptsetup open /dev/root_partition cryptroot
-     # cryptsetup open /dev/user_partition cryptuser
-     # cryptsetup open /dev/swap_partition cryptswap
+     # cryptsetup open /dev/disk/by-partlabel/cryptroot root
+     # cryptsetup open /dev/disk/by-partlabel/cryptuser user
+     # cryptsetup open /dev/disk/by-partlabel/cryptswap swap
   ```
-  - Unmount, Close and remount to make sure that everything is working smoothly
+  - Unmount, close and remount to make sure that everything is working smoothly
   - Mount and make file systems
     ```
-      # mkfs.ext4 /dev/mapper/cryptroot
-      # mkfs.ext4 /dev/mapper/cryptuser
-      # mkswap /dev/mapper/cryptswap
+      # mkfs.ext4 /dev/mapper/root
+      # mkfs.ext4 /dev/mapper/user
+      # mkswap -L swap /dev/mapper/swap
             
-      # mount /dev/mapper/cryptroot /mnt
-      # mount /dev/mapper/cryptuser /mnt/home
-      # swapon /dev/mapper/cryptswap
+      # mount /dev/mapper/root /mnt
+      # mount -L /dev/mapper/user /mnt/home
+      # swapon -L swap
     ```
 - Generate fstab
-  - Use `/dev/mapper/cryptswap swap swap defaults 0 0` for swap
+  - Use `LABEL=swap swap swap defaults 0 0` for swap
 - Chroot
   - ```
       # arch-chroot /mnt
@@ -99,7 +99,7 @@ TODO:
       linux   /vmlinuz-linux
       initrd  /intel-ucode.img
       initrd  /initramfs-linux.img
-      options rd.luks.name=ROOT_UUID=cryptroot root=/dev/mapper/cryptroot rd.luks.name=USER_UUID=cryptuser rd.luks.name=SWAP_UUID=cryptswap rd.luks.options=SWAP_UUID=tpm2-device=auto resume=/dev/mapper/cryptswap rw quiet splash acpi_backlight=vendor
+      options rd.luks.name=ROOT_UUID=root root=/dev/mapper/root rd.luks.name=USER_UUID=user rd.luks.name=SWAP_UUID=swap rd.luks.options=SWAP_UUID=tpm2-device=auto resume=/dev/mapper/swap rw quiet splash acpi_backlight=vendor
     ```
    - Same for fallback
   - Use the already present UEFI partition, if there
@@ -122,8 +122,8 @@ TODO:
   - Configure `/etc/mkinitcpio.conf`, and add `resume` after `udev`
   - Check `cat /sys/class/tpm/tpm0/tpm_version_major` has `2`
   - List available TPMs at `systemd-cryptenroll --tpm2-device=list`
-  - Enroll key with `systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0,7 /dev/swap_partition`
-  - Test that it works with `/usr/lib/systemd/systemd-cryptsetup attach swap /dev/swap_partition - tpm2-device=auto`
+  - Enroll key with `systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0,7 /dev/disk/by-partlabel/cryptswap`
+  - Test that it works with `/usr/lib/systemd/systemd-cryptsetup attach swap /dev/disk/by-partlabel/cryptswap - tpm2-device=auto`
 - Generate initramfs
 
 - Clean Up Boot Options
@@ -150,8 +150,10 @@ TODO:
      $ git config --global commit.gpgsign true
      $ git config --global user.email "$email"
      $ git config --global user.name "$name"
+  ```
+  - TODO automate this
 - Run `init.sh`
-- Make closing lid initiate sleep
+- Make closing lid initiate sleep in `/etc/systemd/logind.conf` with `HandleLidSwitch=suspend` if necessary
 
 ## Auto
 - Enable Color, ILoveCandy and ParallelDownloads in /etc/pacman.conf
@@ -167,7 +169,6 @@ TODO:
 ## TODO
 - Polkit | `polkit-kde-agent` 
 - Display Manager | `sddm`
-- 
 
 ## Manual
 
