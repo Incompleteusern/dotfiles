@@ -554,8 +554,11 @@ Column {
 
     Connections {
         target: sddm
-        onLoginSucceeded: {}
+        onLoginSucceeded: {
+            password.text = ""
+        }
         onLoginFailed: {
+            password.text = ""
             failed = true
             resetError.running ? resetError.stop() && resetError.start() : resetError.start()
         }
