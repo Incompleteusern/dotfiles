@@ -1,3 +1,4 @@
+![image](https://user-images.githubusercontent.com/58920010/217399494-81f74489-fb94-4b74-8b91-99acd16901cc.png)
 ![image](https://user-images.githubusercontent.com/58920010/216701421-588d2a53-43ef-4c46-aba3-798434cddb06.png)
 
 ## Thanks to
@@ -8,7 +9,7 @@
 - https://github.com/catppuccin for the pastel theming over basically everything I can touch
   - For rofi, deathmonde is used
 - https://wiki.archlinux.org/title/User:Bai-Chiang/Installation_notes and https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6 and https://gist.github.com/michaelb081988/0e3f1bbd3bb04fb34c0726e28da2a934 for extended installation notes over encryption and so forth
-- Sugar dark https://github.com/MarianArlt/sddm-sugar-dark/, edited for catppuccin theming 
+- https://github.com/MarianArlt/sddm-sugar-dark/ for sddm theme, modified for catppuccin theming 
 
 ## INFO
 
@@ -23,7 +24,6 @@ TODO:
 - Swap hibernation encryption support based on https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6#known-issues
 - Learn tmux
 - TODO renable secure boot support
-- TODO switch to systemd-boot sometime
 - Change mouse or something idk
 - Do redshift alternative
 - Customize oh-my-fsh more
