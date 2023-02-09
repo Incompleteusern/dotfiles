@@ -169,9 +169,9 @@ TODO:
 
 ## TODO
 - Polkit | `polkit-kde-agent` 
-- Display Manager | `sddm`
 
 ## Manual
+Do this https://wiki.archlinux.org/title/SDDM#KDE_/_KWin to have the greeter and session be on the same tty
 
 ## Auto
 - Compositor | `hyprland-git` 
@@ -184,6 +184,7 @@ TODO:
 - App Launcher | `rofi-lbonn-wayland-git papirus-icon-theme-git sif-git networkmanager-dmenu-git ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd` 
 - Font Input | `fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx-gtk fcitx5-pinyin-zhwiki fcitx5-qt`
 - Session Locker | `swaylockd swaylock-effects-git swayidle-git`
+- Display Manager | `sddm`
 
 # Utilities
 ## Manual
