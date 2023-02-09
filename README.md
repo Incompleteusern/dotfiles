@@ -229,4 +229,4 @@ TODO:
 - Steam | `steam`
 - Vs Code | `visual-studio-code-bin`
 - VPN | `openvpn protonvpn-gui`
-- Spotify |`spotify spotifywm spotify-adblock-git spicetify`
+- Spotify |`spotify-edge spotifywm spotify-adblock-git spicetify`
