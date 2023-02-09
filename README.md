@@ -171,7 +171,6 @@ TODO:
 - Polkit | `polkit-kde-agent` 
 
 ## Manual
-Do this https://wiki.archlinux.org/title/SDDM#KDE_/_KWin to have the greeter and session be on the same tty
 
 ## Auto
 - Compositor | `hyprland-git` 
