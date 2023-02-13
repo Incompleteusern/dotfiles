@@ -28,3 +28,6 @@ cp -r  ~/.fonts ${BASEDIR}/
 cp  /etc/sddm.conf.d/sddm.conf ${BASEDIR}/.sddm
 cp  /usr/share/wayland-sessions/hyprland-wrapped.desktop ${BASEDIR}/.sddm
 cp -r /usr/share/sddm/themes/sugar-dark ${BASEDIR}/.sddm
+
+cp -r ~/.texmf ${BASEDIR}/.texmf/
+cp -r ~/.zshenv ${BASEDIR}/

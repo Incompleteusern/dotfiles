@@ -1,7 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/scripts:$HOME/bin:/usr/local/bin:$HOME/.poetry/bin:$HOME/.local/bin:$PATH:$HOME/gcc-arm-none-eabi-8-2019-q3-update/bin/
-
 export GPG_TTY=$TTY
+export PYTHONPATH=$HOME/scripts:$PYTHONPATH
+export TEXMFHOME=$HOME/.texmf
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -106,14 +107,14 @@ eval $(thefuck --alias)
 
 alias cat=bat
 alias ls="exa -lah --group-directories-first"
-alias find=fd
 alias fuzzy=fzf
+alias pipesh="pipes.sh -r 0 -R -K -f 100"
 alias ping=gping
 alias hibernate="systemctl hibernate"
 alias sleep="systemctl suspend"
 alias restart="reboot now"
 alias sl="sl -e"
-
+alias von="python -m von"
 # Get this to stop being so annoying
 #alias rm="rm -i"
 alias shutdown="shutdown now"
