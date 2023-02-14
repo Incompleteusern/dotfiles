@@ -23,6 +23,8 @@ I don't know how well `init.sh` works right now, run anything here at your own r
 ## TODO
 
 TODO:
+- Make `makepkg` multithread - https://unix.stackexchange.com/questions/268221/use-multi-threaded-make-by-default
+- Separate package installation and copying for `init` to be more stable
 - Swap hibernation encryption support based on https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6#known-issues
 - Learn tmux
 - TODO renable secure boot support
@@ -51,7 +53,7 @@ TODO:
 ### Pre-Boot
 - Standard installation
 
-# THE BELOW IS UNTESTED SINCE I AM LAZY
+# THE BELOW IS UNTESTED SINCE I AM LAZY RUN AT YOUR OWN (VERY BIG) RISK
 
 - Disable Secure Boot/Check it is disabled
   - `# bootctl status | grep "Secure Boot"`
