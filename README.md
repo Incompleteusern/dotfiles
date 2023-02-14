@@ -24,6 +24,7 @@ I don't know how well `init.sh` works right now, run anything here at your own r
 
 TODO:
 - Make `makepkg` multithread - https://unix.stackexchange.com/questions/268221/use-multi-threaded-make-by-default
+- https://wiki.archlinux.org/title/Bash/Prompt_customization, document gamastep and git-delta
 - Separate package installation and copying for `init` to be more stable
 - Swap hibernation encryption support based on https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6#known-issues
 - Learn tmux
