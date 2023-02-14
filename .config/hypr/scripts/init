@@ -24,3 +24,6 @@ swayidle -w before-sleep '. $HOME/scripts/lock'
 
 # kwallet
 kwalletd5 &
+
+# gammastep
+gammastep &
