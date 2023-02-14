@@ -116,8 +116,7 @@ yay -S firefox
 yay -S prismlauncher steam visual-studio-code-bin
 
 # discord
-yay -S discord-electron-bin discord-screenaudio betterdiscordctl-git discord-update-skip-git
-betterdiscordctl install
+yay -S discord-electron-bin discord-screenaudio discord-update-skip-git
 
 # spotify
 yay -S spotify spotifywm spotify-adblock-git spicetify
