@@ -223,16 +223,16 @@ TODO:
 # Applications
 
 ## Manual
-- Use catpuccin mocha lavender for firefox, vscode, bd, and spicetify. Add https://github.com/spicetify/spicetify-marketplace
+- Use catpuccin mocha lavender for firefox, vscode. Add https://github.com/spicetify/spicetify-marketplace
   - TODO automate that shit
 - Use `cups` for printer stuff.
 - Enable firefox hardware acceleration, reopen tabs on close
 
 ## Auto
 - Firefox | `firefox`
-- Discord | `discord-electron-bin discord-screenaudio betterdiscordctl discord-update-skip-git`
+- Discord | `discord-electron-bin discord-screenaudio discord-update-skip-git`
 - Prism Launcher | `prismlauncher`
 - Steam | `steam`
 - Vs Code | `visual-studio-code-bin`
 - VPN | `openvpn protonvpn-gui`
-- Spotify |`spotify-edge spotifywm spotify-adblock-git spicetify`
+- Spotify |`spotify-edge spotifywm spotify-adblock-git`
