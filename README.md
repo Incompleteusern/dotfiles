@@ -26,18 +26,16 @@ TODO:
 - Make `makepkg` multithread - https://unix.stackexchange.com/questions/268221/use-multi-threaded-make-by-default
 - https://wiki.archlinux.org/title/Bash/Prompt_customization, document gamastep and git-delta
 - Separate package installation and copying for `init` to be more stable
-- Swap hibernation encryption support based on https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6#known-issues
+- Customize git-delta
 - Learn tmux
-- TODO renable secure boot support
 - Change mouse or something idk
-- Do redshift alternative
-- Customize oh-my-fsh more
+- Customize oh-my-zsh more
 - Configs for desktop
   - Wallpaper script time!!!!
   - EWW
     - Add customization if mute
     - Finish spotify integration using --follow
-- Write a python script to handle bundling other repos in this
+- Finish handling bundling other repos in this
 - Screensharing, App Launchers, App Clients, Color Pickers
     - aka Configure Rest of Desktop
 - Customize firefox + fork mozilla? 
@@ -45,6 +43,8 @@ TODO:
 - Add disk encryption
   - https://wiki.archlinux.org/title/Dm-crypt/Device_encryption with sector-size
   - Do this in February when wifi-adapter is natively supported by udev
+- Swap hibernation encryption support based on https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6#known-issues
+- TODO renable secure boot support
 - AI gen might be fun for wall paper
 - dhcpcd, blueman and wpa_supplicant?
 
