@@ -40,6 +40,9 @@ cat ILoveCandy >> /etc/pacman.conf
 cp -R ${BASEDIR}/.config/ ~/.config/
 cp -R ${BASEDIR}/scripts/ ~/scripts/
 cp -R ${BASEDIR}/.zshrc ~/.zshrc
+cp -R ${BASEDIR}/.zshenv ~/.zshenv
+cp -R ${BASEDIR}/.texmf ~/.texmf/
+
 cp -R ${BASEDIR}/.fonts ~/.fonts
 
 sudo mkdir --parents /etc/sddm.conf.d
@@ -113,7 +116,7 @@ yay -S firefox
 yay -S prismlauncher steam visual-studio-code-bin
 
 # discord
-yay -S discord-electron-bin discord-screenaudio betterdiscordctl
+yay -S discord-electron-bin discord-screenaudio betterdiscordctl-git discord-update-skip-git
 betterdiscordctl install
 
 # spotify
