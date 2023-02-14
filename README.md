@@ -47,6 +47,10 @@ TODO:
 
 ## Manual
 ### Pre-Boot
+- Standard installation
+
+# THE BELOW IS UNTESTED SINCE I AM LAZY
+
 - Disable Secure Boot/Check it is disabled
   - `# bootctl status | grep "Secure Boot"`
 - Right now, temporary android tether to set up and get driver rtw89 manually
@@ -224,7 +228,7 @@ TODO:
 
 ## Auto
 - Firefox | `firefox`
-- Discord | `discord-electron-bin discord-screenaudio betterdiscordctl`
+- Discord | `discord-electron-bin discord-screenaudio betterdiscordctl discord-update-skip-git`
 - Prism Launcher | `prismlauncher`
 - Steam | `steam`
 - Vs Code | `visual-studio-code-bin`
