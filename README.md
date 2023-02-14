@@ -223,7 +223,7 @@ TODO:
 # Applications
 
 ## Manual
-- Use catpuccin mocha lavender for firefox, vscode. Add https://github.com/spicetify/spicetify-marketplace
+- Use catpuccin mocha lavender for firefox, vscode, spicetify. Add https://github.com/spicetify/spicetify-marketplace
   - TODO automate that shit
 - Use `cups` for printer stuff.
 - Enable firefox hardware acceleration, reopen tabs on close
