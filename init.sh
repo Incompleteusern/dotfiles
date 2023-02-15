@@ -55,7 +55,7 @@ sudo cp ${BASEDIR}/.sddm/sugar-dark /usr/share/sddm/themes
 # DESKTOP
 
 # hyprland and friends
-yay -S hyprland-git xdg-utils
+yay -S hyprland-git xdg-utils 
 
 # bars
 yay -S eww-wayland-git
@@ -84,13 +84,16 @@ yay -S brightnessctl pamixer
 # pipewire
 yay -S pipewire wireplumber pipewire-jack pipewire-pulse
 
+# color temperature
+yay -S gammastep-git
+
 # UTILITIES
 
 # fonts
 yay -S ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git ttf-symbola
 
 # command line
-yay -S bat duf exa fzf fd httpie gping-git
+yay -S bat duf exa fzf fd httpie gping-git git-delta
 
 # system info
 yay -S htop neofetch-git duf
@@ -105,7 +108,7 @@ systemctl enable NetworkManager-dispatcher.service
 systemctl mask systemd-rfkill.service systemd-rfkill.socket
 
 # SILLY
-yay -S neofetch-git cbonsai donut.c cmatrix-git sl
+yay -S neofetch-git cbonsai donut.c cmatrix-git sl 
 
 # APPLICATIONS
 
