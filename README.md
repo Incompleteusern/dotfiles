@@ -142,7 +142,6 @@ TODO:
 - Mirror management | `reflector`
   - Set US as country
   - Enable `reflector.timer`
-  - TODO automate that shit
 - Add user
   `# useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
 - Add wheel group to sudoers | `sudo`
