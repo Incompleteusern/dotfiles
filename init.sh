@@ -42,12 +42,12 @@ cp -R ${BASEDIR}/.texmf ~/.texmf/
 cp -R ${BASEDIR}/.fonts ~/.fonts
 
 # sddm
-sudo mkdir --parents /etc/sddm.conf.d
-sudo mkdir --parents /usr/share/wayland-sessions
-sudo mkdir --parents /usr/share/sddm/themes/
+mkdir --parents /etc/sddm.conf.d
+mkdir --parents /usr/share/wayland-sessions
+mkdir --parents /usr/share/sddm/themes/
 
-sudo cp ${BASEDIR}/.sddm/sddm.conf /etc/sddm.conf.d/sddm.conf
-sudo cp ${BASEDIR}/.sddm/hyprland-wrapped.dekstop /usr/share/wayland-sessions/hyprland-wrapped.desktop
+cp ${BASEDIR}/.sddm/sddm.conf /etc/sddm.conf.d/sddm.conf
+cp ${BASEDIR}/.sddm/hyprland-wrapped.dekstop /usr/share/wayland-sessions/hyprland-wrapped.desktop
 
 # power
 systemctl enable tlp.service 
@@ -57,11 +57,11 @@ systemctl mask systemd-rfkill.service systemd-rfkill.socket
 source sync.sh
 
 # enable plymouth mocha
-sudo plymouth-set-default-theme -R catppuccin-mocha
+plymouth-set-default-theme -R catppuccin-mocha
 
 # enable spicetify mocha
-sudo chmod 777 /opt/spotify
-sudo chmod 777 -R /opt/spotify/Apps
+chmod 777 /opt/spotify
+chmod 777 -R /opt/spotify/Apps
 
 spicetify backup
 spicetify config current_theme catppuccin-mocha

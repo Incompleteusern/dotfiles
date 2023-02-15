@@ -13,7 +13,8 @@
 These dotfiles come with three terrible scripts as of last updated:
 - `local.sh` which syncs local files into this github repo
 - `sync.sh` which syncs bundled github repos into local files
-- `init.sh` which installs the github repo into an arch install
+- `init.sh` which installs the github repo into an arch install, should be run as root
+- `initpackage.sh` which installs packages used
 
 I don't know how well `init.sh` works right now, run anything here at your own risk :)
 
