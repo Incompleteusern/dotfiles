@@ -160,7 +160,6 @@ TODO:
      $ git config --global user.email "$email"
      $ git config --global user.name "$name"
   ```
-  - TODO automate this
 - Run `init.sh`
 - Make closing lid initiate sleep in `/etc/systemd/logind.conf` with `HandleLidSwitch=suspend` if necessary
 - Make `makepkg` multithread - https://unix.stackexchange.com/questions/268221/use-multi-threaded-make-by-default
@@ -172,7 +171,7 @@ TODO:
 - zshrc | `zsh`
 - Pacman Utils | `paccache pacgraph`
 - Add local host to /etc/hosts
-  - TODO url link
+  - https://wiki.archlinux.org/title/Network_configuration#localhost_is_resolved_over_the_network
 
 # Desktop
 
@@ -180,6 +179,7 @@ TODO:
 - Polkit | `polkit-kde-agent` 
 
 ## Manual
+- Use catpuccin for `plymouth-git`, also add `sd-plymouth` when sd-encrypt actually used
 
 ## Auto
 - Compositor | `hyprland-git` 
