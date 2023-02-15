@@ -23,8 +23,7 @@ I don't know how well `init.sh` works right now, run anything here at your own r
 ## TODO
 
 TODO:
-- Make `makepkg` multithread - https://unix.stackexchange.com/questions/268221/use-multi-threaded-make-by-default
-- https://wiki.archlinux.org/title/Bash/Prompt_customization, document gamastep and git-delta
+- https://wiki.archlinux.org/title/Bash/Prompt_customization, document gamastep, plymouth and git-delta
 - Separate package installation and copying for `init` to be more stable
 - Customize git-delta
 - Learn tmux
@@ -164,6 +163,7 @@ TODO:
   - TODO automate this
 - Run `init.sh`
 - Make closing lid initiate sleep in `/etc/systemd/logind.conf` with `HandleLidSwitch=suspend` if necessary
+- Make `makepkg` multithread - https://unix.stackexchange.com/questions/268221/use-multi-threaded-make-by-default
 
 ## Auto
 - Enable Color, ILoveCandy and ParallelDownloads in /etc/pacman.conf
@@ -193,24 +193,27 @@ TODO:
 - Font Input | `fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx-gtk fcitx5-pinyin-zhwiki fcitx5-qt`
 - Session Locker | `swaylockd swaylock-effects-git swayidle-git`
 - Display Manager | `sddm`
+- Color Temperature | `gammastep-git`
 
 # Utilities
 ## Manual
 - Order Chinese as priority for Noto CJK
   - https://wiki.archlinux.org/title/Localization/Simplified_Chinese#Chinese_characters_displayed_as_variant_(Japanese)_glyphs
   - TODO automate that shit
+- `git-delta` install TODO automate
 
 ## Auto
 - Desktop Control | `brightnessctl`
-- fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git ttf-symbola`
+- Fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git ttf-symbola`
   - Set Chinese as font priority
-- screenshots | `grim slurp wl-clipboard jq` (grimblast)
-- cli
+- Screenshots | `grim slurp wl-clipboard jq` (grimblast)
+- Command Line
   - Replace cat | `bat`
   - Replace ls | `exa`
   - Replace find | `fzf`, `fd`
   - Requests | `httpie`
   - Ping | `gping-git`
+  - Git diff | `git-delta`
 - power | `tlp tlp-rdw`
 - spotify integration | `playerctl`
 - volume control | `pamixer`
