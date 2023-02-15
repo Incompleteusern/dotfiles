@@ -87,6 +87,9 @@ yay -S pipewire wireplumber pipewire-jack pipewire-pulse
 # color temperature
 yay -S gammastep-git
 
+# booting animation
+yay -S plymouth-git
+
 # UTILITIES
 
 # fonts
