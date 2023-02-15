@@ -194,6 +194,7 @@ TODO:
 - Session Locker | `swaylockd swaylock-effects-git swayidle-git`
 - Display Manager | `sddm`
 - Color Temperature | `gammastep-git`
+- Booting Animation | `plymouth-git`
 
 # Utilities
 ## Manual
