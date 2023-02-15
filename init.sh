@@ -44,6 +44,7 @@ cp -R ${BASEDIR}/.zshenv ~/.zshenv
 cp -R ${BASEDIR}/.texmf ~/.texmf/
 
 cp -R ${BASEDIR}/.fonts ~/.fonts
+cp ${BASEDIR}/reflector.conf ~/etc/xdg/reflector/reflector.conf
 
 sudo mkdir --parents /etc/sddm.conf.d
 sudo mkdir --parents /usr/share/wayland-sessions
