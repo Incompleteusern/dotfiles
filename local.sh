@@ -26,6 +26,7 @@ cp  ~/.zshrc ${BASEDIR}/
 cp -r  ~/.fonts ${BASEDIR}/
 
 cp  /etc/sddm.conf.d/sddm.conf ${BASEDIR}/.sddm
+cp  /etc/xdg/reflector/reflector.conf ${BASEDIR}/
 cp  /usr/share/wayland-sessions/hyprland-wrapped.desktop ${BASEDIR}/.sddm
 cp -r /usr/share/sddm/themes/sugar-dark ${BASEDIR}/.sddm
 
