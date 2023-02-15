@@ -5,13 +5,6 @@ USER = whoami
 
 # INSTALLATION
 
-# yay
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si 
-cd .. 
-rm -rf yay
-
 # zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 gcl https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -20,23 +13,26 @@ gcl https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/
 rm .bash_history .bash_logout .bash_profile .bashrc
 
 # pacman utils
-yay -S pacgraph
 systemctl enable paccache.timer
+
+systemctl enable reflector.timer
+cp ${BASEDIR}/reflector.conf ~/etc/xdg/reflector/reflector.conf
 
 # networkmanager
 echo "127.0.0.1        localhost" >> /etc/hosts
 echo "::1              localhost" >> /etc/hosts
 
+# Add colors, downloads, ILoveCandy to /etc/pacman.conf, enable multilib
+sed -i "/^#\(Color\|ParallelDownloads\|ILoveCandy\)/s/^#//" /etc/pacman.conf
+sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 
-# add ~/scripts to path
-echo "export PATH=\"${PATH}:/home/${USER}/scripts\"" >> ~/.zshrc
+# laptop sleep
+sed -iE 's/#HandleLidSwitch=suspend/HandleLidSwitch=suspend/' /etc/systemd/logind.conf
 
-# Add colors, downloads, ILoveCandy to /etc/pacman.conf 
-sed -i "s/#Color/Color" /etc/pacman.conf
-sed -i "s/#ParallelDownloads/ParallelDownloads" /etc/pacman.conf
-cat ILoveCandy >> /etc/pacman.conf
+# multithread makepkg
+echo "MAKEFLAGS=\"-j$(expr $(nproc) \+ 1)\"" >> /etc/makepkg.conf
 
-# Copy to .config
+# user stuff
 cp -R ${BASEDIR}/.config/ ~/.config/
 cp -R ${BASEDIR}/scripts/ ~/scripts/
 cp -R ${BASEDIR}/.zshrc ~/.zshrc
@@ -44,86 +40,57 @@ cp -R ${BASEDIR}/.zshenv ~/.zshenv
 cp -R ${BASEDIR}/.texmf ~/.texmf/
 
 cp -R ${BASEDIR}/.fonts ~/.fonts
-cp ${BASEDIR}/reflector.conf ~/etc/xdg/reflector/reflector.conf
 
+# sddm
 sudo mkdir --parents /etc/sddm.conf.d
 sudo mkdir --parents /usr/share/wayland-sessions
 sudo mkdir --parents /usr/share/sddm/themes/
+
 sudo cp ${BASEDIR}/.sddm/sddm.conf /etc/sddm.conf.d/sddm.conf
 sudo cp ${BASEDIR}/.sddm/hyprland-wrapped.dekstop /usr/share/wayland-sessions/hyprland-wrapped.desktop
-sudo cp ${BASEDIR}/.sddm/sugar-dark /usr/share/sddm/themes
-
-# DESKTOP
-
-# hyprland and friends
-yay -S hyprland-git xdg-utils 
-
-# bars
-yay -S eww-wayland-git
-
-# wallpaper
-yay -S swww-git
-
-# notifications
-yay -S dunst libnotify
-
-# session locker
-yay -S swaylockd swaylock-effects-git swayidle-git
-
-# font input
-yay -S fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx-gtk fcitx5-pinyin-zhwiki fcitx5-qt
-
-# app launcher thing
-yay -S rofi-lbonn-wayland-git papirus-icon-theme-git sif-git networkmanager-dmenu-git ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd
-
-# terminal
-yay -S alacritty-git
-
-# desktop utilities
-yay -S brightnessctl pamixer
-
-# pipewire
-yay -S pipewire wireplumber pipewire-jack pipewire-pulse
-
-# color temperature
-yay -S gammastep-git
-
-# booting animation
-yay -S plymouth-git
-
-# UTILITIES
-
-# fonts
-yay -S ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git ttf-symbola
-
-# command line
-yay -S bat duf exa fzf fd httpie gping-git git-delta
-
-# system info
-yay -S htop neofetch-git duf
-
-# screenshots
-yay -S grim slurp wl-clipboard jq
 
 # power
-yay -S tlp tlp-rdw
 systemctl enable tlp.service 
 systemctl enable NetworkManager-dispatcher.service
 systemctl mask systemd-rfkill.service systemd-rfkill.socket
 
-# SILLY
-yay -S neofetch-git cbonsai donut.c cmatrix-git sl 
+source sync.sh
 
-# APPLICATIONS
+# enable plymouth mocha
+sudo plymouth-set-default-theme -R catppuccin-mocha
 
-# firefox - prefer pipewire-jack by earlier
-yay -S firefox 
+# enable spicetify mocha
+sudo chmod 777 /opt/spotify
+sudo chmod 777 -R /opt/spotify/Apps
 
-# others
-yay -S prismlauncher steam visual-studio-code-bin
+spicetify backup
+spicetify config current_theme catppuccin-mocha
+spicetify config color_scheme lavender
+spicetify config inject_css 1 replace_colors 1 overwrite_assets 1
+spicetify config extensions catppuccin-mocha.js
 
-# discord
-yay -S discord-electron-bin discord-screenaudio discord-update-skip-git
+# market place
+curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.sh | sh
 
-# spotify
-yay -S spotify spotifywm spotify-adblock-git spicetify
+# von
+#cd ~/scripts/
+#gcl https://github.com/Incompleteusern/von/
+
+cat <<EOT >> .gitconfig
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    line-numbers = true
+    side-by-side = true
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+EOT

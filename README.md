@@ -136,9 +136,6 @@ TODO:
   - `efibootmgr` can list and remove them as necessary
 
 ## Post-Boot
-- Mirror management | `reflector`
-  - Set US as country
-  - Enable `reflector.timer`
 - Add user
   `# useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
 - Add wheel group to sudoers | `sudo`
@@ -148,7 +145,7 @@ TODO:
      $ gh auth login
      $ ssh-keygen -t ed25519 -C "$email"; ssh-add ~/.ssh/id_ed25519
      $ gh ssh-key add ~/.ssh/id_ed25519.pub --title $hostname
-     $ git clone git@github.com:Incompleteusern/dotfiles.git
+     $ gcl git@github.com:Incompleteusern/dotfiles.git
      $ gpg --full-generate-key
      $ gpg --list-secret-keys --keyid-format=long
      $ git config --global user.signingkey $KEY 
@@ -156,18 +153,21 @@ TODO:
      $ git config --global user.email "$email"
      $ git config --global user.name "$name"
   ```
-- Run `init.sh`
-- Make closing lid initiate sleep in `/etc/systemd/logind.conf` with `HandleLidSwitch=suspend` if necessary
-- Make `makepkg` multithread - https://unix.stackexchange.com/questions/268221/use-multi-threaded-make-by-default
+- Run `initpackage.sh` and then `init.sh`
 
 ## Auto
-- Enable Color, ILoveCandy and ParallelDownloads in /etc/pacman.conf
 - yay | `base-devel`
-- add ~/script to path
+- Mirror management | `reflector`
+  - Set US as country
+  - Enable `reflector.timer`
+- Enable Color, ILoveCandy, multilib and ParallelDownloads in /etc/pacman.conf
+- Make `makepkg` multithread
+  - https://unix.stackexchange.com/questions/268221/use-multi-threaded-make-by-default
 - zshrc | `zsh`
 - Pacman Utils | `paccache pacgraph`
 - Add local host to /etc/hosts
   - https://wiki.archlinux.org/title/Network_configuration#localhost_is_resolved_over_the_network
+- Make closing lid initiate sleep in `/etc/systemd/logind.conf` with `HandleLidSwitch=suspend` if necessary
 
 # Desktop
 
@@ -175,7 +175,11 @@ TODO:
 - Polkit | `polkit-kde-agent` 
 
 ## Manual
-- Use catpuccin for `plymouth-git`, also add `sd-plymouth` when sd-encrypt actually used
+- Add `sd-plymouth` hook when sd-encrypt actually used
+  - Configure `/etc/mkinitcpio.conf`, and add `systemd keyboard sd-vconsole sd-encrypt` presence
+  ```
+    HOOKS=(base udev systemd sd-plymouth keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
+  ```
 
 ## Auto
 - Compositor | `hyprland-git` 
@@ -207,10 +211,10 @@ TODO:
 - Command Line
   - Replace cat | `bat`
   - Replace ls | `exa`
-  - Replace find | `fzf`, `fd`
+  - Find | `fzf`, `fd`
   - Requests | `httpie`
   - Ping | `gping-git`
-  - Git diff | `git-delta`
+  - Git diff | `git-delta-git`
 - power | `tlp tlp-rdw`
 - spotify integration | `playerctl`
 - volume control | `pamixer`
@@ -226,7 +230,7 @@ TODO:
 # Applications
 
 ## Manual
-- Use catpuccin mocha lavender for firefox, vscode, spicetify. Add https://github.com/spicetify/spicetify-marketplace
+- Use catpuccin mocha lavender for firefox, vscode, spicetify.
   - TODO automate that shit
 - Use `cups` for printer stuff.
 - Enable firefox hardware acceleration, reopen tabs on close

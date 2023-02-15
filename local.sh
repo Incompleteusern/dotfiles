@@ -7,7 +7,6 @@ rm -rf ${BASEDIR}/.zshrc
 
 mkdir ${BASEDIR}/.config
 
-
 # Copy files
 cp -r ~/.config/alacritty ${BASEDIR}/.config/
 cp -r ~/.config/dunst ${BASEDIR}/.config/
@@ -20,15 +19,13 @@ cp -r ~/.config/networkmanager-dmenu ${BASEDIR}/.config/
 cp -r ~/.config/eww ${BASEDIR}/.config/
 cp -r ~/.config/fcitx5 ${BASEDIR}/.config/
 cp -r ~/.config/htop ${BASEDIR}/.config/
-
+cp -r ~/.texmf ${BASEDIR}/
 cp -r  ~/scripts/ ${BASEDIR}/
-cp  ~/.zshrc ${BASEDIR}/
 cp -r  ~/.fonts ${BASEDIR}/
+
+cp ~/.zshenv ${BASEDIR}/
+cp  ~/.zshrc ${BASEDIR}/
 
 cp  /etc/sddm.conf.d/sddm.conf ${BASEDIR}/.sddm
 cp  /etc/xdg/reflector/reflector.conf ${BASEDIR}/
 cp  /usr/share/wayland-sessions/hyprland-wrapped.desktop ${BASEDIR}/.sddm
-cp -r /usr/share/sddm/themes/sugar-dark ${BASEDIR}/.sddm
-
-cp -r ~/.texmf ${BASEDIR}/
-cp -r ~/.zshenv ${BASEDIR}/
