@@ -190,13 +190,18 @@ TODO:
     ```
     SHELL=/usr/bin/zsh
     PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-    */30 * * * * source ~/.env; export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; bash ~/.scripts/wallpaper/wallpaper.sh
-    * * * * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/>
-    0 * * * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/>
-    0 0 * * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/>
-    0 0 1 * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/>
-    0 0 1 * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/>
+    */15 * * * * source ~/.env; export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; bash ~/.scripts/wallpaper/wallpaper.sh
+    * * * * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update clock_minute="$(date +\%M)"
+    0 * * * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update clock_time="$(date +\%I)"
+    0 0 * * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update clock_date="$(date '+%m/%d')"; eww -c ~/.config/eww/bar update calendar_day="$(date '+%d')"
+    0 0 1 * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update calendar_month="$(date '+%m')"
+    0 0 1 * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update calendar_year="$(date '+%Y')"
 
+    @reboot export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update clock_minute="$(date +\%M)"
+    @reboot export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update clock_time="$(date +\%I)"
+    @reboot export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update clock_date="$(date '+%m/%d')"; eww -c ~/.config/eww/bar update calendar_day="$(date '+%d')"
+    @reboot XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update calendar_month="$(date '+%m')"
+    @reboot export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update calendar_year="$(date '+%Y')"
     ```
 
 ## Auto
