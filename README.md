@@ -180,6 +180,12 @@ TODO:
   ```
     HOOKS=(base udev systemd sd-plymouth keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
   ```
+- Enable wallpaper timer
+  - ```
+    systemctl enable cronie.service
+    crontab -e
+    */30 * * * * ~/.scripts/wallpaper/wallpaper.sh
+    ```
 
 ## Auto
 - Compositor | `hyprland-git` 
@@ -208,6 +214,7 @@ TODO:
 - Fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git ttf-symbola`
   - Set Chinese as font priority
 - Screenshots | `grim slurp wl-clipboard jq` (grimblast)
+- Scheduler | `cronie`
 - Command Line
   - Replace cat | `bat`
   - Replace ls | `exa`
