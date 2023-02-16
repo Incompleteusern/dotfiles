@@ -185,7 +185,10 @@ TODO:
   - ```
     systemctl enable cronie.service
     crontab -e
-    */30 * * * * ~/.scripts/wallpaper/wallpaper.sh
+    ```
+  - Then
+    ```
+    */30 * * * * export WAYLAND_DISPLAY=wayland-0; source /home/royce/.scripts/wallpaper/wallpaper.sh
     ```
 
 ## Auto
