@@ -24,9 +24,9 @@ sudo cp -r sddm-sugar-dark /usr/share/sddm/themes/
 rm -rf sddm-sugar-dark
 
 # Update wallpaper
-git clone https://github.com/Incompleteusern/wallpaper
-cp wallpaper.sh ~/scripts/wallpaper.sh 
-cp set-wallpaper.py ~/scripts/set-wallpaper.py
+git clone https://github.com/Incompleteusern/wallpaper && cd wallpaper
+cp wallpaper.sh ~/scripts/wallpaper/wallpaper.sh 
+cp set-wallpaper.py ~/scripts/wallpaper/set-wallpaper.py
 rm -rf wallpaper
 
 # von

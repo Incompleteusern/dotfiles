@@ -2,7 +2,7 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Remove old
 rm -rf ${BASEDIR}/.config
-rm -rf ${BASEDIR}/scripts
+rm -rf ${BASEDIR}/.scripts
 rm -rf ${BASEDIR}/.zshrc
 
 mkdir ${BASEDIR}/.config
