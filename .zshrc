@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 pathmunge () {
-  if ! echo $PATH | egrep -q "(^|:)$1($|:)" ; then
+  if ! echo $PATH | grep -E -q "(^|:)$1($|:)" ; then
     if [ "$2" = "after" ] ; then
       PATH=$PATH:$1
     else
@@ -10,11 +10,11 @@ pathmunge () {
 }
 
 
-pathmunge $HOME/.scripts
-pathmunge $HOME/bin:
-pathmunge $HOME/.poetry/bin
-pathmunge $HOME/.local/bin
-pathmunge $HOME/gcc-arm-none-eabi-8-2019-q3-update/bin/
+pathmunge $HOME/.scripts after
+pathmunge $HOME/bin after
+pathmunge $HOME/.poetry/bin after
+pathmunge $HOME/.local/bin after
+pathmunge $HOME/gcc-arm-none-eabi-8-2019-q3-update/bin/ after
 export GPG_TTY=$TTY
 export PYTHONPATH=$HOME/.scripts:$PYTHONPATH
 
