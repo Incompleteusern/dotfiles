@@ -12,7 +12,7 @@
 
 These dotfiles come with three terrible scripts as of last updated:
 - `local.sh` which syncs local files into this github repo
-- `sync.sh` which syncs bundled github repos into local files
+- `sync.sh` which syncs bundled github repos into local files, note that this contains repos I have forked 
 - `init.sh` which installs the github repo into an arch install, should be run as root
 - `initpackage.sh` which installs packages used
 
@@ -181,27 +181,25 @@ TODO:
   ```
     HOOKS=(base udev systemd sd-plymouth keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
   ```
-- Cronjob for wall paper timer and eww
+- Fcronjob for wall paper timer and eww
   - ```
-    systemctl enable cronie.service
-    crontab -e
+    systemctl enable fcron.service
+    systemctl enable fcrontimer.service
+    fcrontab -e
     ```
   - Then (TODO this is terrible)
     ```
     SHELL=/usr/bin/zsh
     PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-    */15 * * * * source ~/.env; export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; bash ~/.scripts/wallpaper/wallpaper.sh
-    * * * * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update clock_minute="$(date +\%M)"
-    0 * * * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update clock_time="$(date +\%I)"
-    0 0 * * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update clock_date="$(date '+%m/%d')"; eww -c ~/.config/eww/bar update calendar_day="$(date '+%d')"
-    0 0 1 * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update calendar_month="$(date '+%m')"
-    0 0 1 1 * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update calendar_year="$(date '+%Y')"
+    XDG_RUNTIME_DIR=/run/user/1000
+    WAYLAND_DISPLAY=wayland-1
+    &bootrun */15 * * * * source ~/.env; bash ~/.scripts/wallpaper/wallpaper.sh
 
-    @reboot export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update clock_minute="$(date +\%M)"
-    @reboot export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update clock_time="$(date +\%I)"
-    @reboot export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update clock_date="$(date '+%m/%d')"; eww -c ~/.config/eww/bar update calendar_day="$(date '+%d')"
-    @reboot XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update calendar_month="$(date '+%m')"
-    @reboot export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/eww/bar update calendar_year="$(date '+%Y')"
+    &bootrun * * * * * eww -c ~/.config/eww/bar update clock_minute="$(date +\%M)"
+    &bootrun 0 * * * * eww -c ~/.config/eww/bar update clock_time="$(date +\%I)"
+    &bootrun 0 0 * * * eww -c ~/.config/eww/bar update clock_date="$(date '+%m/%d')"; eww -c ~/.config/eww/bar update calendar_day="$(date '+%d')"
+    &bootrun 0 0 1 * * eww -c ~/.config/eww/bar update calendar_month="$(date '+%m')"
+    &bootrun 0 0 1 1 * eww -c ~/.config/eww/bar update calendar_year="$(date '+%Y')"
     ```
 
 ## Auto
