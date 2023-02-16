@@ -1,16 +1,14 @@
 #!/usr/bin/bash
 
-export GPG_TTY=$(tty)
-
 # notifications
 dunst &
 
 # wallpaper
 swww init
-source $HOME/,scripts/wallpaper/wallpaper.sh &
+bash $HOME/.scripts/wallpaper/wallpaper.sh &
 
 # eww
-source $HOME/.config/eww/launch_bar
+bash $HOME/.config/eww/launch_bar
 
 # goofy ah protonvpn shit - see https://www.reddit.com/r/ProtonVPN/comments/vgki46/connecting_to_proton_vpn_stuck_in_arch_linux_with/
 gnome-keyring-daemon --start
