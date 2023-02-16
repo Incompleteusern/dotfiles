@@ -35,7 +35,7 @@ yay -S swaylockd swaylock-effects-git swayidle-git
 yay -S fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx-gtk fcitx5-pinyin-zhwiki fcitx5-qt
 
 # app launcher thing
-yay -S rofi-lbonn-wayland-git papirus-icon-theme-git sif-git networkmanager-dmenu-git ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd
+yay -S rofi-lbonn-wayland-git papirus-icon-theme-git sif-git networkmanager-dmenu-git
 
 # terminal
 yay -S alacritty-git
@@ -55,10 +55,10 @@ yay -S plymouth-git
 # UTILITIES
 
 # fonts
-yay -S ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git ttf-symbola
+yay -S ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd
 
 # command line
-yay -S bat duf exa fzf fd httpie gping-git git-delta-git
+yay -S bat duf exa fzf fd httpie gping-git git-delta-git cronie
 
 # system info
 yay -S htop neofetch-git duf
