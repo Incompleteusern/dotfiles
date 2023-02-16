@@ -188,7 +188,10 @@ TODO:
     ```
   - Then
     ```
-    */30 * * * * export WAYLAND_DISPLAY=wayland-0; source /home/royce/.scripts/wallpaper/wallpaper.sh
+    SHELL=/usr/bin/zsh
+    PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+    */30 * * * * source ~/.env; export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; bash ~/.scripts/wallpaper/wallpaper.sh
+
     ```
 
 ## Auto
