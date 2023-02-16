@@ -190,13 +190,13 @@ TODO:
     PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
     XDG_RUNTIME_DIR=/run/user/1000
     WAYLAND_DISPLAY=wayland-1
-    &bootrun */15 * * * * source ~/.env; bash ~/.scripts/wallpaper/wallpaper.sh
+    &runatreboot */15 * * * * source ~/.env; bash ~/.scripts/wallpaper/wallpaper.sh
 
-    &bootrun * * * * * eww -c ~/.config/eww/bar update clock_minute="$(date +\%M)"
-    &bootrun 0 * * * * eww -c ~/.config/eww/bar update clock_time="$(date +\%I)"
-    &bootrun 0 0 * * * eww -c ~/.config/eww/bar update clock_date="$(date '+%m/%d')"; eww -c ~/.config/eww/bar update calendar_day="$(date '+%d')"
-    &bootrun 0 0 1 * * eww -c ~/.config/eww/bar update calendar_month="$(date '+%m')"
-    &bootrun 0 0 1 1 * eww -c ~/.config/eww/bar update calendar_year="$(date '+%Y')"
+    &runatreboot * * * * * eww -c ~/.config/eww/bar update clock_minute="$(date +\%M)"
+    &runatreboot 0 * * * * eww -c ~/.config/eww/bar update clock_time="$(date +\%I)"
+    &runatreboot 0 0 * * * eww -c ~/.config/eww/bar update clock_date="$(date '+%m/%d')"; eww -c ~/.config/eww/bar update calendar_day="$(date '+%d')"
+    &runatreboot 0 0 1 * * eww -c ~/.config/eww/bar update calendar_month="$(date '+%m')"
+    &runatreboot 0 0 1 1 * eww -c ~/.config/eww/bar update calendar_year="$(date '+%Y')"
     ```
 
 ## Auto
