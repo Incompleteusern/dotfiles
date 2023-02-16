@@ -30,8 +30,7 @@ TODO:
   - EWW
     - Add customization if mute
     - Finish spotify integration using --follow
-    - Crontab to update timer every minute, hour, day
-- Finish handling bundling other repos in this
+    - CPU Info
 - Screensharing, App Launchers, App Clients, Color Pickers
     - aka Configure Rest of Desktop
 - Customize firefox + fork mozilla? 
@@ -172,7 +171,6 @@ TODO:
 # Desktop
 
 ## TODO
-- Polkit | `polkit-kde-agent` 
 
 ## Manual
 - Add `sd-plymouth` hook when sd-encrypt actually used
@@ -202,6 +200,7 @@ TODO:
     ```
 
 ## Auto
+- Polkit | `polkit-kde-agent` 
 - Compositor | `hyprland-git` 
 - Wallpapers | `swww-git` 
 - Notification System | `dunst libnotify` 
@@ -221,7 +220,6 @@ TODO:
 - Order Chinese as priority for Noto CJK
   - https://wiki.archlinux.org/title/Localization/Simplified_Chinese#Chinese_characters_displayed_as_variant_(Japanese)_glyphs
   - TODO automate that shit
-- `git-delta` install TODO automate
 
 ## Auto
 - Desktop Control | `brightnessctl`
