@@ -7,9 +7,9 @@ USER = whoami
 
 # zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-gcl https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-gcl https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-gcl https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
 rm .bash_history .bash_logout .bash_profile .bashrc
 
 # fstrim
@@ -37,7 +37,7 @@ echo "MAKEFLAGS=\"-j$(expr $(nproc) \+ 1)\"" >> /etc/makepkg.conf
 
 # user stuff
 cp -R ${BASEDIR}/.config/ ~/.config/
-cp -R ${BASEDIR}/scripts/ ~/scripts/
+cp -R ${BASEDIR}/.scripts/ ~/.scripts/
 cp -R ${BASEDIR}/.zshrc ~/.zshrc
 cp -R ${BASEDIR}/.zshenv ~/.zshenv
 cp -R ${BASEDIR}/.texmf ~/.texmf/
@@ -75,11 +75,12 @@ spicetify config extensions catppuccin-mocha.js
 # market place
 curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.sh | sh
 
-# von
-#cd ~/scripts/
-#gcl https://github.com/Incompleteusern/von/
+cd ~/.scripts/
 
-cat <<EOT >> .gitconfig
+# von
+#git clone https://github.com/Incompleteusern/von/
+
+cat <<EOT >> ~/.gitconfig
 [core]
     pager = delta
 

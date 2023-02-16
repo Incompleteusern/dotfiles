@@ -1,8 +1,4 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/scripts:$HOME/bin:/usr/local/bin:$HOME/.poetry/bin:$HOME/.local/bin:$PATH:$HOME/gcc-arm-none-eabi-8-2019-q3-update/bin/
-export GPG_TTY=$TTY
-export PYTHONPATH=$HOME/scripts:$PYTHONPATH
-export TEXMFHOME=$HOME/.texmf
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -73,9 +69,12 @@ ZSH_THEME="cloud"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
+if [[ -f "$HOME/.env" ]]; then
+    source $HOME/.env
+fi
 
 # User configuration
 
@@ -115,6 +114,6 @@ alias sleep="systemctl suspend"
 alias restart="reboot now"
 alias sl="sl -e"
 alias von="python -m von"
-# Get this to stop being so annoying
-#alias rm="rm -i"
+alias rm="rm -i"
+alias mv="mv -i"
 alias shutdown="shutdown now"
