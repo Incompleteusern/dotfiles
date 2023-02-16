@@ -19,11 +19,8 @@ yay -S pacgraph
 # hyprland and friends
 yay -S hyprland-git xdg-utils 
 
-# bars
-yay -S eww-wayland-git
-
-# wallpaper
-yay -S swww-git
+# bars, wallpaper
+yay -S eww-wayland-git swww-git
 
 # notifications
 yay -S dunst libnotify
@@ -51,6 +48,9 @@ yay -S gammastep-git
 
 # booting animation
 yay -S plymouth-git
+
+# polkit
+yay -S polkit-kde-agent
 
 # UTILITIES
 
