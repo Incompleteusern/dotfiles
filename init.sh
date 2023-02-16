@@ -51,6 +51,7 @@ mkdir --parents /usr/share/sddm/themes/
 
 cp ${BASEDIR}/.sddm/sddm.conf /etc/sddm.conf.d/sddm.conf
 cp ${BASEDIR}/.sddm/hyprland-wrapped.dekstop /usr/share/wayland-sessions/hyprland-wrapped.desktop
+cp ${BASEDIR}/wrappedhl /usr/local/share/
 
 # power
 systemctl enable tlp.service 

@@ -1,5 +1,20 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.scripts:$HOME/bin:/usr/local/bin:$HOME/.poetry/bin:$HOME/.local/bin:$PATH:$HOME/gcc-arm-none-eabi-8-2019-q3-update/bin/
+pathmunge () {
+  if ! echo $PATH | egrep -q "(^|:)$1($|:)" ; then
+    if [ "$2" = "after" ] ; then
+      PATH=$PATH:$1
+    else
+      PATH=$1:$PATH
+    fi
+  fi
+}
+
+
+pathmunge $HOME/.scripts
+pathmunge $HOME/bin:
+pathmunge $HOME/.poetry/bin
+pathmunge $HOME/.local/bin
+pathmunge $HOME/gcc-arm-none-eabi-8-2019-q3-update/bin/
 export GPG_TTY=$TTY
 export PYTHONPATH=$HOME/.scripts:$PYTHONPATH
 
