@@ -21,9 +21,8 @@ I don't know how well `init.sh` works right now, run anything here at your own r
 ## TODO
 
 TODO:
-- https://wiki.archlinux.org/title/Bash/Prompt_customization, document gamastep, plymouth and git-delta
-- Separate package installation and copying for `init` to be more stable
-- Customize git-delta
+- https://wiki.archlinux.org/title/Bash/Prompt_customization
+- cronie document and wallpaper
 - Learn tmux
 - Change mouse or something idk
 - Customize oh-my-zsh more
