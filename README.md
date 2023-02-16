@@ -32,6 +32,7 @@ TODO:
   - EWW
     - Add customization if mute
     - Finish spotify integration using --follow
+    - Crontab to update timer every minute, hour, day
 - Finish handling bundling other repos in this
 - Screensharing, App Launchers, App Clients, Color Pickers
     - aka Configure Rest of Desktop
