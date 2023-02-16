@@ -1,3 +1,4 @@
+from multiprocessing import ProcessError
 import gi, subprocess, time, random, os, requests
 gi.require_version('Geoclue', '2.0')
 from gi.repository import Geoclue
@@ -106,13 +107,17 @@ def find_file():
 img_file = find_file()
 
 if img_file != None: # hacky way to not change :)
-    subprocess.run(
-        [
-            "swww",
-            "img",
-            "--transition-type",
-            "center",
-            str(img_file),
-        ],
-        check=True,
-    )
+    try:
+        subprocess.run(
+            [
+                "swww",
+                "img",
+                "--transition-type",
+                "center",
+                str(img_file),
+            ],
+            capture_output=True,
+            check=True,
+        )
+    except subprocess.CalledProcessError as e:
+        print(e.stderr)

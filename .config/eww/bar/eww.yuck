@@ -18,9 +18,9 @@
 
 (defvar eww "eww -c $HOME/.config/eww/bar")
 
-(defpoll COL_WLAN :interval "5s" "~/.config/eww/bar/scripts/wifi --COL")
-(defpoll ESSID_WLAN :interval "5s" "~/.config/eww/bar/scripts/wifi --ESSID")
-(defpoll WLAN_ICON :interval "5s" "~/.config/eww/bar/scripts/wifi --ICON")
+(defpoll COL_WLAN :interval "3s" "~/.config/eww/bar/scripts/wifi --COL")
+(defpoll ESSID_WLAN :interval "3s" "~/.config/eww/bar/scripts/wifi --ESSID")
+(defpoll WLAN_ICON :interval "3s" "~/.config/eww/bar/scripts/wifi --ICON")
 
 (defpoll song :interval "3s" "~/.config/eww/bar/scripts/music_info --song")
 (defpoll song_artist :interval "3s"  "~/.config/eww/bar/scripts/music_info --artist")
@@ -29,12 +29,12 @@
 (defpoll song_status :interval "3s"  "~/.config/eww/bar/scripts/music_info --status")
 (defpoll cover_art :interval "10s"  "~/.config/eww/bar/scripts/music_info --cover")
 
-(defpoll clock_time :interval "1m" "date +\%I")
-(defpoll clock_minute :interval "1s" "date +\%M")
-(defpoll clock_date :interval "1min" "date '+%m/%d'")
-(defpoll calendar_day :interval "1min" "date '+%d'")
-(defpoll calendar_month :interval "1min" "date '+%m'")
-(defpoll calendar_year :interval "1min" "date '+%Y'")
+;; (defpoll clock_time :interval "1m" "date +\%I")
+;; (defpoll clock_minute :interval "1s" "date +\%M")
+;; (defpoll clock_date :interval "1min" "date '+%m/%d'")
+;; (defpoll calendar_day :interval "1min" "date '+%d'")
+;; (defpoll calendar_month :interval "1min" "date '+%m'")
+;; (defpoll calendar_year :interval "1min" "date '+%Y'")
 
 ;; widgets
 
