@@ -23,7 +23,6 @@ I don't know how well `init.sh` works right now, run anything here at your own r
 TODO:
 - https://wiki.archlinux.org/title/Bash/Prompt_customization
 - Move .desktop to non user directory
-- cronie document and wallpaper
 - Learn tmux
 - Change mouse or something idk
 - Customize oh-my-zsh more
