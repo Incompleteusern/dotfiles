@@ -1,5 +1,5 @@
 [Desktop Entry]
 Name=Hyprland (Wrapped)
 Comment=An intelligent dynamic tiling Wayland compositor
-Exec=/home/royce/scripts/wrappedhl
+Exec=/home/royce/.scripts/wrappedhl
 Type=Application

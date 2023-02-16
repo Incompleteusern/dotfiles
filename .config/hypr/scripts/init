@@ -7,7 +7,7 @@ dunst &
 
 # wallpaper
 swww init
-source $HOME/scripts/wallpaper/wallpaper.sh &
+source $HOME/,scripts/wallpaper/wallpaper.sh &
 
 # eww
 source $HOME/.config/eww/launch_bar
@@ -20,7 +20,7 @@ nm-applet &
 fcitx5 &
 
 # swayidle
-swayidle -w before-sleep '. $HOME/scripts/lock' &
+swayidle -w before-sleep '. $HOME/.scripts/lock' &
 
 # kwallet
 kwalletd5 &
