@@ -181,7 +181,7 @@ TODO:
   ```
     HOOKS=(base udev systemd sd-plymouth keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
   ```
-- Enable wallpaper timer
+- Cronjob for wall paper timer and eww
   - ```
     systemctl enable cronie.service
     crontab -e
@@ -191,6 +191,11 @@ TODO:
     SHELL=/usr/bin/zsh
     PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
     */30 * * * * source ~/.env; export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; bash ~/.scripts/wallpaper/wallpaper.sh
+    * * * * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/>
+    0 * * * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/>
+    0 0 * * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/>
+    0 0 1 * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/>
+    0 0 1 * * export XDG_RUNTIME_DIR=/run/user/1000; export WAYLAND_DISPLAY=wayland-1; eww -c ~/.config/>
 
     ```
 
