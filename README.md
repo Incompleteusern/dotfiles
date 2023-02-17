@@ -201,12 +201,12 @@ TODO:
 
 ## Auto
 - Polkit | `polkit-kde-agent` 
-- Compositor | `hyprland-git` 
+- Compositor | `hyprland-git qt5-wayland qt6-wayland` 
 - Wallpapers | `swww-git` 
 - Notification System | `dunst libnotify` 
 - Status Bars | `eww-wayland-git`
 - Pipewire | `pipewire wireplumber pipewire-pulse pipewire-jack `
-- XDG Integration | `xdg-utils xdg-desktop-portal-wlr`
+- XDG Integration | `xdg-utils xdg-desktop-portal-hyprland`
 - Terminal | `alacritty-git`
 - App Launcher | `rofi-lbonn-wayland-git papirus-icon-theme-git sif-git networkmanager-dmenu-git ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd` 
 - Font Input | `fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx-gtk fcitx5-pinyin-zhwiki fcitx5-qt`
