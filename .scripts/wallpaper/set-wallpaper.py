@@ -1,4 +1,5 @@
-from multiprocessing import ProcessError
+from multiprocessing import Process, Queue
+from re import T
 import gi, subprocess, time, random, os, requests
 gi.require_version('Geoclue', '2.0')
 from gi.repository import Geoclue
@@ -6,12 +7,26 @@ from pathlib import Path
 
 source_dir = Path(__file__).resolve().parent
 
-def lat_long():
+def geoclue(queue):
     clue = Geoclue.Simple.new_sync('something',Geoclue.AccuracyLevel.EXACT, None)
 
     location = clue.get_location()
-    return location.get_property('latitude'), location.get_property('longitude')
+    queue.put([location.get_property('latitude'), location.get_property('longitude')])
 
+
+def lat_long():
+    queue = Queue()
+
+    p = Process(target=geoclue, args=(queue,))
+    p.start()
+    p.join(timeout=30)
+    p.terminate()
+
+    if p.exitcode is None:
+        return None
+    else:
+        return queue.get()
+    
 def conditions(x):
     sunrise = x.get("sys").get("sunrise")
     sunset = x.get("sys").get("sunset")
@@ -62,13 +77,13 @@ def check_new(weather, when):
     return True
 
 
-def choose_img_file(dir):
+def choose_img_file(dir, default):
     if not os.path.isdir(dir):
         print (f"Directory {dir} does not exist, using default wall paper")
         return None
 
     n = 0
-    file = None
+    file = default
     for root, dirs, files in os.walk(dir):
         for name in files:
             if name.endswith(tuple([".jpg", ".png", ".webp"])):
@@ -80,28 +95,41 @@ def choose_img_file(dir):
 
 def find_file():
     default_file = os.path.join(source_dir, "wallpapers", "default.png")
-    lat, lon = lat_long()
 
     OWM_API_KEY = os.getenv("OWM_API_KEY")
     if OWM_API_KEY == None:
         print("Could not find api key, using default wallpaper")
         return default_file
 
-    x = requests.get(f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={OWM_API_KEY}')
+    try:
+        location = lat_long()
+    except Exception as e:
+        print(f"Exception while finding location, using default wallpaper: {e}")
+        return default_file
+
+    if (location is None):
+        print("Timed out while finding location, using default wallpaper")
+        return default_file
+
+    x = requests.get(f'https://api.openweathermap.org/data/2.5/weather?lat={location[0]}&lon={location[1]}&appid={OWM_API_KEY}')
     if x.status_code != 200:
         print("Failed to fetch weather information, using default wallpaper")
         return default_file
 
-    weather, when = conditions(x.json())
+    try:
+        weather, when = conditions(x.json())
+    except Exception as e:
+        print(f"Exception while parsing api response, using default wallpaper: {e}")
+        return default_file
 
     if not check_new(weather, when):
         print("Conditions have not changed since last check, keeping wall paper the same")
         return None
 
     # choose random file
-    chosen = choose_img_file(os.path.join(source_dir, "wallpapers", weather, when))
+    chosen = choose_img_file(os.path.join(source_dir, "wallpapers", weather, when), default_file)
     
-    return chosen or default_file
+    return chosen
 
 
 img_file = find_file()
