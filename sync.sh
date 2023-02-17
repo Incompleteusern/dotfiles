@@ -25,8 +25,8 @@ rm -rf sddm-sugar-dark
 
 # Update wallpaper
 git clone https://github.com/Incompleteusern/wallpaper && cd wallpaper
-cp wallpaper.sh ~/scripts/wallpaper/wallpaper.sh 
-cp set-wallpaper.py ~/scripts/wallpaper/set-wallpaper.py
+cp wallpaper.sh ~/.scripts/wallpaper/wallpaper.sh
+cp set-wallpaper.py ~/.scripts/wallpaper/set-wallpaper.py
 rm -rf wallpaper
 
 # von

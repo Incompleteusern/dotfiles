@@ -29,3 +29,5 @@ cp  ~/.zshrc ${BASEDIR}/
 cp  /etc/sddm.conf.d/sddm.conf ${BASEDIR}/.sddm
 cp  /etc/xdg/reflector/reflector.conf ${BASEDIR}/
 cp  /usr/share/wayland-sessions/hyprland-wrapped.desktop ${BASEDIR}/.sddm
+
+cp -r ~/.scripts/wallpaper/wallpapers ${BASEDIR}/

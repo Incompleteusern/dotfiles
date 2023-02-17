@@ -44,7 +44,9 @@ cp -R ${BASEDIR}/.texmf ~/.texmf/
 
 cp -R ${BASEDIR}/.fonts ~/.fonts
 
-# sddm
+mkdir --parents ~/.scripts/wallpaper
+cp -R ${BASEDIR}/wallpapers ~/.scripts/wallpaper/wallpapers
+
 mkdir --parents /etc/sddm.conf.d
 mkdir --parents /usr/share/wayland-sessions
 mkdir --parents /usr/share/sddm/themes/
@@ -54,7 +56,7 @@ cp ${BASEDIR}/.sddm/hyprland-wrapped.dekstop /usr/share/wayland-sessions/hyprlan
 cp ${BASEDIR}/wrappedhl /usr/local/share/
 
 # power
-systemctl enable tlp.service 
+systemctl enable tlp.service
 systemctl enable NetworkManager-dispatcher.service
 systemctl mask systemd-rfkill.service systemd-rfkill.socket
 
