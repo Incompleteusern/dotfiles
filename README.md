@@ -198,10 +198,11 @@ TODO:
     &runatreboot 0 0 1 * * eww -c ~/.config/eww/bar update calendar_month="$(date '+%m')"
     &runatreboot 0 0 1 1 * eww -c ~/.config/eww/bar update calendar_year="$(date '+%Y')"
     ```
+- TODO `copyq`
 
 ## Auto
 - Polkit | `polkit-kde-agent` 
-- Compositor | `hyprland-git qt5-wayland qt6-wayland` 
+- Compositor | `hyprland-git qt5-wayland qt6-wayland hyprpicker-git` 
 - Wallpapers | `swww-git` 
 - Notification System | `dunst libnotify` 
 - Status Bars | `eww-wayland-git`

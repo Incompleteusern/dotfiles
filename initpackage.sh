@@ -17,7 +17,7 @@ yay -S pacgraph
 # DESKTOP
 
 # hyprland and friends
-yay -S hyprland-git xdg-utils qt5-wayland qt6-wayland xdg-desktop-portal-hyprland
+yay -S hyprland-git xdg-utils qt5-wayland qt6-wayland xdg-desktop-portal-hyprland hyprpicker-git
 
 # bars, wallpaper
 yay -S eww-wayland-git swww-git
