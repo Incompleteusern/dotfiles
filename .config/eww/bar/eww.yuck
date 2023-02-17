@@ -31,26 +31,12 @@
 
 (defpoll player_active :interval "1s" "~/.config/eww/bar/scripts/music_info --active")
 
-;; (defpoll song :interval "3s" "~/.config/eww/bar/scripts/music_info --song")
-;; (defpoll song_artist :interval "3s"  "~/.config/eww/bar/scripts/music_info --artist")
-;; (defpoll song_album :interval "3s"  "~/.config/eww/bar/scripts/music_info --album")
-;; (defpoll current_status :interval "1s"  "~/.config/eww/bar/scripts/music_info --time")
-;; (defpoll song_status :interval "3s"  "~/.config/eww/bar/scripts/music_info --status")
-;; (defpoll cover_art :interval "10s"  "~/.config/eww/bar/scripts/music_info --cover")
-
 (defvar clock_time 0)
 (defvar clock_minute 0)
 (defvar clock_date 0)
 (defvar calendar_day 0)
 (defvar calendar_month 0)
 (defvar calendar_year 0)
-
-;; (defpoll clock_time :interval "1m" "date +\%I")
-;; (defpoll clock_minute :interval "1s" "date +\%M")
-;; (defpoll clock_date :interval "1min" "date '+%m/%d'")
-;; (defpoll calendar_day :interval "1min" "date '+%d'")
-;; (defpoll calendar_month :interval "1min" "date '+%m'")
-;; (defpoll calendar_year :interval "1min" "date '+%Y'")
 
 ;; widgets
 
