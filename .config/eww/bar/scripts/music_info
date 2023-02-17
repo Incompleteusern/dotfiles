@@ -17,7 +17,7 @@ is_active() {
 
 ## Get status
 get_status() {
-	playerctl --follow status | while read -r player_status; do
+	playerctl -p spotify  --follow status | while read -r player_status; do
 			if [[ "$player_status" == *"Playing"* ]]; then
 					echo ""
 			else
@@ -28,7 +28,7 @@ get_status() {
 
 ## Get song
 get_song() {
-	playerctl --follow metadata xesam:title | while read -r song; do
+	playerctl -p spotify --follow metadata xesam:title | while read -r song; do
 		if [[ -n "$song" ]]; then
 			echo "$song"
 		fi	
@@ -38,7 +38,7 @@ get_song() {
 
 ## Get artist
 get_artist() {
-	playerctl --follow metadata xesam:artist | while read -r artist; do
+	playerctl -p spotify --follow metadata xesam:artist | while read -r artist; do
 		if [[ -n "$artist" ]]; then
 			echo "$artist"
 		fi	
@@ -47,7 +47,7 @@ get_artist() {
 
 ## Get album
 get_album() {
-	playerctl --follow metadata xesam:album | while read -r album; do
+	playerctl -p spotify --follow metadata xesam:album | while read -r album; do
         if [[ -n "$album" ]]; then
                 echo "$album"
         fi
@@ -56,7 +56,7 @@ get_album() {
 
 ## Get time
 get_time() {
-	playerctl --follow metadata --format "{{position}} {{mpris:length}}" | while read -r position length; do
+	playerctl -p spotify --follow metadata --format "{{position}} {{mpris:length}}" | while read -r position length; do
 		#echo "$position"
 		#echo "$(playerctl -p spotify position)"
 		#echo "$(playerctl -p spotify metadata "mpris:length")"
@@ -75,7 +75,7 @@ set_time() {
 
 ## Get cover
 get_cover() {
-	playerctl --follow metadata mpris:artUrl | while read -r cover; do
+	playerctl -p spotify --follow metadata mpris:artUrl | while read -r cover; do
 		# Check if the file has a embbeded album art
 		if [[ -n "$cover" ]]; then
 			id=$(sha1sum <<< "$cover")
