@@ -17,7 +17,6 @@ systemctl enable fstrim.timer
 
 # pacman utils
 systemctl enable paccache.timer
-
 systemctl enable reflector.timer
 cp ${BASEDIR}/reflector.conf ~/etc/xdg/reflector/reflector.conf
 
@@ -25,17 +24,32 @@ cp ${BASEDIR}/reflector.conf ~/etc/xdg/reflector/reflector.conf
 echo "127.0.0.1        localhost" >> /etc/hosts
 echo "::1              localhost" >> /etc/hosts
 
+# systemd-resolvd
+systemctl enable systemd-resolved.service
 
-device = $(nmcli device | grep wifi\ | awk '{print $1}')
-nmcli device modify "$device" ipv4.dns "1.1.1.1,8.8.8.8"
+mkdir --parents /etc/systemd/resolved.conf.d 
+cat <<EOT >> /etc/systemd/resolved.conf.d/dnssec.conf
+[Resolve]
+DNSSEC=allow-downgrade
+EOT
 
 # Add colors, downloads, ILoveCandy to /etc/pacman.conf, enable multilib
 sed -i "/^#\(Color\|ParallelDownloads\|ILoveCandy\|VerbosePkgLists\)/s/^#//" /etc/pacman.conf
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 
 # laptop sleep
+mkdir --parents /etc/systemd/logind.conf.d
 sed -iE 's/#HandleLidSwitch=suspend/HandleLidSwitch=suspend/' /etc/systemd/logind.conf
 
+cat <<EOT >> /etc/systemd/logind.conf.d/lid_sleep.conf
+[Login]
+HandleLidSwitch=suspend
+EOT
+
+[Login]
+HandleLidSwitch=suspend
+
+mkdir --parents /etc/NetworkManager/conf.d
 cat <<EOT >> /etc/NetworkManager/conf.d/wifi_rand_mac.conf
 [device-mac-randomization]
 wifi.scan-rand-mac-address=yes
