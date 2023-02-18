@@ -16,7 +16,7 @@
 (deflisten workspaces :initial "[]" "bash ~/.config/hypr/scripts/get-workspaces")
 (deflisten current_workspace :initial "1" "bash ~/.config/hypr/scripts/get-active-workspace")
 
-(defvar eww "eww -c $HOME/.config/eww/bar")
+;; (defvar eww "eww -c $HOME/.config/eww/bar")
 
 (defpoll COL_WLAN :interval "3s" "~/.config/eww/bar/scripts/wifi --COL")
 (defpoll ESSID_WLAN :interval "3s" "~/.config/eww/bar/scripts/wifi --ESSID")
@@ -41,8 +41,8 @@
 ;; widgets
 
 (defwidget wifi [] 
-  (eventbox :onhover "${eww} update wifi_rev=true"
-			  :onhoverlost "${eww} update wifi_rev=false"
+  (eventbox :onhover "${EWW_CMD} update wifi_rev=true"
+			  :onhoverlost "${EWW_CMD} update wifi_rev=false"
 		(box :vexpand "false" :hexpand "false" :space-evenly "false"
 				(button :class "module-wif" :onclick "networkmanager_dmenu &" :wrap "false" :limit-width 12 :style "color: ${COL_WLAN};" WLAN_ICON)
 	(revealer :transition "slideright"
@@ -96,14 +96,27 @@
                 ""))))
 
 
+(defwidget cpu []
+		(box :class "cpu_module" :vexpand "false" :hexpand "false" 
+            (circular-progress :value {EWW_CPU.avg}
+                :class "cpubar"
+                :thickness 4
+            (button 
+                :class "iconcpu"
+                :limit-width 2
+                :tooltip "using ${round(EWW_CPU.avg, 0)}% on avg"
+                :onclick "$HOME/.config/eww/bar/scripts/pop system"
+                :wrap false
+                ""))))
+
 
 (defwidget sep []
   (box :class "module-2" :vexpand "false" :hexpand "false"
     (label :class "separ" :text "|")))
 
 (defwidget clock_module []
-  (eventbox :onhover "${eww} update time_rev=true"
-			  :onhoverlost "${eww} update time_rev=false"
+  (eventbox :onhover "${EWW_CMD} update time_rev=true"
+			  :onhoverlost "${EWW_CMD} update time_rev=false"
     (box :class "module" :space-evenly "false" :orientation "h" :spacing "3" 
       (label :text clock_time :class "clock_time_class" )
       (label :text "" :class "clock_time_sep" )
@@ -117,8 +130,8 @@
   ))))
   
 (defwidget volume []
-  (eventbox :onhover "${eww} update vol_reveal=true"
-			  :onhoverlost "${eww} update vol_reveal=false"
+  (eventbox :onhover "${EWW_CMD} update vol_reveal=true"
+			  :onhoverlost "${EWW_CMD} update vol_reveal=false"
   (box :class "module-2" :space-evenly "false" :orientation "h" :spacing "3" 
 	(button   :onclick "scripts/pop audio"   :class "volume_icon" "")
 	(revealer :transition "slideleft"
@@ -133,7 +146,7 @@
 			  :onchange "pamixer --set-volume {}" )))))
 
 (defwidget bright []
-  (eventbox :onhover "${eww} update br_reveal=true" :onhoverlost "${eww} update br_reveal=false"
+  (eventbox :onhover "${EWW_CMD} update br_reveal=true" :onhoverlost "${EWW_CMD} update br_reveal=false"
   (box :class "module-2" :space-evenly "false" :orientation "h" :spacing "3" 
     (label :text "" :class "bright_icon" :tooltip "brightness")
 	(revealer :transition "slideleft"
@@ -151,8 +164,8 @@
 
 	;;  Music 
    (defwidget music [] 
-    (eventbox :onhover "${eww} update music_reveal=true"
-			  :onhoverlost "${eww} update music_reveal=false"
+    (eventbox :onhover "${EWW_CMD} update music_reveal=true"
+			  :onhoverlost "${EWW_CMD} update music_reveal=false"
 		(box :class "module-2" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false" 
 			(box :class "song_cover_art" :vexpand "false" :hexpand "false" :style {player_active ? "background-image: url(\'${cover_art}\');" : "background-image: url('images/music.png');"})
 			(button :class "song" :wrap "true" :onclick "~/.config/eww/bar/scripts/pop music" 
@@ -177,6 +190,7 @@
 (sep)
 (bat)
 (mem)
+(cpu)
 (sep)
 (clock_module)))
 
@@ -216,7 +230,18 @@
 	  :focusable false
           :exclusive true
   (bar_1))
-  
+      
+(defwidget core [value]
+    (scale
+        :class "core"
+        :value {value}
+        :orientation "v"
+        :flipped "true"
+        :max 101
+        :min 0
+    )
+)
+
 (defwidget system []
   (box :class "sys_win" :orientation "v" :space-evenly "false" :hexpand "false" :vexpand "false" :spacing 0
   (box :class "sys_bat_box" :orientation "h" :space-evenly "false"
@@ -235,7 +260,7 @@
                 :limit-width 9
                 
                 :wrap false)
-            (label :text "${battery}%"
+            (label :text "${battery}% Power"
                 :halign "start"
                 :class "sys_text_bat_sub"
                 :limit-width 22
@@ -276,7 +301,48 @@
                 :class "sys_text_mem_sub"
                 :limit-width 22
                 
-                :wrap false)))))
+                :wrap false)))
+            (label :text "" :class "sys_sep" :halign "center")
+  (box :class "sys_cpu_box" :orientation "h" :space-evenly "false" :halign "start"
+      (circular-progress :value {EWW_CPU.avg}
+                :class "sys_cpu"
+                :thickness 9
+            (label :text ""
+                :class "sys_icon_cpu"
+                :limit-width 2
+                
+                :wrap false
+                :angle 0.0))
+            (box :orientation "v" :space-evenly "false" :spacing 0 :hexpand "false" :vexpand "false"
+            (label :text "cpu"
+                :halign "start"
+                :class "sys_text_cpu"
+                :limit-width 9
+                
+                :wrap false)
+            (label :text "${round(EWW_CPU.avg, 0)}% average"
+                :halign "start"
+                :class "sys_text_cpu_sub"
+                :limit-width 22
+                
+                :wrap false)
+
+            (box :class "cores" :orientation "h"
+              (core :value {EWW_CPU.cores[0].usage})
+              (core :value {EWW_CPU.cores[1].usage})
+              (core :value {EWW_CPU.cores[2].usage})
+              (core :value {EWW_CPU.cores[3].usage})
+              (core :value {EWW_CPU.cores[4].usage})
+              (core :value {EWW_CPU.cores[5].usage})
+              (core :value {EWW_CPU.cores[6].usage})
+              (core :value {EWW_CPU.cores[7].usage})
+              (core :value {EWW_CPU.cores[8].usage})
+              (core :value {EWW_CPU.cores[9].usage})
+              (core :value {EWW_CPU.cores[10].usage})
+            )
+
+      )
+)))
 
 (defwidget cal []
 	(box :class "cal" :orientation "v"

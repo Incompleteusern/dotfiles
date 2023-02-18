@@ -88,6 +88,11 @@ tooltip label {
     background-color: $surface0;
   border-radius: 10px;
 }
+.cpubar {
+  color: $blue;
+    background-color: $surface0;
+  border-radius: 10px;
+}
 .batbar {
   color: $green;
     background-color: $surface0;
@@ -97,6 +102,21 @@ tooltip label {
   background-color: $yellow;
   border-radius: 10px;
 }
+.cores {
+  margin: 0px 0px 0px 25px;
+}
+.core trough highlight {
+  background-color: $blue;
+}
+.core trough {
+  all: unset;
+  background-color: $surface0;
+  box-shadow: 0 1px 2px 1px $crust;
+  min-height: 35px;
+  min-width: 9px;
+  margin: 0px 3px 0px 0px;
+}
+
 .volbar trough highlight {
   background-color: $lavender;
   border-radius: 10px;
@@ -126,7 +146,10 @@ tooltip label {
 .iconbat {
     color: $green;
 }
-.iconbat, .iconmem {
+.iconcpu {
+    color: $blue;
+}
+.iconbat, .iconmem, .iconcpu {
     font-size: 15;
     margin: 10px;
 }
@@ -147,6 +170,9 @@ tooltip label {
 .mem_module {
   margin: 0px 10px 0px 3px;
   }
+.cpu_module {
+  margin: 0px 10px 0px 3px;
+  }
 .bat_module {
   margin: 0px 10px 0px 10px;
   }
@@ -163,10 +189,10 @@ scale trough {
 }
 
 .works {
-font-size: 27px;
-font-weight: normal;
-margin: 5px 0px 0px 20px;
-background-color: $mantle;
+  font-size: 27px;
+  font-weight: normal;
+  margin: 5px 0px 0px 20px;
+  background-color: $mantle;
 }
 
 .song_cover_art {
@@ -190,7 +216,7 @@ background-color: $mantle;
 	color: $mauve;
 	font-size : 28px;
 	margin : 3px 0px 0px 5px;
-        font-family: Iosevka Nerd Font;
+  font-family: Iosevka Nerd Font;
 }
 
 
@@ -253,17 +279,17 @@ calendar:indeterminate {
     font-size: 18;
     margin: 0px 10px 0px 10px;
 }
-.sys_text_bat_sub, .sys_text_mem_sub {
+.sys_text_bat_sub, .sys_text_mem_sub, .sys_text_cpu_sub {
     font-size: 16;
     color: $subtext1;
     margin: 5px 0px 0px 25px;
 }
-.sys_text_bat, .sys_text_mem {
+.sys_text_bat, .sys_text_mem, .sys_text_cpu {
     font-size: 21;
     font-weight: bold;
     margin: 14px 0px 0px 25px;
 }
-.sys_icon_bat, .sys_icon_mem {
+.sys_icon_bat, .sys_icon_mem, .sys_icon_cpu {
     font-size: 30;
     margin: 30px;
 }
@@ -282,19 +308,24 @@ calendar:indeterminate {
     background-color: $surface0;
   border-radius: 10px;
 }
+.sys_cpu {
+  color: $blue;
+    background-color: $surface0;
+  border-radius: 10px;
+}
 .sys_icon_bat, .sys_text_bat {
     color: $green;
 }
 .sys_icon_mem, .sys_text_mem {
     color: $peach;
 }
-.sys_bat_box {
+.sys_icon_cpu, .sys_text_cpu {
+  color: $blue;
+}
+
+.sys_bat_box, .sys_mem_box, .sys_cpu_box {
 	border-radius: 16px;
     margin: 15px 10px 10px 20px;
-  }
-.sys_mem_box {
-	border-radius: 16px;
-    margin: 10px 10px 15px 20px;
   }
 
 .music_pop {
