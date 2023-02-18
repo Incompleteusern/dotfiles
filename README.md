@@ -21,6 +21,7 @@ I don't know how well `init.sh` works right now, run anything here at your own r
 ## TODO
 
 TODO:
+- https://wiki.archlinux.org/title/Network_configuration#localhost_is_resolved_over_the_network local host name third line?
 - https://wiki.archlinux.org/title/Bash/Prompt_customization
 - Learn tmux
 - Change mouse or something idk
