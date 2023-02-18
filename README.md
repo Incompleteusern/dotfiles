@@ -199,7 +199,8 @@ TODO:
     &runatreboot 0 0 1 * * eww -c ~/.config/eww/bar update calendar_month="$(date '+%m')"
     &runatreboot 0 0 1 1 * eww -c ~/.config/eww/bar update calendar_year="$(date '+%Y')"
     ```
-    - TODO automate this
+  - TODO automate this
+- Add `OWM_API_KEY` to be exported frm .env
 
 ## Auto
 - Polkit | `polkit-kde-agent` 
@@ -240,6 +241,8 @@ TODO:
 - spotify integration | `playerctl`
 - volume control | `pamixer`
 - System Information | `htop neofetch-git duf`
+- crontab | `fcron`
+
 # Silly
 ## Manual
 ## Auto
