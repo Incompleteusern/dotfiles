@@ -21,7 +21,6 @@ I don't know how well `init.sh` works right now, run anything here at your own r
 ## TODO
 
 TODO:
-- https://wiki.archlinux.org/title/Network_configuration#localhost_is_resolved_over_the_network local host name third line?
 - https://wiki.archlinux.org/title/Bash/Prompt_customization
 - Learn tmux
 - Change mouse or something idk
@@ -30,7 +29,6 @@ TODO:
   - Wallpaper script time!!!!
   - EWW
     - Add customization if mute
-    - Finish spotify integration using --follow
     - CPU Info
 - Screensharing, App Launchers, App Clients, Color Pickers
     - aka Configure Rest of Desktop
@@ -42,7 +40,6 @@ TODO:
 - Swap hibernation encryption support based on https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6#known-issues
 - TODO renable secure boot support
 - AI gen might be fun for wall paper
-- dhcpcd, blueman and wpa_supplicant?
 
 # Installation
 
@@ -179,7 +176,7 @@ TODO:
   ```
     HOOKS=(base udev systemd sd-plymouth keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
   ```
-- Fcronjob for wall paper timer and eww
+- Fcronjob for wall paper timer and ewww
   - ```
     systemctl enable fcron.service
     systemctl enable fcrontimer.service
@@ -199,7 +196,7 @@ TODO:
     &runatreboot 0 0 1 * * eww -c ~/.config/eww/bar update calendar_month="$(date '+%m')"
     &runatreboot 0 0 1 1 * eww -c ~/.config/eww/bar update calendar_year="$(date '+%Y')"
     ```
-- TODO `copyq`
+    - TODO automate this
 
 ## Auto
 - Polkit | `polkit-kde-agent` 
@@ -251,10 +248,13 @@ TODO:
 # Applications
 
 ## Manual
-- Use catpuccin mocha lavender for firefox, vscode, spicetify.
+- Use catpuccin mocha lavender for firefox, vscode.
   - TODO automate that shit
 - Use `cups` for printer stuff.
+  - Do https://wiki.archlinux.org/title/Avahi#Hostname_resolution
+  - TODO automate, move to installation section too?
 - Enable firefox hardware acceleration, reopen tabs on close
+  - TODO automate?
 
 ## Auto
 - Firefox | `firefox`
