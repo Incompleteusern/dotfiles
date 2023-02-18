@@ -157,13 +157,16 @@ TODO:
 - Mirror management | `reflector`
   - Set US as country
   - Enable `reflector.timer`
-- Enable Color, ILoveCandy, multilib and ParallelDownloads in /etc/pacman.conf
+- Enable Color, ILoveCandy, VerbosePkgLists, multilib and ParallelDownloads in /etc/pacman.conf
 - Make `makepkg` multithread
   - https://unix.stackexchange.com/questions/268221/use-multi-threaded-make-by-default
 - zshrc | `zsh`
 - Pacman Utils | `paccache pacgraph`
-- Add local host to /etc/hosts
+- NetworkManager stuff
+  - Add local host to /etc/hosts
   - https://wiki.archlinux.org/title/Network_configuration#localhost_is_resolved_over_the_network
+  - Use 1.1.1.1, 8.8.8.8 for default dns, mac address randomization
+  - Maybe use `systemd-resolvd` one day, if `cups` works with it 
 - Make closing lid initiate sleep in `/etc/systemd/logind.conf` with `HandleLidSwitch=suspend` if necessary
 
 # Desktop
@@ -240,10 +243,9 @@ TODO:
 # Silly
 ## Manual
 ## Auto
-- cbonsai | `cbonsai-git`
-- donut.c | `donut.c`
+- fortune | `fortune`
 - cmatrix | `cmatrix-git`
-- sl | `sl`
+- ascii art `ascii-rain-git asciiquarium sl donut.c`
 
 # Applications
 

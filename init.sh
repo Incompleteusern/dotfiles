@@ -25,12 +25,25 @@ cp ${BASEDIR}/reflector.conf ~/etc/xdg/reflector/reflector.conf
 echo "127.0.0.1        localhost" >> /etc/hosts
 echo "::1              localhost" >> /etc/hosts
 
+
+device = $(nmcli device | grep wifi\ | awk '{print $1}')
+nmcli device modify "$device" ipv4.dns "1.1.1.1,8.8.8.8"
+
 # Add colors, downloads, ILoveCandy to /etc/pacman.conf, enable multilib
-sed -i "/^#\(Color\|ParallelDownloads\|ILoveCandy\)/s/^#//" /etc/pacman.conf
+sed -i "/^#\(Color\|ParallelDownloads\|ILoveCandy\|VerbosePkgLists\)/s/^#//" /etc/pacman.conf
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 
 # laptop sleep
 sed -iE 's/#HandleLidSwitch=suspend/HandleLidSwitch=suspend/' /etc/systemd/logind.conf
+
+cat <<EOT >> /etc/NetworkManager/conf.d/wifi_rand_mac.conf
+[device-mac-randomization]
+wifi.scan-rand-mac-address=yes
+
+[connection-mac-randomization]
+ethernet.cloned-mac-address=random
+wifi.cloned-mac-address=random
+EOT
 
 # multithread makepkg
 echo "MAKEFLAGS=\"-j$(expr $(nproc) \+ 1)\"" >> /etc/makepkg.conf

@@ -5,6 +5,11 @@ dunst &
 
 # wallpaper
 swww init
+
+if [[ -f "$HOME/.env" ]]; then
+    source $HOME/.env
+fi
+
 bash $HOME/.scripts/wallpaper/wallpaper.sh &
 
 # eww

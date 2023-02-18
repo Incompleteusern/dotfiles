@@ -90,9 +90,6 @@ ZSH_THEME="cloud"
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
-if [[ -f "$HOME/.env" ]]; then
-    source $HOME/.env
-fi
 
 # User configuration
 

@@ -61,7 +61,7 @@ yay -S ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra 
 yay -S bat duf exa fzf fd httpie gping-git git-delta-git fcron
 
 # system info
-yay -S htop neofetch-git duf
+yay -S htop neofetch-git duf neofetch-git
 
 # screenshots
 yay -S grim slurp wl-clipboard jq
@@ -70,7 +70,7 @@ yay -S grim slurp wl-clipboard jq
 yay -S tlp tlp-rdw
 
 # SILLY
-yay -S neofetch-git cbonsai donut.c cmatrix-git sl 
+yay -S cbonsai donut.c cmatrix-git sl ascii-rain-git asciiquarium fortune
 
 # APPLICATIONS
 
