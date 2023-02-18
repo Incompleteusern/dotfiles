@@ -313,6 +313,11 @@ calendar:indeterminate {
     background-color: $surface0;
   border-radius: 10px;
 }
+
+.sys_icon_bat, .sys_icon_mem, .sys_icon_cpu {
+  font-family: feather;  
+}
+
 .sys_icon_bat, .sys_text_bat {
     color: $green;
 }

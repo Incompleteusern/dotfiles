@@ -307,7 +307,7 @@
       (circular-progress :value {EWW_CPU.avg}
                 :class "sys_cpu"
                 :thickness 9
-            (label :text ""
+            (label :text ""
                 :class "sys_icon_cpu"
                 :limit-width 2
                 
