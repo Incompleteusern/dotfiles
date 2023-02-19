@@ -82,22 +82,20 @@ tooltip label {
     margin: 0px 5px 0px 0px;
 }
 
-
-.membar {
-  color: $peach;
+.membar, .cpubar, .batbar {
     background-color: $surface0;
   border-radius: 10px;
+}
+.membar {
+  color: $peach;
 }
 .cpubar {
   color: $blue;
-    background-color: $surface0;
-  border-radius: 10px;
 }
 .batbar {
   color: $green;
-    background-color: $surface0;
-  border-radius: 10px;
 }
+
 .brightbar trough highlight {
   background-color: $yellow;
   border-radius: 10px;
@@ -140,6 +138,10 @@ tooltip label {
   margin: 0px 10px 0px 5px;
 }
 
+.iconbat, .iconmem, .iconcpu {
+  font-size: 15;
+  margin: 10px;
+}
 .iconmem {
     color: $peach;
 }
@@ -149,10 +151,7 @@ tooltip label {
 .iconcpu {
     color: $blue;
 }
-.iconbat, .iconmem, .iconcpu {
-    font-size: 15;
-    margin: 10px;
-}
+
 .bright_icon {
     font-size: 22;
     color: $yellow;
@@ -167,16 +166,9 @@ tooltip label {
     margin: 0px 8px 0px 8px;
   }
 
-.mem_module {
+.mem_module, .cpu_module, .bat_module {
   margin: 0px 10px 0px 3px;
   }
-.cpu_module {
-  margin: 0px 10px 0px 3px;
-  }
-.bat_module {
-  margin: 0px 10px 0px 10px;
-  }
-
 
 scale trough {
   all: unset;
@@ -298,20 +290,18 @@ calendar:indeterminate {
     border-radius: 16px;
     font-family: JetBrains Mono;
 }
-.sys_bat {
-  color: $green;
+.sys_bat, .sys_mem, .sys_cpu {
     background-color: $surface0;
   border-radius: 10px;
+}
+.sys_bat {
+  color: $green;
 }
 .sys_mem {
   color: $peach;
-    background-color: $surface0;
-  border-radius: 10px;
 }
 .sys_cpu {
   color: $blue;
-    background-color: $surface0;
-  border-radius: 10px;
 }
 
 .sys_icon_bat, .sys_icon_mem, .sys_icon_cpu {

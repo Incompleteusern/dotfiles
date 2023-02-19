@@ -108,8 +108,6 @@
                 :onclick "$HOME/.config/eww/bar/scripts/pop system"
                 :wrap false
                 ""))))
-
-
 (defwidget sep []
   (box :class "module-2" :vexpand "false" :hexpand "false"
     (label :class "separ" :text "|")))
@@ -342,7 +340,8 @@
             )
 
       )
-)))
+)
+))
 
 (defwidget cal []
 	(box :class "cal" :orientation "v"
