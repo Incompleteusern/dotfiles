@@ -1,11 +1,13 @@
 ## Thanks to
 
-- https://github.com/scotus-1/dotfiles for format and what to use xd
-- https://github.com/flick0/dotfiles for various configs
-- https://github.com/Saimoomedits/eww-widgets for the top bar, modified for catppuccin theming, hyprland and spotify 
+- https://github.com/scotus-1/dotfiles for format and what to use
+- https://github.com/flick0/dotfiles for various configs, old waybar
+- https://github.com/Saimoomedits/eww-widgets for the top bar
+  - Modified for catppuccin theming, hyprland and spotify 
+  - TODO move to fork
 - https://github.com/catppuccin for the pastel theming over basically everything I can touch
-  - For rofi, deathmonde is used
-- https://wiki.archlinux.org/title/User:Bai-Chiang/Installation_notes and https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6 and https://gist.github.com/michaelb081988/0e3f1bbd3bb04fb34c0726e28da2a934 for extended installation notes over encryption and so forth
+  - For rofi, deathmonde specficially is used
+- https://wiki.archlinux.org/title/User:Bai-Chiang/Installation_notes and https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6, https://www.reddit.com/r/archlinux/comments/zo83gb/how_i_setup_secure_boot_for_arch_linux_simple/, and https://gist.github.com/michaelb081988/0e3f1bbd3bb04fb34c0726e28da2a934 for extended installation notes over encryption and so forth
 - https://github.com/MarianArlt/sddm-sugar-dark/ for sddm theme, modified for catppuccin theming 
 
 ## INFO
