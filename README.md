@@ -8,6 +8,7 @@
 - https://github.com/catppuccin for the pastel theming over basically everything I can touch
   - For rofi, deathmonde specficially is used
 - https://wiki.archlinux.org/title/User:Bai-Chiang/Installation_notes and https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6, https://www.reddit.com/r/archlinux/comments/zo83gb/how_i_setup_secure_boot_for_arch_linux_simple/, and https://gist.github.com/michaelb081988/0e3f1bbd3bb04fb34c0726e28da2a934 for extended installation notes over encryption and so forth
+- https://www.reddit.com/r/archlinux/comments/rz6294/arch_linux_laptop_optimization_guide_for/ for optimization
 - https://github.com/MarianArlt/sddm-sugar-dark/ for sddm theme, modified for catppuccin theming 
 
 ## INFO
@@ -23,8 +24,8 @@ I don't know how well `init.sh` works right now, run anything here at your own r
 ## TODO
 
 TODO:
+- proton-ge-custom-bin, libwebcam-git
 - Document https://wiki.archlinux.org/title/OpenSSH#Deny
-- Document https://wiki.archlinux.org/title/Intel_graphics, https://wiki.archlinux.org/title/Hardware_video_acceleration#Configuring_applications, early kmsc
 - https://www.reddit.com/r/archlinux/comments/116dd58/is_it_possible_to_default_remove_make/
 - Firewall, proton-ge-custom-bin, libwebcam-git
 - Document time sync
@@ -104,8 +105,9 @@ TODO:
       linux   /vmlinuz-linux
       initrd  /intel-ucode.img
       initrd  /initramfs-linux.img
-      options rd.luks.name=ROOT_UUID=root root=/dev/mapper/root rd.luks.name=USER_UUID=user rd.luks.name=SWAP_UUID=swap resume=/dev/mapper/swap rw quiet splash acpi_backlight=vendor
+      options rd.luks.name=ROOT_UUID=root root=/dev/mapper/root rd.luks.name=USER_UUID=user rd.luks.name=SWAP_UUID=swap resume=/dev/mapper/swap rw quiet splash acpi_backlight=vendor nowatchdog
     ```
+      - TODO document params
    - Same for fallback
 - Disk Encryption (UNTESTED!!!)
   - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
@@ -140,7 +142,7 @@ TODO:
   - Enroll key with `systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0,7 /dev/disk/by-partlabel/cryptswap`
   - Test that it works with `/usr/lib/systemd/systemd-cryptsetup attach swap /dev/disk/by-partlabel/cryptswap - tpm2-device=auto`
   - Add `rd.luks.options=SWAP_UUID=tpm2-device=auto` to kernel parameters in `/etc/kernel/cmdline`
-  - Regenerate Image with `sbctl generate-bundles --sign`
+  - Regenerate image with `sbctl generate-bundles --sign`
 
 - Add user
   `# useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
@@ -243,6 +245,37 @@ TODO:
 - Order Chinese as priority for Noto CJK
   - https://wiki.archlinux.org/title/Localization/Simplified_Chinese#Chinese_characters_displayed_as_variant_(Japanese)_glyphs
   - TODO automate that shit
+
+- Most of this is intel or computer specific to me
+  - https://wiki.archlinux.org/title/Intel_graphics and https://wiki.archlinux.org/title/Power_management#Power_saving
+  - Early kms 
+    - Add `i915` in `MODULES=()`, regenerate initramfs
+    - In `/etc/modprobe.d/i915.conf` 
+      ```
+      options i915 enable_guc=2 enable_fbc=1 enable_psr=1
+      ```
+  - Hardware acceleration
+    - ```
+       yay -S intel-media-driver libvdpau-va-gl libva-utils vdpauinfo
+      ```
+    - Add `export LIBVA_DRIVER_NAME=iHD` and `export VDPAU_DRIVER=va_gl`, check that things still work with `vainfo` and `vdpauinfo`
+    - Move environment variables to ` /etc/environment`
+  - Thermald
+    - ```
+      yay -S thermald
+      systemctl enable thermald
+      ```
+   - Module stuff
+     - Add in `/etc/modprobe.d/audio_powersave.conf`
+      ```
+      options snd_hda_intel power_save=1
+      ```
+     - Add in `/etc/sysctl.d/dirty.conf`
+      ```
+      vm.dirty_writeback_centisecs = 6000
+      ```
+  gpu power saving, audio power save
+
 
 ## Auto
 - Desktop Control | `brightnessctl pamixer`
