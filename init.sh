@@ -39,7 +39,6 @@ sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 
 # laptop sleep
 mkdir --parents /etc/systemd/logind.conf.d
-sed -iE 's/#HandleLidSwitch=suspend/HandleLidSwitch=suspend/' /etc/systemd/logind.conf
 
 cat <<EOT >> /etc/systemd/logind.conf.d/lid_sleep.conf
 [Login]

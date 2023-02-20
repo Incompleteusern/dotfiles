@@ -13,6 +13,7 @@ fi
 bash $HOME/.scripts/wallpaper/wallpaper.sh &
 
 # eww
+source ~/.env 
 bash $HOME/.config/eww/launch_bar
 
 # goofy ah protonvpn shit - see https://www.reddit.com/r/ProtonVPN/comments/vgki46/connecting_to_proton_vpn_stuck_in_arch_linux_with/

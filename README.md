@@ -24,6 +24,7 @@ I don't know how well `init.sh` works right now, run anything here at your own r
 
 TODO:
 - Document https://wiki.archlinux.org/title/OpenSSH#Deny
+- https://www.reddit.com/r/archlinux/comments/116dd58/is_it_possible_to_default_remove_make/
 - Firewall, proton-ge-custom-bin, libwebcam-git
 - Document time sync
 - https://wiki.archlinux.org/title/Zsh#Prompts
@@ -205,13 +206,16 @@ TODO:
     PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
     XDG_RUNTIME_DIR=/run/user/1000
     WAYLAND_DISPLAY=wayland-1
-    &runatreboot */15 * * * * source ~/.env; bash ~/.scripts/wallpaper/wallpaper.sh
 
-    &runatreboot * * * * * eww -c ~/.config/eww/bar update clock_minute="$(date +\%M)"
-    &runatreboot 0 * * * * eww -c ~/.config/eww/bar update clock_time="$(date +\%I)"
-    &runatreboot 0 0 * * * eww -c ~/.config/eww/bar update clock_date="$(date '+%m/%d')"; eww -c ~/.config/eww/bar update calendar_day="$(date '+%d')"
-    &runatreboot 0 0 1 * * eww -c ~/.config/eww/bar update calendar_month="$(date '+%m')"
-    &runatreboot 0 0 1 1 * eww -c ~/.config/eww/bar update calendar_year="$(date '+%Y')"
+    !exesev,bootrun
+
+    */15 * * * * source ~/.env; bash ~/.scripts/wallpaper/wallpaper.sh
+
+    * * * * * eww -c ~/.config/eww/bar update clock_minute="$(date +\%M)"
+    0 * * * * eww -c ~/.config/eww/bar update clock_time="$(date +\%I)"
+    0 0 * * * eww -c ~/.config/eww/bar update clock_date="$(date '+%m/%d')"; eww -c ~/.config/eww/bar up>
+    0 0 1 * * eww -c ~/.config/eww/bar update calendar_month="$(date '+%m')"
+    0 0 1 1 * eww -c ~/.config/eww/bar update calendar_year="$(date '+%Y')"
     ```
   - TODO automate this
 - Add `OWM_API_KEY` to be exported frm .env
