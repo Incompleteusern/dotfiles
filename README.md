@@ -23,7 +23,11 @@ I don't know how well `init.sh` works right now, run anything here at your own r
 ## TODO
 
 TODO:
-- https://wiki.archlinux.org/title/Bash/Prompt_customization
+- Document https://wiki.archlinux.org/title/OpenSSH#Deny
+- Firewall, proton-ge-custom-bin, libwebcam-git
+- Document time sync
+- https://wiki.archlinux.org/title/Zsh#Prompts
+- https://wiki.archlinux.org/title/Improving_performance
 - Learn tmux
 - Change mouse or something idk
 - Customize oh-my-zsh more
@@ -32,8 +36,11 @@ TODO:
   - EWW
     - Add customization if mute
 - Customize firefox + fork mozilla? 
-- Go through general preference :SOB:
 - Do disk encryption, unified kernel image
+- Add disk encryption
+  - https://wiki.archlinux.org/title/Dm-crypt/Device_encryption with sector-size
+  - Do this in February when wifi-adapter is natively supported by udev
+- Swap hibernation encryption support based on https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6#known-issues
 - AI gen might be fun for wall paper
 
 # Installation
@@ -98,7 +105,6 @@ TODO:
       options rd.luks.name=ROOT_UUID=root root=/dev/mapper/root rd.luks.name=USER_UUID=user rd.luks.name=SWAP_UUID=swap resume=/dev/mapper/swap rw quiet splash acpi_backlight=vendor
     ```
    - Same for fallback
-  - Use the already present UEFI partition, if there
 - Disk Encryption (UNTESTED!!!)
   - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
   - Configure `/etc/mkinitcpio.conf`, and add `systemd keyboard sd-vconsole sd-encrypt` presence
@@ -137,6 +143,7 @@ TODO:
 - Add user
   `# useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
 - Add wheel group to sudoers | `sudo`
+  - Use `visudo`
   - Uncomment `# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL:ALL) ALL`
   - Add
     ```
