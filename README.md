@@ -91,7 +91,7 @@ TODO:
   - Processor Microcode | `intel-ucode`
   - Text Editor | `nano nano-syntax-highlighting`
   - Network Manager | `networkmanager` and enable service
-- Systemd-boot
+- Systemd-boot (KERNEL PARAMS UNTESTED!!!)
   - https://wiki.archlinux.org/title/Systemd-boot
   - Use `/boot` as mount point and run `bootctl install`
   - Add in at `/boot/loader/entries/arch.conf`
