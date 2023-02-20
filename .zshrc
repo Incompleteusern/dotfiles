@@ -122,6 +122,10 @@ source $ZSH/oh-my-zsh.sh
 
 eval $(thefuck --alias)
 
+autoload -Uz promptinit
+promptinit
+prompt fade cyan white green
+
 alias cat=bat
 alias ls="exa -lah --group-directories-first"
 alias fuzzy=fzf
@@ -136,3 +140,4 @@ alias rm="rm -i"
 alias mv="mv -i"
 alias shutdown="shutdown now"
 alias sudo='sudo '
+

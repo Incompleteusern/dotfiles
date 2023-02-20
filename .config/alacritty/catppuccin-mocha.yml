@@ -51,7 +51,7 @@ colors:
         blue: "#89B4FA" # blue
         magenta: "#F5C2E7" # pink
         cyan: "#94E2D5" # teal
-        white: "#BAC2DE" # subtext1
+        white: "#E6EFFD" # subtext1
 
     # Bright colors - shift up by 8 in each
     bright:
@@ -62,7 +62,7 @@ colors:
         blue: "#91BCFF" # blue
         magenta: "#FDCAEF" # pink
         cyan: "#9CEADD" # teal
-        white: "#E6EFFD" # text
+        white: "#EDF7FF" # text
 
     # Dim colors - shift down by 8 in each
     dim:
@@ -73,7 +73,7 @@ colors:
         blue: "#81ABF2" # blue
         magenta: "#EDBADF" # pink
         cyan: "#8CDACD" # teal
-        white: "#A6ADC8" # subtext0
+        white: "#DEE7F6" # subtext0
 
     indexed_colors:
         - { index: 16, color: "#FAB387" }
