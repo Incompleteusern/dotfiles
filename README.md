@@ -31,16 +31,9 @@ TODO:
   - Wallpaper script time!!!!
   - EWW
     - Add customization if mute
-    - CPU Info
-- Screensharing, App Launchers, App Clients, Color Pickers
-    - aka Configure Rest of Desktop
 - Customize firefox + fork mozilla? 
 - Go through general preference :SOB:
-- Add disk encryption
-  - https://wiki.archlinux.org/title/Dm-crypt/Device_encryption with sector-size
-  - Do this in February when wifi-adapter is natively supported by udev
-- Swap hibernation encryption support based on https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6#known-issues
-- TODO renable secure boot support
+- Do disk encryption, unified kernel image
 - AI gen might be fun for wall paper
 
 # Installation
