@@ -23,13 +23,13 @@ yay -S hyprland-git xdg-utils qt5-wayland qt6-wayland xdg-desktop-portal-hyprlan
 yay -S eww-wayland-git swww-git
 
 # notifications
-yay -S dunst libnotify
+yay -S dunst-git libnotify
 
 # session locker
 yay -S swaylockd swaylock-effects-git swayidle-git
 
 # font input
-yay -S fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx-gtk fcitx5-pinyin-zhwiki fcitx5-qt
+yay -S fcitx5-git fcitx5-chinese-addons-git fcitx5-configtool-git fcitx5-gtk-git fcitx5-pinyin-zhwiki fcitx5-qt
 
 # app launcher thing
 yay -S rofi-lbonn-wayland-git papirus-icon-theme-git sif-git networkmanager-dmenu-git
@@ -37,14 +37,14 @@ yay -S rofi-lbonn-wayland-git papirus-icon-theme-git sif-git networkmanager-dmen
 # terminal
 yay -S alacritty-git
 
-# desktop utilities
-yay -S brightnessctl pamixer
-
 # pipewire
-yay -S pipewire wireplumber pipewire-jack pipewire-pulse
+yay -S pipewire-git wireplumber-git pipewire-jack-git pipewire-pulse-git
 
 # color temperature
 yay -S gammastep-git
+
+# desktop manager
+yay -S sddm-git sddm-conf-git
 
 # booting animation
 yay -S plymouth-git
@@ -52,7 +52,13 @@ yay -S plymouth-git
 # polkit
 yay -S polkit-kde-agent
 
+# color picker
+yay -S hyprpicker-git
+
 # UTILITIES
+
+# desktop utilities
+yay -S brightnessctl pamixer
 
 # fonts
 yay -S ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd
@@ -79,6 +85,9 @@ yay -S firefox
 
 # others
 yay -S prismlauncher steam visual-studio-code-bin
+
+# proton
+yay -S openvpn protonvpn-gui networkmanager-openvpn
 
 # discord
 yay -S discord-electron-bin discord-screenaudio discord-update-skip-git

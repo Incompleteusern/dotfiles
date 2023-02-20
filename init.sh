@@ -59,8 +59,10 @@ ethernet.cloned-mac-address=random
 wifi.cloned-mac-address=random
 EOT
 
+
 # multithread makepkg
-echo "MAKEFLAGS=\"-j$(expr $(nproc) \+ 1)\"" >> /etc/makepkg.conf
+cores=$(nproc)
+echo "MAKEFLAGS=\"-j$cores --load-average=$cores\"" >> /etc/makepkg.conf
 
 # user stuff
 cp -R ${BASEDIR}/.config/ ~/.config/

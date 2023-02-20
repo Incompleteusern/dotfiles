@@ -47,12 +47,11 @@ TODO:
 ### Pre-Boot
 - Standard installation
 
-# THE BELOW IS UNTESTED SINCE I AM LAZY RUN AT YOUR OWN (VERY BIG) RISK
-
 - Disable Secure Boot/Check it is disabled
   - `# bootctl status | grep "Secure Boot"`
 - Right now, temporary android tether to set up and get driver rtw89 manually
-- Three partitions and encryption
+  - Wait till kernel 6.2
+- Three partitions and encryption (UNTESTED!!!)
   - Make root, user, and swap partitions using `cblsk` and part labels `cryptroot`, `cryptuser`, and `cryptswap` (TODO make using fblsk in the future LOL)
   - https://wiki.archlinux.org/title/Dm-crypt/Device_encryption
   ```
@@ -80,7 +79,7 @@ TODO:
       # swapon -L swap
     ```
 - Generate fstab
-  - Use `LABEL=swap swap swap defaults 0 0` for swap
+  - Use `LABEL=swap swap swap defaults 0 0` for swap (UNTESTED!!!)
 - Chroot
   - ```
       # arch-chroot /mnt
@@ -92,7 +91,6 @@ TODO:
   - Processor Microcode | `intel-ucode`
   - Text Editor | `nano nano-syntax-highlighting`
   - Network Manager | `networkmanager` and enable service
-  - Secure boot tool | `sbctl`
 - Systemd-boot
   - https://wiki.archlinux.org/title/Systemd-boot
   - Use `/boot` as mount point and run `bootctl install`
@@ -102,41 +100,55 @@ TODO:
       linux   /vmlinuz-linux
       initrd  /intel-ucode.img
       initrd  /initramfs-linux.img
-      options rd.luks.name=ROOT_UUID=root root=/dev/mapper/root rd.luks.name=USER_UUID=user rd.luks.name=SWAP_UUID=swap rd.luks.options=SWAP_UUID=tpm2-device=auto resume=/dev/mapper/swap rw quiet splash acpi_backlight=vendor
+      options rd.luks.name=ROOT_UUID=root root=/dev/mapper/root rd.luks.name=USER_UUID=user rd.luks.name=SWAP_UUID=swap resume=/dev/mapper/swap rw quiet splash acpi_backlight=vendor
     ```
    - Same for fallback
   - Use the already present UEFI partition, if there
-- Secure Boot
-  - https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#sbctl
-  - Verify with `sbctl status`
-  - `sbctl create-keys`
-  - `sbctl enroll-keys -m` and check status again
-  - Sign files from `sbctl verify` with `sbctl sign -s /path/to/file`
-  - Check everything works with `sbctl status`
-  - Add pacman hooks from https://wiki.archlinux.org/title/Systemd-boot#pacman_hook
-  - Re-enable Secure Boot
-- Disk Encryption
+- Disk Encryption (UNTESTED!!!)
   - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
   - Configure `/etc/mkinitcpio.conf`, and add `systemd keyboard sd-vconsole sd-encrypt` presence
   ```
     HOOKS=(base udev systemd keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
   ```
-- Swap Encryption and Hibernation | `tpm2-tss tpm2-tools` (TODO update to hibernation friendly method, use TPM)
+  - Regenerate initramfs
+- Clean Up Boot Options
+  - `efibootmgr` can list and remove them as necessary
+
+## Post-Boot
+
+- Secure Boot | `sbctl`
+  - https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#sbctl
+  - Verify with `sbctl status`, reset keys and enable set up mode
+  - `sbctl create-keys`
+  - `sbctl enroll-keys -m` and check status again
+  - Sign files with `sbctl sign-all`
+  - Check everything works with `sbctl status` and `sbctl list-files`
+  - Add pacman hooks from https://wiki.archlinux.org/title/Systemd-boot#pacman_hook
+
+- Unified Kernel Image (UNTESTED!!!)
+  - Move kernel parameters to `/etc/kernel/cmdline`
+  - Make bundled image with `sbctl bundle -i /boot/intel-ucode.img  --save /boot/archlinux.efi`
+  - Change default systemd-boot, remove `arch.conf` (?)
+  - Re-enable Secure Boot
+- Swap Encryption and Hibernation | `tpm2-tss tpm2-tools` (UNTESTED!!!)
   - Configure `/etc/mkinitcpio.conf`, and add `resume` after `udev`
   - Check `cat /sys/class/tpm/tpm0/tpm_version_major` has `2`
   - List available TPMs at `systemd-cryptenroll --tpm2-device=list`
   - Enroll key with `systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0,7 /dev/disk/by-partlabel/cryptswap`
   - Test that it works with `/usr/lib/systemd/systemd-cryptsetup attach swap /dev/disk/by-partlabel/cryptswap - tpm2-device=auto`
-- Generate initramfs
+  - Add `rd.luks.options=SWAP_UUID=tpm2-device=auto` to kernel parameters in `/etc/kernel/cmdline`
+  - Regenerate Image with `sbctl generate-bundles --sign`
 
-- Clean Up Boot Options
-  - `efibootmgr` can list and remove them as necessary
-
-## Post-Boot
 - Add user
   `# useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
 - Add wheel group to sudoers | `sudo`
   - Uncomment `# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL:ALL) ALL`
+  - Add
+    ```
+    Defaults      env_reset
+    Defaults      editor=/usr/bin/rnano, !env_editor
+    Defaults passwd_timeout=0
+    ```
 - git, ssh/gpg | `git openssh github-cli`
   ```
      $ gh auth login
@@ -203,20 +215,21 @@ TODO:
 - Add `OWM_API_KEY` to be exported frm .env
 
 ## Auto
-- Polkit | `polkit-kde-agent` 
-- Compositor | `hyprland-git qt5-wayland qt6-wayland hyprpicker-git` 
-- Wallpapers | `swww-git` 
-- Notification System | `dunst libnotify` 
-- Status Bars | `eww-wayland-git`
-- Pipewire | `pipewire wireplumber pipewire-pulse pipewire-jack `
+- Compositor | `hyprland-git qt5-wayland qt6-wayland` 
 - XDG Integration | `xdg-utils xdg-desktop-portal-hyprland`
-- Terminal | `alacritty-git`
-- App Launcher | `rofi-lbonn-wayland-git papirus-icon-theme-git sif-git networkmanager-dmenu-git ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd` 
-- Font Input | `fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx-gtk fcitx5-pinyin-zhwiki fcitx5-qt`
+- Status Bars | `eww-wayland-git`
+- Wallpapers | `swww-git` 
+- Notification System | `dunst-git libnotify` 
 - Session Locker | `swaylockd swaylock-effects-git swayidle-git`
-- Display Manager | `sddm`
+- Font Input | `fcitx5-git fcitx5-chinese-addons-git fcitx5-configtool-git fcitx-gtk-git fcitx5-pinyin-zhwiki fcitx5-qt`
+- App Launcher | `rofi-lbonn-wayland-git papirus-icon-theme-git sif-git networkmanager-dmenu-git` 
+- Terminal | `alacritty-git`
+- Pipewire | `pipewire-git wireplumber-git pipewire-jack-git pipewire-pulse-git`
+- Display Manager | `sddm-git sddm-conf-git`
 - Color Temperature | `gammastep-git`
 - Booting Animation | `plymouth-git`
+- Color Picker `hyprpicker-git`
+- Polkit | `polkit-kde-agent` 
 
 # Utilities
 ## Manual
@@ -225,8 +238,8 @@ TODO:
   - TODO automate that shit
 
 ## Auto
-- Desktop Control | `brightnessctl`
-- Fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-material-icons-git ttf-symbola`
+- Desktop Control | `brightnessctl pamixer`
+- Fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd`
   - Set Chinese as font priority
 - Screenshots | `grim slurp wl-clipboard jq` (grimblast)
 - Scheduler | `cronie`
@@ -239,7 +252,6 @@ TODO:
   - Git diff | `git-delta-git`
 - power | `tlp tlp-rdw`
 - spotify integration | `playerctl`
-- volume control | `pamixer`
 - System Information | `htop neofetch-git duf`
 - crontab | `fcron`
 
@@ -267,5 +279,5 @@ TODO:
 - Prism Launcher | `prismlauncher`
 - Steam | `steam`
 - Vs Code | `visual-studio-code-bin`
-- VPN | `openvpn protonvpn-gui`
+- VPN | `openvpn protonvpn-gui networkmanager-openvpn`
 - Spotify |`spotify-edge spotifywm spotify-adblock-git spicetify`

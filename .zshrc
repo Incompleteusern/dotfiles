@@ -18,6 +18,9 @@ pathmunge $HOME/gcc-arm-none-eabi-8-2019-q3-update/bin/ after
 export GPG_TTY=$TTY
 export PYTHONPATH=$HOME/.scripts:$PYTHONPATH
 
+export EDITOR="nano"
+# not cool enough for vim
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -132,3 +135,4 @@ alias von="python -m von"
 alias rm="rm -i"
 alias mv="mv -i"
 alias shutdown="shutdown now"
+alias sudo='sudo '
