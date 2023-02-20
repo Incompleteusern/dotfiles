@@ -24,6 +24,7 @@ I don't know how well `init.sh` works right now, run anything here at your own r
 
 TODO:
 - Document https://wiki.archlinux.org/title/OpenSSH#Deny
+- Document https://wiki.archlinux.org/title/Intel_graphics, https://wiki.archlinux.org/title/Hardware_video_acceleration#Configuring_applications, early kmsc
 - https://www.reddit.com/r/archlinux/comments/116dd58/is_it_possible_to_default_remove_make/
 - Firewall, proton-ge-custom-bin, libwebcam-git
 - Document time sync
@@ -182,7 +183,7 @@ TODO:
   - https://wiki.archlinux.org/title/Network_configuration#localhost_is_resolved_over_the_network
   - Use 1.1.1.1, 8.8.8.8 for default dns, mac address randomization
   - Use basic `systemd-resolvd`
-- Make closing lid initiate sleep in `/etc/systemd/logind.conf` with `HandleLidSwitch=suspend` if necessary
+- Make closing lid initiate sleep
 
 # Desktop
 
