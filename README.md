@@ -24,6 +24,7 @@ I don't know how well `init.sh` works right now, run anything here at your own r
 ## TODO
 
 TODO:
+- Document intellij
 - libwebcam-git necessary?
 - Stop bundling `.sty` or something
 - Document https://wiki.archlinux.org/title/OpenSSH#Deny
@@ -295,8 +296,12 @@ TODO:
 # Applications
 
 ## Manual
-- Use catpuccin mocha lavender for firefox, vscode.
-  - TODO automate that shit
+- Firefox
+  - Use duckduckgo, adblock ultimate, h26ify
+  - Use catpuccin mocha lavender theme
+  - TODO automatically copy pref.js + extensions?
+- Use catpuccin mocha lavender for intellij, vscode.
+  - TODO automate that
 - Use `cups` for printer stuff.
   - Do https://wiki.archlinux.org/title/Avahi#Hostname_resolution
   - TODO automate, move to installation section too?
