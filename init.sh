@@ -27,6 +27,9 @@ echo "::1              localhost" >> /etc/hosts
 # systemd-resolvd
 systemctl enable systemd-resolved.service
 
+# systemd-timesyncd
+systemctl enable systemd-timesyncd.service
+
 mkdir --parents /etc/systemd/resolved.conf.d 
 cat <<EOT >> /etc/systemd/resolved.conf.d/dnssec.conf
 [Resolve]
