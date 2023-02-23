@@ -88,7 +88,21 @@ TODO:
   - Processor Microcode | `intel-ucode`
   - Text Editor | `nano nano-syntax-highlighting`
   - Network Manager | `networkmanager` and enable service
-- Systemd-boot (KERNEL PARAMS UNTESTED!!!)
+- Disk Encryption (UNTESTED!!!)
+  - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
+  - Configure `/etc/mkinitcpio.conf`, and add `systemd keyboard sd-vconsole sd-encrypt` presence
+  ```
+    HOOKS=(base udev systemd keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
+  ```
+  - Regenerate initramfs
+- Swap Encryption and Hibernation | `tpm2-tss tpm2-tools` (UNTESTED!!!)
+  - Configure `/etc/mkinitcpio.conf`, and add `resume` after `udev`
+  - Check `cat /sys/class/tpm/tpm0/tpm_version_major` has `2`
+  - List available TPMs at `systemd-cryptenroll --tpm2-device=list`
+  - Enroll key with `systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0,7 /dev/disk/by-partlabel/cryptswap`
+  - Test that it works with `/usr/lib/systemd/systemd-cryptsetup attach swap /dev/disk/by-partlabel/cryptswap - tpm2-device=auto`
+  - Add `rd.luks.options=SWAP_UUID=tpm2-device=auto` to kernel parameters
+- Systemd-boot (ENCRYPTION KERNEL PARAMS UNTESTED!!!)
   - https://wiki.archlinux.org/title/Systemd-boot
   - Use `/boot` as mount point and run `bootctl install`
   - Add in at `/boot/loader/entries/arch.conf`
@@ -99,26 +113,8 @@ TODO:
       initrd  /initramfs-linux.img
       options rd.luks.name=ROOT_UUID=root root=/dev/mapper/root rd.luks.name=USER_UUID=user rd.luks.name=SWAP_UUID=swap resume=/dev/mapper/swap rw quiet splash acpi_backlight=vendor nowatchdog
     ```
-      - TODO document params
+   - TODO document params
    - Same for fallback
-- Disk Encryption (UNTESTED!!!)
-  - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LUKS_on_a_partition
-  - Configure `/etc/mkinitcpio.conf`, and add `systemd keyboard sd-vconsole sd-encrypt` presence
-  ```
-    HOOKS=(base udev systemd keyboard autodetect modconf kms sd-vconsole block sd-encrypt filesystems fsck)
-  ```
-  - Regenerate initramfs
-- Clean Up Boot Options
-  - `efibootmgr` can list and remove them as necessary
-- Swap Encryption and Hibernation | `tpm2-tss tpm2-tools` (UNTESTED!!!)
-  - Configure `/etc/mkinitcpio.conf`, and add `resume` after `udev`
-  - Check `cat /sys/class/tpm/tpm0/tpm_version_major` has `2`
-  - List available TPMs at `systemd-cryptenroll --tpm2-device=list`
-  - Enroll key with `systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0,7 /dev/disk/by-partlabel/cryptswap`
-  - Test that it works with `/usr/lib/systemd/systemd-cryptsetup attach swap /dev/disk/by-partlabel/cryptswap - tpm2-device=auto`
-  - Add `rd.luks.options=SWAP_UUID=tpm2-device=auto` to kernel parameters in `/etc/kernel/cmdline`
-  - Regenerate image with `sbctl generate-bundles --sign`
-
 ## Post-Boot
 
 - Secure Boot | `sbctl`
@@ -136,6 +132,9 @@ TODO:
   - Change default systemd-boot, remove `arch.conf` (?)
   - Re-enable Secure Boot
   
+- Clean Up Boot Options
+  - `efibootmgr` can list and remove them as necessary
+
 - Add user
   `# useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
 - Add wheel group to sudoers | `sudo`
