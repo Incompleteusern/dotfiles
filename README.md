@@ -47,7 +47,6 @@ TODO:
 ## Manual
 ### Pre-Boot
 - Standard installation
-
 - Three partitions and encryption (UNTESTED!!!)
   - Make root, user, and swap partitions using `cblsk` and part labels `cryptroot`, `cryptuser`, and `cryptswap` (TODO make using fblsk in the future LOL)
   - https://wiki.archlinux.org/title/Dm-crypt/Device_encryption
@@ -71,8 +70,10 @@ TODO:
       # mkfs.ext4 /dev/mapper/user
       # mkswap -L swap /dev/mapper/swap
             
-      # mount /dev/mapper/root /mnt
-      # mount -L /dev/mapper/user /mnt/home
+      # mount LABEL=root /dev/mapper/root /mnt
+      # mount LABEL=user /dev/mapper/user /mnt/home
+      # mkdir /mnt/boot
+      # mount LABEL=EFI /mnt/boot
       # swapon -L swap
     ```
 - Generate fstab
@@ -114,7 +115,6 @@ TODO:
       options rd.luks.name=ROOT_UUID=root root=/dev/mapper/root rd.luks.name=USER_UUID=user rd.luks.name=SWAP_UUID=swap resume=/dev/mapper/swap rw quiet splash acpi_backlight=vendor nowatchdog
     ```
    - TODO document params
-   - Same for fallback
 ## Post-Boot
 
 - Secure Boot | `sbctl`
@@ -125,10 +125,10 @@ TODO:
   - Sign files with `sbctl sign-all`
   - Check everything works with `sbctl status` and `sbctl list-files`
   - Add pacman hooks from https://wiki.archlinux.org/title/Systemd-boot#pacman_hook
-
-- Unified Kernel Image (UNTESTED!!!)
+  - Re-enable Secure Boot
+- Unified Kernel Image
   - Move kernel parameters to `/etc/kernel/cmdline`
-  - TODO splash?, switch to `/efi` for mount
+  - TODO splash?
   - Make bundled image with 
     ```
        sbctl bundle -s -i /boot/intel-ucode.img \
@@ -138,8 +138,7 @@ TODO:
            /boot/EFI/Linux/archlinux.efi
     ```
   - Regenerate with `sbctl generate-bundles --sign`
-  - Change default systemd-boot, remove `arch.conf` (?)
-  - Re-enable Secure Boot
+  - Remove default systemd-boot, remove `arch.conf`
   
 - Clean Up Boot Options
   - `efibootmgr` can list and remove them as necessary
