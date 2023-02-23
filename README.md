@@ -135,7 +135,7 @@ TODO:
            -k /boot/vmlinuz-linux \
            -f /boot/initramfs-linux.img \
            -c /etc/kernel/cmdline \
-           /boot/EFI/archlinux.efi
+           /boot/EFI/Linux/archlinux.efi
     ```
   - Regenerate with `sbctl generate-bundles --sign`
   - Change default systemd-boot, remove `arch.conf` (?)
