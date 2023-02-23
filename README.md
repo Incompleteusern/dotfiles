@@ -1,15 +1,15 @@
 ## Thanks to
 
-- https://github.com/scotus-1/dotfiles for format and what to use
-- https://github.com/flick0/dotfiles for various configs, old waybar
-- https://github.com/Saimoomedits/eww-widgets for the top bar
+- ![scotus-1](https://github.com/scotus-1/dotfiles) for format and what to use
+- ![flick-0](https://github.com/flick0/dotfiles) for various configs, old waybar
+- ![Saimoomedits](https://github.com/Saimoomedits/eww-widgets) for the top bar
   - Modified for catppuccin theming, hyprland and spotify 
-  - TODO move to fork
-- https://github.com/catppuccin for the pastel theming over basically everything I can touch
-  - For rofi, deathmonde specficially is used
-- https://wiki.archlinux.org/title/User:Bai-Chiang/Installation_notes and https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6, https://www.reddit.com/r/archlinux/comments/zo83gb/how_i_setup_secure_boot_for_arch_linux_simple/, and https://gist.github.com/michaelb081988/0e3f1bbd3bb04fb34c0726e28da2a934 for extended installation notes over encryption and so forth
-- https://www.reddit.com/r/archlinux/comments/rz6294/arch_linux_laptop_optimization_guide_for/ for optimization
-- https://github.com/MarianArlt/sddm-sugar-dark/ for sddm theme, modified for catppuccin theming 
+  - TODO move to fork?
+- ![catppuccin](https://github.com/catppuccin) for the pastel theming over basically everything possible
+  - For rofi, Deathmonic specficially is used
+- ![Arch wiki](https://wiki.archlinux.org/) and ![various](https://wiki.archlinux.org/title/User:Bai-Chiang/Installation_notes) ![other](https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6) ![guides](https://www.reddit.com/r/archlinux/comments/zo83gb/how_i_setup_secure_boot_for_arch_linux_simple/) ![about](https://gist.github.com/michaelb081988/0e3f1bbd3bb04fb34c0726e28da2a934) for notes over encryption and so forth
+- ![This](https://www.reddit.com/r/archlinux/comments/rz6294/arch_linux_laptop_optimization_guide_for/) nice guide for optimization
+- ![MarianArlt](https://github.com/MarianArlt/sddm-sugar-dark/) for sddm theme, forked for catppuccin theming 
 
 ## INFO
 
@@ -110,6 +110,14 @@ TODO:
   - Regenerate initramfs
 - Clean Up Boot Options
   - `efibootmgr` can list and remove them as necessary
+- Swap Encryption and Hibernation | `tpm2-tss tpm2-tools` (UNTESTED!!!)
+  - Configure `/etc/mkinitcpio.conf`, and add `resume` after `udev`
+  - Check `cat /sys/class/tpm/tpm0/tpm_version_major` has `2`
+  - List available TPMs at `systemd-cryptenroll --tpm2-device=list`
+  - Enroll key with `systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0,7 /dev/disk/by-partlabel/cryptswap`
+  - Test that it works with `/usr/lib/systemd/systemd-cryptsetup attach swap /dev/disk/by-partlabel/cryptswap - tpm2-device=auto`
+  - Add `rd.luks.options=SWAP_UUID=tpm2-device=auto` to kernel parameters in `/etc/kernel/cmdline`
+  - Regenerate image with `sbctl generate-bundles --sign`
 
 ## Post-Boot
 
@@ -127,15 +135,7 @@ TODO:
   - Make bundled image with `sbctl bundle -i /boot/intel-ucode.img  --save /boot/archlinux.efi`
   - Change default systemd-boot, remove `arch.conf` (?)
   - Re-enable Secure Boot
-- Swap Encryption and Hibernation | `tpm2-tss tpm2-tools` (UNTESTED!!!)
-  - Configure `/etc/mkinitcpio.conf`, and add `resume` after `udev`
-  - Check `cat /sys/class/tpm/tpm0/tpm_version_major` has `2`
-  - List available TPMs at `systemd-cryptenroll --tpm2-device=list`
-  - Enroll key with `systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0,7 /dev/disk/by-partlabel/cryptswap`
-  - Test that it works with `/usr/lib/systemd/systemd-cryptsetup attach swap /dev/disk/by-partlabel/cryptswap - tpm2-device=auto`
-  - Add `rd.luks.options=SWAP_UUID=tpm2-device=auto` to kernel parameters in `/etc/kernel/cmdline`
-  - Regenerate image with `sbctl generate-bundles --sign`
-
+  
 - Add user
   `# useradd -m $user; passwd $user; usermod -aG wheel,audio,video,optical,storage $user`
 - Add wheel group to sudoers | `sudo`
