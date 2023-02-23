@@ -52,8 +52,6 @@ TODO:
 ### Pre-Boot
 - Standard installation
 
-- Disable Secure Boot/Check it is disabled
-  - `# bootctl status | grep "Secure Boot"`
 - Right now, temporary android tether to set up and get driver rtw89 manually
   - Wait till kernel 6.2
 - Three partitions and encryption (UNTESTED!!!)
