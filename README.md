@@ -29,7 +29,6 @@ TODO:
 - Document https://wiki.archlinux.org/title/OpenSSH#Deny
 - https://www.reddit.com/r/archlinux/comments/116dd58/is_it_possible_to_default_remove_make/
 - Firewall
-- Document time sync
 - Learn tmux
 - Change mouse or something idk
 - Customize oh-my-zsh more
@@ -177,6 +176,7 @@ TODO:
   - Use 1.1.1.1, 8.8.8.8 for default dns, mac address randomization
   - Use basic `systemd-resolvd`
 - Make closing lid initiate sleep
+- Systemd-timesynced for basic time syncing
 
 # Desktop
 
