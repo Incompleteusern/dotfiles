@@ -24,13 +24,12 @@ I don't know how well `init.sh` works right now, run anything here at your own r
 ## TODO
 
 TODO:
-- proton-ge-custom-bin, libwebcam-git
+- libwebcam-git necessary?
+- Stop bundling `.sty` or something
 - Document https://wiki.archlinux.org/title/OpenSSH#Deny
 - https://www.reddit.com/r/archlinux/comments/116dd58/is_it_possible_to_default_remove_make/
-- Firewall, proton-ge-custom-bin, libwebcam-git
+- Firewall
 - Document time sync
-- https://wiki.archlinux.org/title/Zsh#Prompts
-- https://wiki.archlinux.org/title/Improving_performance
 - Learn tmux
 - Change mouse or something idk
 - Customize oh-my-zsh more
@@ -39,11 +38,8 @@ TODO:
   - EWW
     - Add customization if mute
 - Customize firefox + fork mozilla? 
-- Do disk encryption, unified kernel image
-- Add disk encryption
-  - https://wiki.archlinux.org/title/Dm-crypt/Device_encryption with sector-size
-  - Do this in February when wifi-adapter is natively supported by udev
-- Swap hibernation encryption support based on https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6#known-issues
+- Test untested parts
+  - Wait till kernel 6.2 since goofy wifi
 - AI gen might be fun for wall paper
 
 # Installation
@@ -52,8 +48,6 @@ TODO:
 ### Pre-Boot
 - Standard installation
 
-- Right now, temporary android tether to set up and get driver rtw89 manually
-  - Wait till kernel 6.2
 - Three partitions and encryption (UNTESTED!!!)
   - Make root, user, and swap partitions using `cblsk` and part labels `cryptroot`, `cryptuser`, and `cryptswap` (TODO make using fblsk in the future LOL)
   - https://wiki.archlinux.org/title/Dm-crypt/Device_encryption
