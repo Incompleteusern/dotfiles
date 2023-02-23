@@ -1,15 +1,15 @@
 ## Thanks to
 
-- ![scotus-1](https://github.com/scotus-1/dotfiles) for format and what to use
-- ![flick-0](https://github.com/flick0/dotfiles) for various configs, old waybar
-- ![Saimoomedits](https://github.com/Saimoomedits/eww-widgets) for the top bar
+- [scotus-1](https://github.com/scotus-1/dotfiles) for format and what to use
+- [flick-0](https://github.com/flick0/dotfiles) for various configs, old waybar
+- [Saimoomedits](https://github.com/Saimoomedits/eww-widgets) for the top bar
   - Modified for catppuccin theming, hyprland and spotify 
   - TODO move to fork?
-- ![catppuccin](https://github.com/catppuccin) for the pastel theming over basically everything possible
+- [catppuccin](https://github.com/catppuccin) for the pastel theming over basically everything possible
   - For rofi, Deathmonic specficially is used
-- ![Arch wiki](https://wiki.archlinux.org/) and ![various](https://wiki.archlinux.org/title/User:Bai-Chiang/Installation_notes) ![other](https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6) ![guides](https://www.reddit.com/r/archlinux/comments/zo83gb/how_i_setup_secure_boot_for_arch_linux_simple/) ![about](https://gist.github.com/michaelb081988/0e3f1bbd3bb04fb34c0726e28da2a934) for notes over encryption and so forth
-- ![This](https://www.reddit.com/r/archlinux/comments/rz6294/arch_linux_laptop_optimization_guide_for/) nice guide for optimization
-- ![MarianArlt](https://github.com/MarianArlt/sddm-sugar-dark/) for sddm theme, forked for catppuccin theming 
+- [Arch wiki](https://wiki.archlinux.org/) and [various](https://wiki.archlinux.org/title/User:Bai-Chiang/Installation_notes) [other](https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6) [guides](https://www.reddit.com/r/archlinux/comments/zo83gb/how_i_setup_secure_boot_for_arch_linux_simple/) [about](https://gist.github.com/michaelb081988/0e3f1bbd3bb04fb34c0726e28da2a934) for notes over encryption and so forth
+- [This](https://www.reddit.com/r/archlinux/comments/rz6294/arch_linux_laptop_optimization_guide_for/) nice guide for optimization
+- [MarianArlt](https://github.com/MarianArlt/sddm-sugar-dark/) for sddm theme, forked for catppuccin theming 
 
 ## INFO
 
