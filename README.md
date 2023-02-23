@@ -47,8 +47,9 @@ TODO:
 ## Manual
 ### Pre-Boot
 - Standard installation
+- resize EFI partition size to 1GB (TODO)
 - Three partitions and encryption (UNTESTED!!!)
-  - Make root, user, and swap partitions using `cblsk` and part labels `cryptroot`, `cryptuser`, and `cryptswap` (TODO make using fblsk in the future LOL)
+  - Make root, user, and swap partitions using `cblsk` and part labels `cryptroot`, `cryptuser`, and `cryptswap`
   - https://wiki.archlinux.org/title/Dm-crypt/Device_encryption
   ```
      # cryptsetup benchmark
@@ -63,16 +64,16 @@ TODO:
      # cryptsetup open /dev/disk/by-partlabel/cryptuser user
      # cryptsetup open /dev/disk/by-partlabel/cryptswap swap
   ```
-  - Unmount, close and remount to make sure that everything is working smoothly
+  - Unmount, close crypt, and remount to make sure that everything is working smoothly
   - Mount and make file systems
     ```
       # mkfs.ext4 /dev/mapper/root
       # mkfs.ext4 /dev/mapper/user
       # mkswap -L swap /dev/mapper/swap
+      # mkdir /mnt/boot
             
       # mount LABEL=root /dev/mapper/root /mnt
       # mount LABEL=user /dev/mapper/user /mnt/home
-      # mkdir /mnt/boot
       # mount LABEL=EFI /mnt/boot
       # swapon -L swap
     ```
@@ -128,7 +129,6 @@ TODO:
   - Re-enable Secure Boot
 - Unified Kernel Image
   - Move kernel parameters to `/etc/kernel/cmdline`
-  - TODO splash?
   - Make bundled image with 
     ```
        sbctl bundle -s -i /boot/intel-ucode.img \
@@ -139,6 +139,7 @@ TODO:
     ```
   - Regenerate with `sbctl generate-bundles --sign`
   - Remove default systemd-boot, remove `arch.conf`
+  - Do same for fallbacks if enough size in partition maybe
   
 - Clean Up Boot Options
   - `efibootmgr` can list and remove them as necessary
