@@ -128,7 +128,16 @@ TODO:
 
 - Unified Kernel Image (UNTESTED!!!)
   - Move kernel parameters to `/etc/kernel/cmdline`
-  - Make bundled image with `sbctl bundle -i /boot/intel-ucode.img  --save /boot/archlinux.efi`
+  - TODO splash?, switch to `/efi` for mount
+  - Make bundled image with 
+    ```
+       sbctl bundle -s -i /boot/intel-ucode.img \
+           -k /boot/vmlinuz-linux \
+           -f /boot/initramfs-linux.img \
+           -c /etc/kernel/cmdline \
+           /boot/EFI/archlinux.efi
+    ```
+  - Regenerate with `sbctl generate-bundles --sign`
   - Change default systemd-boot, remove `arch.conf` (?)
   - Re-enable Secure Boot
   
