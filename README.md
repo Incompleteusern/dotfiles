@@ -170,13 +170,12 @@ TODO:
   - https://unix.stackexchange.com/questions/268221/use-multi-threaded-make-by-default
 - zshrc | `zsh`
 - Pacman Utils | `paccache pacgraph`
-- NetworkManager stuff
-  - Add local host to /etc/hosts
-  - https://wiki.archlinux.org/title/Network_configuration#localhost_is_resolved_over_the_network
+- NetworkManager
+  - [Add local host to /etc/hosts](https://wiki.archlinux.org/title/Network_configuration#localhost_is_resolved_over_the_network)
   - Use 1.1.1.1, 8.8.8.8 for default dns, mac address randomization
   - Use basic `systemd-resolvd`
 - Make closing lid initiate sleep
-- Systemd-timesynced for basic time syncing
+- Systemd-timesyncd for basic time syncing
 
 # Desktop
 
