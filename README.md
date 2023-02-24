@@ -10,7 +10,7 @@
 - [Arch wiki](https://wiki.archlinux.org/) and [various](https://wiki.archlinux.org/title/User:Bai-Chiang/Installation_notes) [other](https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6) [guides](https://www.reddit.com/r/archlinux/comments/zo83gb/how_i_setup_secure_boot_for_arch_linux_simple/) [about](https://gist.github.com/michaelb081988/0e3f1bbd3bb04fb34c0726e28da2a934) for notes over encryption and so forth
 - [This](https://www.reddit.com/r/archlinux/comments/rz6294/arch_linux_laptop_optimization_guide_for/) nice guide for optimization
 - [MarianArlt](https://github.com/MarianArlt/sddm-sugar-dark/) for sddm theme, forked for catppuccin theming 
-
+- [ayamir](https://github.com/ayamir/nvimdots/wiki/Plugins) for nvim reference
 ## INFO
 
 These dotfiles come with three terrible scripts as of last updated:
