@@ -30,6 +30,9 @@ TODO:
 - Document https://wiki.archlinux.org/title/OpenSSH#Deny
 - https://www.reddit.com/r/archlinux/comments/116dd58/is_it_possible_to_default_remove_make/
 - Firewall
+- Document time sync
+- https://wiki.archlinux.org/title/Zsh#Prompts
+- https://wiki.archlinux.org/title/Improving_performance
 - Learn tmux
 - Change mouse or something idk
 - Customize oh-my-zsh more
@@ -224,20 +227,20 @@ TODO:
 - Add `OWM_API_KEY` to be exported frm .env
 
 ## Auto
-- Compositor | `hyprland-git qt5-wayland qt6-wayland` 
+- Compositor | `hyprland qt5-wayland qt6-wayland` 
 - XDG Integration | `xdg-utils xdg-desktop-portal-hyprland`
-- Status Bars | `eww-wayland-git`
-- Wallpapers | `swww-git` 
-- Notification System | `dunst-git libnotify` 
-- Session Locker | `swaylockd swaylock-effects-git swayidle-git`
-- Font Input | `fcitx5-git fcitx5-chinese-addons-git fcitx5-configtool-git fcitx-gtk-git fcitx5-pinyin-zhwiki fcitx5-qt`
-- App Launcher | `rofi-lbonn-wayland-git papirus-icon-theme-git sif-git networkmanager-dmenu-git` 
-- Terminal | `alacritty-git`
-- Pipewire | `pipewire-git wireplumber-git pipewire-jack-git pipewire-pulse-git`
-- Display Manager | `sddm-git sddm-conf-git`
-- Color Temperature | `gammastep-git`
-- Booting Animation | `plymouth-git`
-- Color Picker `hyprpicker-git`
+- Status Bars | `eww-wayland`
+- Wallpapers | `swww` 
+- Notification System | `dunst libnotify` 
+- Session Locker | `swaylockd swaylock-effects swayidle`
+- Font Input | `fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx-gtk fcitx5-pinyin-zhwiki fcitx5-qt`
+- App Launcher | `rofi-lbonn-wayland papirus-icon-theme sif networkmanager-dmenu` 
+- Terminal | `alacritty`
+- Pipewire | `pipewire wireplumber pipewire-jack pipewire-pulse`
+- Display Manager | `sddm sddm-conf`
+- Color Temperature | `gammastep`
+- Booting Animation | `plymouth`
+- Color Picker `hyprpicker`
 - Polkit | `polkit-kde-agent` 
 
 # Utilities
@@ -288,19 +291,19 @@ TODO:
   - Replace ls | `exa`
   - Find | `fzf`, `fd`
   - Requests | `httpie`
-  - Ping | `gping-git`
-  - Git diff | `git-delta-git`
+  - Ping | `gping`
+  - Git diff | `git-delta`
 - power | `tlp tlp-rdw`
 - spotify integration | `playerctl`
-- System Information | `htop neofetch-git duf`
+- System Information | `htop neofetch duf`
 - crontab | `fcron`
 
 # Silly
 ## Manual
 ## Auto
 - fortune | `fortune`
-- cmatrix | `cmatrix-git`
-- ascii art `ascii-rain-git asciiquarium sl donut.c`
+- cmatrix | `cmatrix`
+- ascii art `ascii-rain asciiquarium sl donut.c`
 
 # Applications
 
@@ -319,9 +322,9 @@ TODO:
 
 ## Auto
 - Firefox | `firefox`
-- Discord | `discord-electron-bin discord-screenaudio discord-update-skip-git`
+- Discord | `discord-electron-bin discord-screenaudio discord-update-skip`
 - Prism Launcher | `prismlauncher`
 - Steam | `steam`
 - Vs Code | `visual-studio-code-bin`
 - VPN | `openvpn protonvpn-gui networkmanager-openvpn`
-- Spotify |`spotify-edge spotifywm spotify-adblock-git spicetify`
+- Spotify |`spotify-edge spotifywm spotify-adblock spicetify`

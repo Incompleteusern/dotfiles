@@ -38,7 +38,7 @@ yay -S rofi-lbonn-wayland-git papirus-icon-theme-git sif-git networkmanager-dmen
 yay -S alacritty-git
 
 # pipewire
-yay -S pipewire-git wireplumber-git pipewire-jack-git pipewire-pulse-git
+yay -S pipewire wireplumber-git pipewire-jack pipewire-pulse
 
 # color temperature
 yay -S gammastep-git

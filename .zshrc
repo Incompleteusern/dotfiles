@@ -16,7 +16,6 @@ pathmunge $HOME/.poetry/bin after
 pathmunge $HOME/.local/bin after
 pathmunge $HOME/gcc-arm-none-eabi-8-2019-q3-update/bin/ after
 export GPG_TTY=$TTY
-export PYTHONPATH=$HOME/.scripts:$PYTHONPATH
 
 export EDITOR="nano"
 # not cool enough for vim
