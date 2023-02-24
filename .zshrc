@@ -17,7 +17,7 @@ pathmunge $HOME/.local/bin after
 pathmunge $HOME/gcc-arm-none-eabi-8-2019-q3-update/bin/ after
 export GPG_TTY=$TTY
 
-export EDITOR="nano"
+export EDITOR="nvim"
 # not cool enough for vim
 
 # Path to your oh-my-zsh installation.
@@ -123,7 +123,7 @@ eval $(thefuck --alias)
 
 autoload -Uz promptinit
 promptinit
-prompt fade cyan white green
+prompt fade magenta white
 
 alias cat=bat
 alias ls="exa -lah --group-directories-first"

@@ -94,3 +94,5 @@ yay -S discord-electron-bin discord-screenaudio discord-update-skip-git
 
 # spotify
 yay -S spotify spotifywm spotify-adblock-git spicetify
+
+yay -S nvim

@@ -19,6 +19,7 @@ cp -r ~/.config/networkmanager-dmenu ${BASEDIR}/.config/
 cp -r ~/.config/eww ${BASEDIR}/.config/
 cp -r ~/.config/fcitx5 ${BASEDIR}/.config/
 cp -r ~/.config/htop ${BASEDIR}/.config/
+cp -r ~/.config/nvim ${BASEDIR}/.config/
 cp -r ~/.texmf ${BASEDIR}/
 cp -r  ~/.scripts/ ${BASEDIR}/
 cp -r  ~/.fonts ${BASEDIR}/

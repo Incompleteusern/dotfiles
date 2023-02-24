@@ -21,10 +21,12 @@ These dotfiles come with three terrible scripts as of last updated:
 
 I don't know how well `init.sh` works right now, run anything here at your own risk :)
 
+
 ## TODO
 
 TODO:
 - Document intellij
+- Customize nvim
 - libwebcam-git necessary?
 - Stop bundling `.sty` or something
 - Document https://wiki.archlinux.org/title/OpenSSH#Deny
@@ -45,7 +47,9 @@ TODO:
   - Wait till kernel 6.2 since goofy wifi
 - AI gen might be fun for wall paper
 
+
 # Installation
+
 
 ## Manual
 ### Pre-Boot
@@ -328,3 +332,4 @@ TODO:
 - Vs Code | `visual-studio-code-bin`
 - VPN | `openvpn protonvpn-gui networkmanager-openvpn`
 - Spotify |`spotify-edge spotifywm spotify-adblock spicetify`
+- Neovim | `nvim`
