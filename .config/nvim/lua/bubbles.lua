@@ -21,7 +21,7 @@ require('lualine').setup {
     lualine_y = { 'filetype', 'progress' },
     lualine_z = {
       { 'location',
-      					left_padding = 2,
+      	left_padding = 2,
       } 
     },
   },

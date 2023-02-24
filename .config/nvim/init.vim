@@ -11,8 +11,9 @@ set title
 set ttimeoutlen=0
 set wildmenu
 set expandtab
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
+
 set mousemodel=extend
 
 filetype plugin indent on
@@ -43,6 +44,9 @@ call plug#begin()
     Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
     " Git
     Plug 'airblade/vim-gitgutter'
+
+    Plug 'lukas-reineke/indent-blankline.nvim'
+
 call plug#end()
 
 colorscheme catppuccin
@@ -60,12 +64,10 @@ require('tree')
 require("bufferline").setup{
     options = {
         offsets = {
-			{
-			    filetype = "NvimTree",
-				text = "File Explorer",
-				text_align = "center",
-				padding = 1,
-			}
+            filetype = "NvimTree",
+            text = "File Explorer",
+            text_align = "center",
+            padding = 1,
         },
     }
 }
