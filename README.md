@@ -27,6 +27,7 @@ I don't know how well `init.sh` works right now, run anything here at your own r
 TODO:
 - Document intellij
 - Customize nvim
+- https://wiki.archlinux.org/title/laptop#Hibernate_on_low_battery_level
 - libwebcam-git necessary?
 - Stop bundling `.sty` or something
 - Document https://wiki.archlinux.org/title/OpenSSH#Deny
