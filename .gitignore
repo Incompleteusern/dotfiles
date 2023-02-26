@@ -2,3 +2,5 @@
 .scripts/grimblast
 .scripts/von
 .scripts/wallpaper
+
+.config/nvim

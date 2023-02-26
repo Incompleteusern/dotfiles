@@ -140,3 +140,4 @@ alias mv="mv -i"
 alias shutdown="shutdown now"
 alias sudo='sudo '
 
+source /usr/share/nvm/init-nvm.sh
