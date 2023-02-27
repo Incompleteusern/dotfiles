@@ -26,6 +26,7 @@ I don't know how well `init.sh` works right now, run anything here at your own r
 
 TODO:
 - Document intellij
+- https://wiki.archlinux.org/title/Trash_management
 - Customize nvim
 - https://wiki.archlinux.org/title/laptop#Hibernate_on_low_battery_level
 - libwebcam-git necessary?
@@ -147,7 +148,7 @@ TODO:
     ```
   - Regenerate with `sbctl generate-bundles --sign`
   - Remove default systemd-boot, remove `arch.conf`
-  - Do same for fallbacks if enough size in partition maybe
+  - Do same for fallbacks if enough size in partition
   
 - Clean Up Boot Options
   - `efibootmgr` can list and remove them as necessary

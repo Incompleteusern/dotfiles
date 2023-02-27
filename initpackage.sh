@@ -81,7 +81,7 @@ yay -S cbonsai donut.c cmatrix-git sl ascii-rain-git asciiquarium fortune
 # APPLICATIONS
 
 # firefox - prefer pipewire-jack by earlier
-yay -S firefox 
+yay -S firefox-nightly-bin 
 
 # others
 yay -S prismlauncher steam visual-studio-code-bin
