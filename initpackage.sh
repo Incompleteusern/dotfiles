@@ -26,7 +26,7 @@ yay -S eww-wayland-git swww-git
 yay -S dunst-git libnotify
 
 # session locker
-yay -S swaylockd swaylock-effects-git swayidle-git
+yay -S swaylockd swaylock-effects-git swayidle
 
 # font input
 yay -S fcitx5-git fcitx5-chinese-addons-git fcitx5-configtool-git fcitx5-gtk-git fcitx5-pinyin-zhwiki fcitx5-qt

@@ -26,6 +26,7 @@ I don't know how well `init.sh` works right now, run anything here at your own r
 
 TODO:
 - Document intellij
+- Document systemd boot efi changes
 - https://wiki.archlinux.org/title/Trash_management
 - Customize nvim
 - https://wiki.archlinux.org/title/laptop#Hibernate_on_low_battery_level
@@ -318,8 +319,15 @@ TODO:
   - Use duckduckgo, adblock ultimate, h26ify
   - Use catpuccin mocha lavender theme
   - TODO automatically copy pref.js + extensions?
+  - Set `media.ffmpeg.vaapi.enabled` to true
 - Use catpuccin mocha lavender for intellij, vscode.
   - TODO automate that
+  - https://github.com/catppuccin/github
+https://github.com/catppuccin/steam?
+https://github.com/catppuccin/modrinth
+https://github.com/catppuccin/duckduckgo
+https://github.com/catppuccin/neomutt
+https://github.com/catppuccin/youtube
 - Use `cups` for printer stuff.
   - Do https://wiki.archlinux.org/title/Avahi#Hostname_resolution
   - TODO automate, move to installation section too?

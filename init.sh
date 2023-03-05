@@ -79,12 +79,9 @@ mkdir --parents ~/.scripts/wallpaper
 cp -R ${BASEDIR}/wallpapers ~/.scripts/wallpaper/wallpapers
 
 mkdir --parents /etc/sddm.conf.d
-mkdir --parents /usr/share/wayland-sessions
 mkdir --parents /usr/share/sddm/themes/
 
 cp ${BASEDIR}/.sddm/sddm.conf /etc/sddm.conf.d/sddm.conf
-cp ${BASEDIR}/.sddm/hyprland-wrapped.dekstop /usr/share/wayland-sessions/hyprland-wrapped.desktop
-cp ${BASEDIR}/wrappedhl /usr/local/share/
 
 # power
 systemctl enable tlp.service
