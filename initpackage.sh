@@ -1,7 +1,11 @@
 #!/bin/bash
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-USER = whoami
+if [[ $(whoami | grep "root") = "root" ]]; then
+    echo "root, aborting"
+    exit
+fi
+USER="$(logname)"
 
 # INSTALLATION
 
@@ -12,7 +16,8 @@ makepkg -si
 cd .. 
 rm -rf yay
 
-yay -S pacgraph
+# pacman 
+yay -S pacgraph pacman-contrib informant
 
 # DESKTOP
 
@@ -84,7 +89,7 @@ yay -S cbonsai donut.c cmatrix-git sl ascii-rain-git asciiquarium fortune
 yay -S firefox-nightly-bin 
 
 # others
-yay -S prismlauncher steam visual-studio-code-bin
+yay -S prismlauncher-qt5-git steam visual-studio-code-bin
 
 # proton
 yay -S openvpn protonvpn-gui networkmanager-openvpn
@@ -100,3 +105,12 @@ yay -S nvim
 
 # intellij
 yay -S intellij-idea-community-edition
+
+# theming
+yay -S qt5ct qt6ct nwg-look
+
+# file manager
+yay -S thunar papirus-folders-git
+
+# tor
+yay -S tor tor-browser

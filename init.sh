@@ -1,15 +1,19 @@
 #!/bin/bash
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-USER = whoami
+if [[ $(whoami | grep "root") != "root" ]]; then
+    echo "not root, aborting"
+    exit
+fi
+USER="$(logname)"
 
 # INSTALLATION
 
 # zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-/home/"$USER"/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-/home/"$USER"/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-/home/"$USER"/.oh-my-zsh/custom}/plugins/zsh-completions
 rm .bash_history .bash_logout .bash_profile .bashrc
 
 # fstrim
@@ -18,7 +22,9 @@ systemctl enable fstrim.timer
 # pacman utils
 systemctl enable paccache.timer
 systemctl enable reflector.timer
-cp ${BASEDIR}/reflector.conf ~/etc/xdg/reflector/reflector.conf
+usermod -aG informant "$USER"
+
+cp ${BASEDIR}/reflector.conf /home/"$USER"/etc/xdg/reflector/reflector.conf
 
 # networkmanager
 echo "127.0.0.1        localhost" >> /etc/hosts
@@ -67,16 +73,16 @@ cores=$(nproc)
 echo "MAKEFLAGS=\"-j$cores --load-average=$cores\"" >> /etc/makepkg.conf
 
 # user stuff
-cp -R ${BASEDIR}/.config/ ~/.config/
-cp -R ${BASEDIR}/.scripts/ ~/.scripts/
-cp -R ${BASEDIR}/.zshrc ~/.zshrc
-cp -R ${BASEDIR}/.zshenv ~/.zshenv
-cp -R ${BASEDIR}/.texmf ~/.texmf/
+cp -R ${BASEDIR}/.config/ /home/"$USER"/.config/
+cp -R ${BASEDIR}/.scripts/ /home/"$USER"/.scripts/
+cp -R ${BASEDIR}/.zshrc /home/"$USER"/.zshrc
+cp -R ${BASEDIR}/.zshenv /home/"$USER"/.zshenv
+cp -R ${BASEDIR}/.texmf /home/"$USER"/.texmf/
 
-cp -R ${BASEDIR}/.fonts ~/.fonts
+cp -R ${BASEDIR}/.fonts /home/"$USER"/.fonts
 
-mkdir --parents ~/.scripts/wallpaper
-cp -R ${BASEDIR}/wallpapers ~/.scripts/wallpaper/wallpapers
+mkdir --parents /home/"$USER"/.scripts/wallpaper
+cp -R ${BASEDIR}/wallpapers /home/"$USER"/.scripts/wallpaper/wallpapers
 
 mkdir --parents /etc/sddm.conf.d
 mkdir --parents /usr/share/sddm/themes/
@@ -87,6 +93,9 @@ cp ${BASEDIR}/.sddm/sddm.conf /etc/sddm.conf.d/sddm.conf
 systemctl enable tlp.service
 systemctl enable NetworkManager-dispatcher.service
 systemctl mask systemd-rfkill.service systemd-rfkill.socket
+
+# papirus folders
+papirus-folders -C pink --theme Papirus
 
 source sync.sh
 
@@ -106,12 +115,12 @@ spicetify config extensions catppuccin-mocha.js
 # market place
 curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.sh | sh
 
-cd ~/.scripts/
+cd /home/"$USER"/.scripts/
 
 # von
 #git clone https://github.com/Incompleteusern/von/
 
-cat <<EOT >> ~/.gitconfig
+cat <<EOT >> /home/"$USER"/.gitconfig
 [core]
     pager = delta
 

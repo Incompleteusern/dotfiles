@@ -25,7 +25,6 @@ I don't know how well `init.sh` works right now, actually run anything here at y
 ## TODO
 
 TODO:
-- Document intellij, tor, informant, 
 - https://github.com/catppuccin/steam?
 - https://wiki.archlinux.org/title/Trash_management
 - Customize nvim
@@ -185,7 +184,7 @@ TODO:
 - Make `makepkg` multithread
   - https://unix.stackexchange.com/questions/268221/use-multi-threaded-make-by-default
 - zshrc | `zsh`
-- Pacman Utils | `paccache pacgraph`
+- Pacman Utils | `paccache pacgraph pacman-contrib informant`
 - NetworkManager
   - [Add local host to /etc/hosts](https://wiki.archlinux.org/title/Network_configuration#localhost_is_resolved_over_the_network)
   - Use 1.1.1.1, 8.8.8.8 for default dns, mac address randomization
@@ -312,17 +311,26 @@ TODO:
 
 ## Manual
 - Firefox
-  - Use duckduckgo, ublock origin, h26ify, privacy badger
+  - Use duckduckgo, ublock origin, h26ify, privacy badger, stylus
   - Use catpuccin mocha lavender theme
   - TODO automatically copy pref.js + extensions?
   - Set `media.ffmpeg.vaapi.enabled` to true
-  - https://github.com/catppuccin/github
-  - https://github.com/catppuccin/modrinth
-  - https://github.com/catppuccin/duckduckgo
-  - https://github.com/catppuccin/youtube
 
-- Use catpuccin mocha lavender for Intellij, Vscode.
-  - TODO automate that?
+- Use catpuccin mocha lavender
+  - Through stylus
+    - https://github.com/catppuccin/github
+    - https://github.com/catppuccin/modrinth
+    - https://github.com/catppuccin/duckduckgo
+    - https://github.com/catppuccin/youtube
+ - Through extension
+    - https://github.com/catppuccin/firefox
+    - https://github.com/catppuccin/vscode
+    - https://github.com/catppuccin/jetbrains
+- Through theming tool
+    - https://github.com/catppuccin/gtk
+    - https://github.com/catppuccin/qt5ct (extend to qt6ct)
+- Use papirus-theme for `nwg-look`, `qt5ct qt6c6` (pink)
+ 
 - use `cups` for printer stuff.
   - Do https://wiki.archlinux.org/title/avahi#hostname_resolution
   - todo automate, move to installation section too?
@@ -338,4 +346,7 @@ TODO:
 - VPN | `openvpn protonvpn-gui networkmanager-openvpn`
 - Spotify |`spotify-edge spotifywm spotify-adblock spicetify`
 - Neovim | `nvim` (TODO nvimdots)
-- Intellij | `intellij-idea-community-edition
+- Intellij | `intellij-idea-community-edition`
+- Theming | `qt5ct qt6ct nwg-look`
+- File Manager | `thunar`
+- Tor | `tor tor-browser`
