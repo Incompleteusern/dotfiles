@@ -329,7 +329,7 @@ TODO:
 - Through theming tool
     - https://github.com/catppuccin/gtk
     - https://github.com/catppuccin/qt5ct (extend to qt6ct)
-- Use papirus-theme for `nwg-look`, `qt5ct qt6c6` (pink)
+- Use papirus-icon-theme for `nwg-look`, `qt5ct qt6c6` (pink folders)
  
 - use `cups` for printer stuff.
   - Do https://wiki.archlinux.org/title/avahi#hostname_resolution
