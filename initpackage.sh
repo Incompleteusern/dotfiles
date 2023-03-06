@@ -110,7 +110,7 @@ yay -S intellij-idea-community-edition
 yay -S qt5ct qt6ct nwg-look
 
 # file manager
-yay -S thunar papirus-folders-git
+yay -S thunar papirus-folders-git gvfs bashtrash
 
 # tor
 yay -S tor tor-browser

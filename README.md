@@ -25,6 +25,8 @@ I don't know how well `init.sh` works right now, actually run anything here at y
 ## TODO
 
 TODO:
+- icon theme
+- separate theming
 - https://github.com/catppuccin/steam?
 - https://wiki.archlinux.org/title/Trash_management
 - Customize nvim
@@ -348,5 +350,5 @@ TODO:
 - Neovim | `nvim` (TODO nvimdots)
 - Intellij | `intellij-idea-community-edition`
 - Theming | `qt5ct qt6ct nwg-look`
-- File Manager | `thunar`
+- File Manager | `thunar papirus-folders-git gvfs bashtrash`
 - Tor | `tor tor-browser`
