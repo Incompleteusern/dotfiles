@@ -31,3 +31,6 @@ kwalletd5 &
 
 # gammastep
 gammastep &
+
+# polkit
+/usr/lib/polkit-kde-authentication-agent-1
