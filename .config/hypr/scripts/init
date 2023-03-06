@@ -31,11 +31,3 @@ kwalletd5 &
 
 # gammastep
 gammastep &
-
-# applications
-discord & firefox-nightly & alacritty --title init_kitty & LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify --uri=%U
-
-# polkit
-/usr/lib/polkit-kde-authentication-agent-1
-
-

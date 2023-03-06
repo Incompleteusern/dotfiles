@@ -19,37 +19,32 @@ These dotfiles come with three terrible scripts as of last updated:
 - `init.sh` which installs the github repo into an arch install, should be run as root
 - `initpackage.sh` which installs packages used
 
-I don't know how well `init.sh` works right now, run anything here at your own risk :)
+I don't know how well `init.sh` works right now, actually run anything here at your own risk :)
 
 
 ## TODO
 
 TODO:
-- Document intellij
-- Document systemd boot efi changes
+- Document intellij, tor, informant, 
+- https://github.com/catppuccin/steam?
 - https://wiki.archlinux.org/title/Trash_management
 - Customize nvim
 - https://wiki.archlinux.org/title/laptop#Hibernate_on_low_battery_level
-- libwebcam-git necessary?
 - Stop bundling `.sty` or something
 - Document https://wiki.archlinux.org/title/OpenSSH#Deny
 - https://www.reddit.com/r/archlinux/comments/116dd58/is_it_possible_to_default_remove_make/
 - Firewall
 - Document time sync
-- https://wiki.archlinux.org/title/Zsh#Prompts
 - https://wiki.archlinux.org/title/Improving_performance
 - Learn tmux
 - Change mouse or something idk
 - Customize oh-my-zsh more
 - Configs for desktop
-  - Wallpaper script time!!!!
   - EWW
     - Add customization if mute
 - Customize firefox + fork mozilla? 
 - Test untested parts
   - Wait till kernel 6.2 since goofy wifi
-- AI gen might be fun for wall paper
-
 
 # Installation
 
@@ -163,7 +158,7 @@ TODO:
     ```
     Defaults      env_reset
     Defaults      editor=/usr/bin/rnano, !env_editor
-    Defaults passwd_timeout=0
+    Defaults      passwd_timeout=0
     ```
 - git, ssh/gpg | `git openssh github-cli`
   ```
@@ -316,30 +311,30 @@ TODO:
 
 ## Manual
 - Firefox
-  - Use duckduckgo, adblock ultimate, h26ify
+  - Use duckduckgo, ublock origin, h26ify, privacy badger
   - Use catpuccin mocha lavender theme
   - TODO automatically copy pref.js + extensions?
   - Set `media.ffmpeg.vaapi.enabled` to true
-- Use catpuccin mocha lavender for intellij, vscode.
-  - TODO automate that
   - https://github.com/catppuccin/github
-https://github.com/catppuccin/steam?
-https://github.com/catppuccin/modrinth
-https://github.com/catppuccin/duckduckgo
-https://github.com/catppuccin/neomutt
-https://github.com/catppuccin/youtube
-- Use `cups` for printer stuff.
-  - Do https://wiki.archlinux.org/title/Avahi#Hostname_resolution
-  - TODO automate, move to installation section too?
-- Enable firefox hardware acceleration, reopen tabs on close
+  - https://github.com/catppuccin/modrinth
+  - https://github.com/catppuccin/duckduckgo
+  - https://github.com/catppuccin/youtube
+
+- Use catpuccin mocha lavender for Intellij, Vscode.
+  - TODO automate that?
+- use `cups` for printer stuff.
+  - Do https://wiki.archlinux.org/title/avahi#hostname_resolution
+  - todo automate, move to installation section too?
+- enable firefox hardware acceleration, reopen tabs on close
   - TODO automate?
 
 ## Auto
 - Firefox | `firefox`
-- Discord | `discord-electron-bin discord-screenaudio discord-update-skip`
+- Discord | `discord-electron-bin discord-update-skip`
 - Prism Launcher | `prismlauncher`
 - Steam | `steam`
 - Vs Code | `visual-studio-code-bin`
 - VPN | `openvpn protonvpn-gui networkmanager-openvpn`
 - Spotify |`spotify-edge spotifywm spotify-adblock spicetify`
-- Neovim | `nvim`
+- Neovim | `nvim` (TODO nvimdots)
+- Intellij | `intellij-idea-community-edition

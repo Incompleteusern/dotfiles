@@ -90,9 +90,13 @@ yay -S prismlauncher steam visual-studio-code-bin
 yay -S openvpn protonvpn-gui networkmanager-openvpn
 
 # discord
-yay -S discord-electron-bin discord-screenaudio discord-update-skip-git
+yay -S discord-electron-bin discord-update-skip-git
 
 # spotify
 yay -S spotify spotifywm spotify-adblock-git spicetify
 
+# nvim
 yay -S nvim
+
+# intellij
+yay -S intellij-idea-community-edition
