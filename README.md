@@ -45,6 +45,7 @@ TODO:
 - Customize firefox + fork mozilla? 
 - Test untested parts
   - Wait till kernel 6.2 since goofy wifi
+- Switch to lightdm 
 
 # Installation
 
