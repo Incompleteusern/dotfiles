@@ -26,6 +26,7 @@ I don't know how well `init.sh` works right now, actually run anything here at y
 
 TODO:
 - icon theme
+- keepassxc yt-dlp onefetch krita tldr bandwhich cheat
 - separate theming
 - https://github.com/catppuccin/steam?
 - https://wiki.archlinux.org/title/Trash_management
@@ -314,7 +315,7 @@ TODO:
 ## Manual
 - Firefox
   - Use duckduckgo, ublock origin, h26ify, privacy badger, stylus
-  - Use catpuccin mocha lavender theme
+  - Use https only
   - TODO automatically copy pref.js + extensions?
   - Set `media.ffmpeg.vaapi.enabled` to true
 
@@ -324,6 +325,7 @@ TODO:
     - https://github.com/catppuccin/modrinth
     - https://github.com/catppuccin/duckduckgo
     - https://github.com/catppuccin/youtube
+    - https://github.com/catppuccin/reddit
  - Through extension
     - https://github.com/catppuccin/firefox
     - https://github.com/catppuccin/vscode
@@ -350,5 +352,5 @@ TODO:
 - Neovim | `nvim` (TODO nvimdots)
 - Intellij | `intellij-idea-community-edition`
 - Theming | `qt5ct qt6ct nwg-look`
-- File Manager | `thunar papirus-folders-git gvfs bashtrash`
+- File Manager | `thunar papirus-folders-git gvfs rmtrash trash-cli`
 - Tor | `tor tor-browser`
