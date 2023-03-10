@@ -25,6 +25,7 @@ I don't know how well `init.sh` works right now, actually run anything here at y
 ## TODO
 
 TODO:
+- todo obsidian documentation
 - icon theme
 - keepassxc yt-dlp onefetch krita tldr bandwhich cheat
 - separate theming
@@ -319,7 +320,7 @@ TODO:
   - TODO automatically copy pref.js + extensions?
   - Set `media.ffmpeg.vaapi.enabled` to true
 
-- Use catpuccin mocha lavender
+- Use catpuccin mocha pink LOL
   - Through stylus
     - https://github.com/catppuccin/github
     - https://github.com/catppuccin/modrinth

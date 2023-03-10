@@ -213,7 +213,7 @@ scale trough {
 
 
 .song_btn_prev, .song_btn_next {
-	color: $lavender;
+	color: $sky;
 	font-size : 24px;
 	margin : 3px 0px 0px 12px;
 }
@@ -226,7 +226,7 @@ scale trough {
 
 .cal-in {
     padding: 0px 10px 0px 10px;
-    color: $flamingo;
+    color: $rosewater;
 
 .cal {
      &.highlight {
@@ -242,7 +242,6 @@ scale trough {
 }
 
 calender {
-    color: green;
 }
 calendar:selected {
   color: $red;
@@ -254,7 +253,7 @@ calendar.header {
 }
 
 calendar.button {
-    color: $lavender;
+    color: $rosewater;
 }
 
 calendar.highlight {
@@ -485,7 +484,7 @@ calendar:indeterminate {
 .workspace-entry.current { 
     font-weight: bold;
     border-radius: 4px;
-    color: $mauve;
+    color: $pink;
     background-color: $surface0;
 }
 

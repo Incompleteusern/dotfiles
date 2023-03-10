@@ -72,6 +72,7 @@
 		(box :class "bat_module" :vexpand "false" :hexpand "false" 
             (circular-progress :value battery
                 :class "batbar"
+                :onclick "$HOME/.config/eww/bar/scripts/pop system"
                 :thickness 4
             (button 
                 :class "iconbat"
@@ -86,6 +87,7 @@
 		(box :class "mem_module" :vexpand "false" :hexpand "false" 
             (circular-progress :value memory
                 :class "membar"
+                :onclick "$HOME/.config/eww/bar/scripts/pop system"
                 :thickness 4
             (button 
                 :class "iconmem"
@@ -100,6 +102,7 @@
 		(box :class "cpu_module" :vexpand "false" :hexpand "false" 
             (circular-progress :value {EWW_CPU.avg}
                 :class "cpubar"
+                :onclick "$HOME/.config/eww/bar/scripts/pop system"
                 :thickness 4
             (button 
                 :class "iconcpu"
