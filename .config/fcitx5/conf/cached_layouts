@@ -253,86 +253,6 @@ Description="Keyboard - Ukrainian - Ukrainian (Sun Type 6/7)"
 Language=uk
 Label="ua (sun_type6)"
 
-[keyboard-il]
-Description="Keyboard - Hebrew"
-Language=he
-Label=he
-
-[keyboard-il-biblicalSIL]
-Description="Keyboard - Hebrew - Hebrew (Biblical, SIL phonetic)"
-Language=he
-Label="il (biblicalSIL)"
-
-[keyboard-tr]
-Description="Keyboard - Turkish"
-Language=tr
-Label=tr
-
-[keyboard-tr-f]
-Description="Keyboard - Turkish - Turkish (F)"
-Language=tr
-Label="tr (f)"
-
-[keyboard-tr-e]
-Description="Keyboard - Turkish - Turkish (E)"
-Language=tr
-Label="tr (e)"
-
-[keyboard-tr-alt]
-Description="Keyboard - Turkish - Turkish (Alt-Q)"
-Language=tr
-Label="tr (alt)"
-
-[keyboard-tr-ku]
-Description="Keyboard - Turkish - Kurdish (Turkey, Latin Q)"
-Language=ku
-Label=ku
-
-[keyboard-tr-ku_f]
-Description="Keyboard - Turkish - Kurdish (Turkey, F)"
-Language=ku
-Label="ku (ku_f)"
-
-[keyboard-tr-ku_alt]
-Description="Keyboard - Turkish - Kurdish (Turkey, Latin Alt-Q)"
-Language=ku
-Label="ku (ku_alt)"
-
-[keyboard-tr-intl]
-Description="Keyboard - Turkish - Turkish (intl., with dead keys)"
-Language=tr
-Label="tr (intl)"
-
-[keyboard-tr-ot]
-Description="Keyboard - Turkish - Ottoman (Q)"
-Language=tr
-Label="tr (ot)"
-
-[keyboard-tr-otf]
-Description="Keyboard - Turkish - Ottoman (F)"
-Language=tr
-Label="tr (otf)"
-
-[keyboard-tr-otk]
-Description="Keyboard - Turkish - Old Turkic"
-Language=tr
-Label="tr (otk)"
-
-[keyboard-tr-otkf]
-Description="Keyboard - Turkish - Old Turkic (F)"
-Language=tr
-Label="tr (otkf)"
-
-[keyboard-tr-sun_type6]
-Description="Keyboard - Turkish - Turkish (Sun Type 6/7)"
-Language=tr
-Label="tr (sun_type6)"
-
-[keyboard-tr-us]
-Description="Keyboard - Turkish - Turkish (Turkey, Latin Q, Swap i and ı)"
-Language=tr
-Label="tr (us)"
-
 [keyboard-th]
 Description="Keyboard - Thai"
 Language=th
@@ -389,7 +309,7 @@ Language=sk
 Label="sk (acc)"
 
 [keyboard-sk-sun_type6]
-Description="Keyboard - Slovak - ak (Sun Type 6/7)"
+Description="Keyboard - Slovak - Slovak (Sun Type 6/7)"
 Language=sk
 Label="sk (sun_type6)"
 
@@ -549,7 +469,7 @@ Language=ru
 Label="ru (phonetic_mac)"
 
 [keyboard-ru-sun_type6]
-Description="Keyboard - Russian - 6/7)"
+Description="Keyboard - Russian - Russian (Sun Type 6/7)"
 Language=ru
 Label="ru (sun_type6)"
 
@@ -743,26 +663,6 @@ Description="Keyboard - Estonian - Estonian (Sun Type 6/7)"
 Language=et
 Label="ee (sun_type6)"
 
-[keyboard-l]
-Description="Keyboard - Hebrew"
-Language=he
-Label=he
-
-[keyboard-l-lyx]
-Description="Keyboard - Hebrew - Hebrew (lyx)"
-Language=he
-Label="l (lyx)"
-
-[keyboard-l-phonetic]
-Description="Keyboard - Hebrew - Hebrew (phonetic)"
-Language=he
-Label="l (phonetic)"
-
-[keyboard-l-biblical]
-Description="Keyboard - Hebrew - Hebrew (Biblical, Tiro)"
-Language=he
-Label="l (biblical)"
-
 [keyboard-nl]
 Description="Keyboard - Dutch"
 Language=nl
@@ -794,7 +694,7 @@ Language=cs
 Label=cs
 
 [keyboard-cz-bksl]
-Description="Keyboard - Czech - key)"
+Description="Keyboard - Czech - Czech (with <\\|> key)"
 Language=cs
 Label="cz (bksl)"
 
@@ -1164,7 +1064,7 @@ Language=en
 Label="us (carpalx-intl)"
 
 [keyboard-us-carpalx-altgr-intl]
-Description="Keyboard - English (US) - ntl., with AltGr dead keys)"
+Description="Keyboard - English (US) - English (Carpalx, intl., with AltGr dead keys)"
 Language=en
 Label="us (carpalx-altgr-intl)"
 
@@ -1214,27 +1114,27 @@ Language=en
 Label="us (altgr-weur)"
 
 [keyboard-ge]
-Description="Keyboard - eorgian"
+Description="Keyboard - Georgian"
 Language=ka
 Label=ka
 
 [keyboard-ge-ergonomic]
-Description="Keyboard - eorgian - Georgian (ergonomic)"
+Description="Keyboard - Georgian - Georgian (ergonomic)"
 Language=ka
 Label="ge (ergonomic)"
 
 [keyboard-ge-mess]
-Description="Keyboard - eorgian - Georgian (MESS)"
+Description="Keyboard - Georgian - Georgian (MESS)"
 Language=ka
 Label="ge (mess)"
 
 [keyboard-ge-ru]
-Description="Keyboard - eorgian - Russian (Georgia)"
+Description="Keyboard - Georgian - Russian (Georgia)"
 Language=ru
 Label=ru
 
 [keyboard-ge-os]
-Description="Keyboard - eorgian - Ossetian (Georgia)"
+Description="Keyboard - Georgian - Ossetian (Georgia)"
 Language=os
 Label="ge (os)"
 
@@ -1799,7 +1699,7 @@ Language=da
 Label="dk (mac)"
 
 [keyboard-dk-mac_nodeadkeys]
-Description="Keyboard - Danish - keys)"
+Description="Keyboard - Danish - Danish (Macintosh, no dead keys)"
 Language=da
 Label="dk (mac_nodeadkeys)"
 
@@ -2091,7 +1991,7 @@ Label="ta (tamilnet)"
 [keyboard-in-tamilnet_tamilnumbers]
 Description="Keyboard - Indian - Tamil (TamilNet '99 with Tamil numerals)"
 Language=ta
-Label="a (tamilnet_tamilnumbers)"
+Label="ta (tamilnet_tamilnumbers)"
 
 [keyboard-in-tamilnet_TAB]
 Description="Keyboard - Indian - Tamil (TamilNet '99, TAB encoding)"
@@ -2354,7 +2254,7 @@ Language=lv
 Label="lv (sun_type6)"
 
 [keyboard-lv-apostrophe-deadquotes]
-Description="Keyboard - Latvian - ad quotes)"
+Description="Keyboard - Latvian - Latvian (apostrophe, dead quotes)"
 Language=lv
 Label="lv (apostrophe-deadquotes)"
 
@@ -3308,6 +3208,101 @@ Description="Keyboard - Hungarian - Old Hungarian (for ligatures)"
 Language=hu
 Label="oldhun(lig) (oldhunlig)"
 
+[keyboard-tr]
+Description="Keyboard - Turkish"
+Language=tr
+Label=tr
+
+[keyboard-tr-f]
+Description="Keyboard - Turkish - Turkish (F)"
+Language=tr
+Label="tr (f)"
+
+[keyboard-tr-e]
+Description="Keyboard - Turkish - Turkish (E)"
+Language=tr
+Label="tr (e)"
+
+[keyboard-tr-alt]
+Description="Keyboard - Turkish - Turkish (Alt-Q)"
+Language=tr
+Label="tr (alt)"
+
+[keyboard-tr-ku]
+Description="Keyboard - Turkish - Kurdish (Turkey, Latin Q)"
+Language=ku
+Label=ku
+
+[keyboard-tr-ku_f]
+Description="Keyboard - Turkish - Kurdish (Turkey, F)"
+Language=ku
+Label="ku (ku_f)"
+
+[keyboard-tr-ku_alt]
+Description="Keyboard - Turkish - Kurdish (Turkey, Latin Alt-Q)"
+Language=ku
+Label="ku (ku_alt)"
+
+[keyboard-tr-intl]
+Description="Keyboard - Turkish - Turkish (intl., with dead keys)"
+Language=tr
+Label="tr (intl)"
+
+[keyboard-tr-ot]
+Description="Keyboard - Turkish - Ottoman (Q)"
+Language=tr
+Label="tr (ot)"
+
+[keyboard-tr-otf]
+Description="Keyboard - Turkish - Ottoman (F)"
+Language=tr
+Label="tr (otf)"
+
+[keyboard-tr-otk]
+Description="Keyboard - Turkish - Old Turkic"
+Language=tr
+Label="tr (otk)"
+
+[keyboard-tr-otkf]
+Description="Keyboard - Turkish - Old Turkic (F)"
+Language=tr
+Label="tr (otkf)"
+
+[keyboard-tr-sun_type6]
+Description="Keyboard - Turkish - Turkish (Sun Type 6/7)"
+Language=tr
+Label="tr (sun_type6)"
+
+[keyboard-tr-us]
+Description="Keyboard - Turkish - Turkish (Turkey, Latin Q, Swap i and ı)"
+Language=tr
+Label="tr (us)"
+
+[keyboard-il]
+Description="Keyboard - Hebrew"
+Language=he
+Label=he
+
+[keyboard-il-lyx]
+Description="Keyboard - Hebrew - Hebrew (lyx)"
+Language=he
+Label="il (lyx)"
+
+[keyboard-il-phonetic]
+Description="Keyboard - Hebrew - Hebrew (phonetic)"
+Language=he
+Label="il (phonetic)"
+
+[keyboard-il-biblical]
+Description="Keyboard - Hebrew - Hebrew (Biblical, Tiro)"
+Language=he
+Label="il (biblical)"
+
+[keyboard-il-biblicalSIL]
+Description="Keyboard - Hebrew - Hebrew (Biblical, SIL phonetic)"
+Language=he
+Label="il (biblicalSIL)"
+
 [keyboard-it]
 Description="Keyboard - Italian"
 Language=it
@@ -3379,7 +3374,7 @@ Language=ja
 Label=ja
 
 [keyboard-jp-kana]
-Description="Keyboard - Japanese - ana)"
+Description="Keyboard - Japanese - Japanese (Kana)"
 Language=ja
 Label="jp (kana)"
 

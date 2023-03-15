@@ -27,6 +27,7 @@ I don't know how well `init.sh` works right now, actually run anything here at y
 TODO:
 - todo obsidian documentation
 - icon theme
+- goofy driver stuff for proton
 - keepassxc yt-dlp onefetch krita tldr bandwhich cheat
 - separate theming
 - https://github.com/catppuccin/steam?
@@ -42,6 +43,7 @@ TODO:
 - Learn tmux
 - Change mouse or something idk
 - Customize oh-my-zsh more
+- https://wiki.archlinux.org/title/Makepkg#Tips_and_tricks
 - Configs for desktop
   - EWW
     - Add customization if mute
