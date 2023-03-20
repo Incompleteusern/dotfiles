@@ -25,13 +25,13 @@ I don't know how well `init.sh` works right now, actually run anything here at y
 ## TODO
 
 TODO:
+- https://github.com/catppuccin/papirus-folders
+- phinger-cursors? thunar-archive-plugin thunar-media-tags-plugin thunar-volman
 - todo obsidian documentation
 - icon theme
 - goofy driver stuff for proton
 - keepassxc yt-dlp onefetch krita tldr bandwhich cheat
 - separate theming
-- https://github.com/catppuccin/steam?
-- https://wiki.archlinux.org/title/Trash_management
 - Customize nvim
 - https://wiki.archlinux.org/title/laptop#Hibernate_on_low_battery_level
 - Stop bundling `.sty` or something
@@ -292,7 +292,7 @@ TODO:
 - Desktop Control | `brightnessctl pamixer`
 - Fonts | `ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd`
   - Set Chinese as font priority
-- Screenshots | `grim slurp wl-clipboard jq` (grimblast)
+- Screenshots | `grimblast-git`
 - Scheduler | `cronie`
 - Command Line
   - Replace cat | `bat`

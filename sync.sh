@@ -1,10 +1,3 @@
-# Update grimblast
-git clone https://github.com/hyprwm/contrib
-cd contrib
-cp grimblast/grimblast ~/scripts/
-cd ..
-rm -rf contrib
-
 # Update plymouth theme
 git clone https://github.com/catppuccin/plymouth.git && cd plymouth
 sudo cp -r themes/* /usr/share/plymouth/themes/

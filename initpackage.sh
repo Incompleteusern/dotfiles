@@ -75,7 +75,7 @@ yay -S bat duf exa fzf fd httpie gping-git git-delta-git fcron
 yay -S htop neofetch-git duf neofetch-git
 
 # screenshots
-yay -S grim slurp wl-clipboard jq
+yay -S grimblast-git
 
 # power
 yay -S tlp tlp-rdw
