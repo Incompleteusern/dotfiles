@@ -25,7 +25,10 @@ I don't know how well `init.sh` works right now, actually run anything here at y
 ## TODO
 
 TODO:
+- I removed cheat added imagemagick
 - https://github.com/catppuccin/papirus-folders
+- https://github.com/NoiSek/Aether
+- https://github.com/catppuccin/tty
 - phinger-cursors? thunar-archive-plugin thunar-media-tags-plugin thunar-volman
 - todo obsidian documentation
 - icon theme
