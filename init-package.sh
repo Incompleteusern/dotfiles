@@ -69,10 +69,7 @@ yay -S brightnessctl pamixer
 yay -S ttf-ms-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-iosevka-nerd
 
 # command line
-yay -S bat duf exa fzf fd httpie gping-git git-delta-git fcron
-
-# system info
-yay -S htop neofetch-git duf neofetch-git
+yay -S bat duf exa fzf fd httpie gping-git git-delta-git fcron htop neofetch-git duf neofetch-git bandwhich yt-dlp man-db tldr onefetch playerctl
 
 # screenshots
 yay -S grimblast-git

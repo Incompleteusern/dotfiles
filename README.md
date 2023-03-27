@@ -17,7 +17,7 @@ These dotfiles come with three terrible scripts as of last updated:
 - `local.sh` which syncs local files into this github repo
 - `sync.sh` which syncs bundled github repos into local files, note that this contains repos I have forked 
 - `init.sh` which installs the github repo into an arch install, should be run as root
-- `initpackage.sh` which installs packages used
+- `init-package.sh` which installs packages used
 
 I don't know how well `init.sh` works right now, actually run anything here at your own risk :)
 
@@ -30,14 +30,11 @@ TODO:
 - https://github.com/catppuccin/minecraft maybe
 - https://bengarrison.me/joplin-vs-obsidian/ https://github.com/catppuccin/joplin
 - qbittorrent?
-- https://github.com/catppuccin/cursors?
 - wait for https://github.com/catppuccin/cli
-- change rofi box highlight
 - todo obsidian documentation
 - icon theme
 - goofy driver stuff for proton
-- keepassxc yt-dlp onefetch krita tldr bandwhich cheat
-- separate theming
+- keepassxc krita
 - Customize nvim
 - https://wiki.archlinux.org/title/laptop#Hibernate_on_low_battery_level
 - Stop bundling `.sty` or something
@@ -46,7 +43,6 @@ TODO:
 - Firewall
 - Document time sync
 - https://wiki.archlinux.org/title/Improving_performance
-- Learn tmux
 - Customize oh-my-zsh more
 - https://wiki.archlinux.org/title/Makepkg#Tips_and_tricks
 - Configs for desktop
@@ -291,7 +287,7 @@ TODO:
       ```
       vm.dirty_writeback_centisecs = 6000
       ```
-  gpu power saving, audio power save
+  TODO gpu power saving, audio power save
 
 
 ## Auto
@@ -306,10 +302,12 @@ TODO:
   - Find | `fzf`, `fd`
   - Requests | `httpie`
   - Ping | `gping`
-  - Git diff | `git-delta`
+  - Git Info | `git-delta onefetch`
+  - Command Info | `tldr man-db`
+  - Youtube Downloader | `yt-dlp`
+  - System Information | `htop neofetch duf bandwhich`
 - power | `tlp tlp-rdw`
-- spotify integration | `playerctl`
-- System Information | `htop neofetch duf`
+- Spotify Integration | `playerctl`
 - crontab | `fcron`
 
 # Silly
