@@ -16,8 +16,12 @@ pathmunge $HOME/.poetry/bin after
 pathmunge $HOME/.local/bin after
 pathmunge $HOME/gcc-arm-none-eabi-8-2019-q3-update/bin/ after
 export GPG_TTY=$TTY
-
+export BAT_THEME="Catppuccin-mocha"
 export EDITOR="nvim"
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 # not cool enough for vim
 
 # Path to your oh-my-zsh installation.
@@ -141,3 +145,4 @@ alias shutdown="shutdown now"
 alias sudo='sudo '
 
 (source /usr/share/nvm/init-nvm.sh &) &> /dev/null
+

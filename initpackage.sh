@@ -37,7 +37,7 @@ yay -S swaylockd swaylock-effects-git swayidle
 yay -S fcitx5-git fcitx5-chinese-addons-git fcitx5-configtool-git fcitx5-gtk-git fcitx5-pinyin-zhwiki fcitx5-qt
 
 # app launcher thing
-yay -S rofi-lbonn-wayland-git papirus-icon-theme-git sif-git networkmanager-dmenu-git
+yay -S rofi-lbonn-wayland-git networkmanager-dmenu-git
 
 # terminal
 yay -S alacritty-git
@@ -106,11 +106,20 @@ yay -S nvim
 # intellij
 yay -S intellij-idea-community-edition
 
-# theming
-yay -S qt5ct qt6ct nwg-look
 
 # file manager
-yay -S thunar papirus-folders-git gvfs rmtrash trash-cli
+yay -S thunar papirus-folders-catppuccin-git gvfs rmtrash trash-cli thunar-archive-plugin thunar-media-tags-plugin thunar-volman
 
 # tor
 yay -S tor tor-browser
+
+# THEMING
+
+# tools
+yay -S qt5ct qt6ct nwg-look
+
+# papirus folders
+yay -S papirus-folders-catppuccin-git papirus-icon-theme-git
+
+# cursors
+yay -S phinger-cursors

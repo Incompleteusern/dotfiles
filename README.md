@@ -25,11 +25,14 @@ I don't know how well `init.sh` works right now, actually run anything here at y
 ## TODO
 
 TODO:
-- I removed cheat added imagemagick
-- https://github.com/catppuccin/papirus-folders
 - https://github.com/NoiSek/Aether
-- https://github.com/catppuccin/tty
-- phinger-cursors? thunar-archive-plugin thunar-media-tags-plugin thunar-volman
+- https://github.com/catppuccin/kde for krita?
+- https://github.com/catppuccin/minecraft maybe
+- https://bengarrison.me/joplin-vs-obsidian/ https://github.com/catppuccin/joplin
+- qbittorrent?
+- https://github.com/catppuccin/cursors?
+- wait for https://github.com/catppuccin/cli
+- change rofi box highlight
 - todo obsidian documentation
 - icon theme
 - goofy driver stuff for proton
@@ -44,7 +47,6 @@ TODO:
 - Document time sync
 - https://wiki.archlinux.org/title/Improving_performance
 - Learn tmux
-- Change mouse or something idk
 - Customize oh-my-zsh more
 - https://wiki.archlinux.org/title/Makepkg#Tips_and_tricks
 - Configs for desktop
@@ -56,7 +58,6 @@ TODO:
 - Switch to lightdm 
 
 # Installation
-
 
 ## Manual
 ### Pre-Boot
@@ -121,6 +122,8 @@ TODO:
 - Systemd-boot (ENCRYPTION KERNEL PARAMS UNTESTED!!!)
   - https://wiki.archlinux.org/title/Systemd-boot
   - Use `/boot` as mount point and run `bootctl install`
+  - TODO loader params
+    - Enable editor, timeout 0
   - Add in at `/boot/loader/entries/arch.conf`
     ```
       title   Arch Linux
@@ -245,7 +248,7 @@ TODO:
 - Notification System | `dunst libnotify` 
 - Session Locker | `swaylockd swaylock-effects swayidle`
 - Font Input | `fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx-gtk fcitx5-pinyin-zhwiki fcitx5-qt`
-- App Launcher | `rofi-lbonn-wayland papirus-icon-theme sif networkmanager-dmenu` 
+- App Launcher | `rofi-lbonn-wayland networkmanager-dmenu` 
 - Terminal | `alacritty`
 - Pipewire | `pipewire wireplumber pipewire-jack pipewire-pulse`
 - Display Manager | `sddm sddm-conf`
@@ -325,27 +328,12 @@ TODO:
   - TODO automatically copy pref.js + extensions?
   - Set `media.ffmpeg.vaapi.enabled` to true
 
-- Use catpuccin mocha pink LOL
-  - Through stylus
-    - https://github.com/catppuccin/github
-    - https://github.com/catppuccin/modrinth
-    - https://github.com/catppuccin/duckduckgo
-    - https://github.com/catppuccin/youtube
-    - https://github.com/catppuccin/reddit
- - Through extension
-    - https://github.com/catppuccin/firefox
-    - https://github.com/catppuccin/vscode
-    - https://github.com/catppuccin/jetbrains
-- Through theming tool
-    - https://github.com/catppuccin/gtk
-    - https://github.com/catppuccin/qt5ct (extend to qt6ct)
-- Use papirus-icon-theme for `nwg-look`, `qt5ct qt6c6` (pink folders)
- 
 - use `cups` for printer stuff.
   - Do https://wiki.archlinux.org/title/avahi#hostname_resolution
   - todo automate, move to installation section too?
 - enable firefox hardware acceleration, reopen tabs on close
   - TODO automate?
+
 
 ## Auto
 - Firefox | `firefox`
@@ -357,6 +345,47 @@ TODO:
 - Spotify |`spotify-edge spotifywm spotify-adblock spicetify`
 - Neovim | `nvim` (TODO nvimdots)
 - Intellij | `intellij-idea-community-edition`
-- Theming | `qt5ct qt6ct nwg-look`
-- File Manager | `thunar papirus-folders-git gvfs rmtrash trash-cli`
+- File Manager | `thunar gvfs rmtrash trash-cli thunar-archive-plugin thunar-media-tags-plugin thunar-volman`
 - Tor | `tor tor-browser`
+
+# Theming
+
+## Manual
+- Use catpuccin mocha pink LOL
+  - Through stylus
+    - https://github.com/catppuccin/github
+    - https://github.com/catppuccin/modrinth
+    - https://github.com/catppuccin/duckduckgo
+    - https://github.com/catppuccin/youtube
+    - https://github.com/catppuccin/reddit
+    - https://github.com/catppuccin/proton
+    - https://github.com/catppuccin/twitch
+    - https://github.com/catppuccin/hacker-news
+    - https://github.com/catppuccin/monkeytype
+ - Through extension
+    - https://github.com/catppuccin/firefox
+    - https://github.com/catppuccin/vscode
+    - https://github.com/catppuccin/jetbrains
+    - https://github.com/catppuccin/vscode-icons 
+
+ - Through theming tool
+    - https://github.com/catppuccin/gtk
+    - https://github.com/catppuccin/qt5ct (extend to qt6ct)
+ - Manually
+    - https://github.com/catppuccin/prismlauncher
+    - https://github.com/catppuccin/bat
+    - https://github.com/catppuccin/fzf
+    - https://github.com/catppuccin/tty
+- GTK and QT
+  - Use JetBrains Mono 10 font
+  - phinger cursors
+  - pink folders
+    ```
+    papirus-folders -C cat-mocha-pink --theme Papirus
+    ```
+
+## Auto
+- Theming Tools | `qt5ct qt6ct nwg-look`
+- Papirus | `papirus-folders-catppuccin-git papirus-icon-theme-git`
+- Cursors | `phinger-cursors`
+
