@@ -26,17 +26,18 @@
 (deflisten song_artist :initial "No Artist" "bash ~/.config/eww/bar/scripts/music_info --artist")
 (deflisten song_album :initial "No Album" "bash ~/.config/eww/bar/scripts/music_info --album")
 (deflisten current_status :initial "0.0" "bash ~/.config/eww/bar/scripts/music_info --time")
-(deflisten song_status :initial "奈" "bash ~/.config/eww/bar/scripts/music_info --status")
+(deflisten song_status :initial "󰁚" "bash ~/.config/eww/bar/scripts/music_info --status")
 (deflisten cover_art :initial "images/music.png" "bash ~/.config/eww/bar/scripts/music_info --cover")
 
 (defpoll player_active :interval "1s" "~/.config/eww/bar/scripts/music_info --active")
 
-(defvar clock_time 0)
-(defvar clock_minute 0)
-(defvar clock_date 0)
-(defvar calendar_day 0)
-(defvar calendar_month 0)
-(defvar calendar_year 0)
+(defpoll clock_time :interval "1s" "date +\%I")
+(defpoll clock_minute :interval "1s" "date +\%M")
+(defpoll clock_date :interval "1m" "date '+%d/%m'")
+(defpoll calendar_day :interval "1m" "date '+%d'")
+(defvar calendar_month :interval "1h" "date '+%m'")
+(defpoll calendar_year :interval "1h" "date '+%Y'")
+
 
 ;; widgets
 

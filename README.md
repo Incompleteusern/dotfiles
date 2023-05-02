@@ -241,12 +241,6 @@ TODO:
     !exesev,bootrun
 
     */15 * * * * source ~/.env; bash ~/.scripts/wallpaper/wallpaper.sh
-
-    * * * * * eww -c ~/.config/eww/bar update clock_minute="$(date +\%M)"
-    0 * * * * eww -c ~/.config/eww/bar update clock_time="$(date +\%I)"
-    0 0 * * * eww -c ~/.config/eww/bar update clock_date="$(date '+%m/%d')"; eww -c ~/.config/eww/bar up>
-    0 0 1 * * eww -c ~/.config/eww/bar update calendar_month="$(date '+%m')"
-    0 0 1 1 * eww -c ~/.config/eww/bar update calendar_year="$(date '+%Y')"
     ```
 
   - TODO automate this
