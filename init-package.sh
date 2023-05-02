@@ -2,8 +2,8 @@
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 if [[ $(whoami | grep "root") = "root" ]]; then
-    echo "root, aborting"
-    exit
+	echo "root, aborting"
+	exit
 fi
 USER="$(logname)"
 
@@ -12,11 +12,11 @@ USER="$(logname)"
 # yay
 git clone https://aur.archlinux.org/yay.git
 cd yay
-makepkg -si 
-cd .. 
+makepkg -si
+cd ..
 rm -rf yay
 
-# pacman 
+# pacman
 yay -S pacgraph pacman-contrib informant
 
 # DESKTOP
@@ -25,7 +25,7 @@ yay -S pacgraph pacman-contrib informant
 yay -S hyprland-git xdg-utils qt5-wayland qt6-wayland xdg-desktop-portal-hyprland hyprpicker-git
 
 # bars, wallpaper
-yay -S eww-wayland-git swww-git
+yay -S eww-wayland swww-git
 
 # notifications
 yay -S dunst-git libnotify
@@ -34,7 +34,7 @@ yay -S dunst-git libnotify
 yay -S swaylockd swaylock-effects-git swayidle
 
 # font input
-yay -S fcitx5-git fcitx5-chinese-addons-git fcitx5-configtool-git fcitx5-gtk-git fcitx5-pinyin-zhwiki fcitx5-qt
+yay -S fcitx5-git fcitx5-chinese-addons-git fcitx5-configtool-git fcitx5-gtk-git fcitx5-pinyin-zhwiki fcitx5-qt fcitx5-mozc
 
 # app launcher thing
 yay -S rofi-lbonn-wayland-git networkmanager-dmenu-git
@@ -83,7 +83,7 @@ yay -S cbonsai donut.c cmatrix-git sl ascii-rain-git asciiquarium fortune
 # APPLICATIONS
 
 # firefox - prefer pipewire-jack by earlier
-yay -S firefox-nightly-bin 
+yay -S firefox-nightly-bin
 
 # others
 yay -S prismlauncher-qt5-git steam visual-studio-code-bin
@@ -102,7 +102,6 @@ yay -S nvim
 
 # intellij
 yay -S intellij-idea-community-edition
-
 
 # file manager
 yay -S thunar papirus-folders-catppuccin-git gvfs rmtrash trash-cli thunar-archive-plugin thunar-media-tags-plugin thunar-volman

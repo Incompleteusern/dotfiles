@@ -8,21 +8,21 @@ TMP_DIR="$HOME/.cache/eww"
 ## Is active
 is_active() {
 	if [[ -z "$(playerctl -ps spotify status)" ]]; then
-			echo "false"
+		echo "false"
 	else
-			echo "true"
+		echo "true"
 	fi
 
 }
 
 ## Get status
 get_status() {
-	playerctl -p spotify  --follow status | while read -r player_status; do
-			if [[ "$player_status" == *"Playing"* ]]; then
-					echo ""
-			else
-					echo "奈"
-			fi
+	playerctl -p spotify --follow status | while read -r player_status; do
+		if [[ "$player_status" == *"Playing"* ]]; then
+			echo "󰏦"
+		else
+			echo "󰁚"
+		fi
 	done
 }
 
@@ -31,26 +31,25 @@ get_song() {
 	playerctl -p spotify --follow metadata xesam:title | while read -r song; do
 		if [[ -n "$song" ]]; then
 			echo "$song"
-		fi	
+		fi
 	done
 }
-
 
 ## Get artist
 get_artist() {
 	playerctl -p spotify --follow metadata xesam:artist | while read -r artist; do
 		if [[ -n "$artist" ]]; then
 			echo "$artist"
-		fi	
+		fi
 	done
 }
 
 ## Get album
 get_album() {
 	playerctl -p spotify --follow metadata xesam:album | while read -r album; do
-        if [[ -n "$album" ]]; then
-                echo "$album"
-        fi
+		if [[ -n "$album" ]]; then
+			echo "$album"
+		fi
 	done
 }
 
@@ -61,9 +60,9 @@ get_time() {
 		#echo "$(playerctl -p spotify position)"
 		#echo "$(playerctl -p spotify metadata "mpris:length")"
 		atime=$(echo "print \$(($position * 100.0 / $length))" | zsh)
-        if [[ -n "$atime" ]]; then
-                echo "$atime"
-        fi
+		if [[ -n "$atime" ]]; then
+			echo "$atime"
+		fi
 	done
 }
 
@@ -78,13 +77,13 @@ get_cover() {
 	playerctl -p spotify --follow metadata mpris:artUrl | while read -r cover; do
 		# Check if the file has a embbeded album art
 		if [[ -n "$cover" ]]; then
-			id=$(sha1sum <<< "$cover")
+			id=$(sha1sum <<<"$cover")
 			tmp_temp_path="$TMP_DIR/${id::-4}.png"
-			echo "$tmp_temp_path" 
+			echo "$tmp_temp_path"
 			if [[ ! -e "$tmp_temp_path" ]]; then
-				curl -sf --create-dirs  "$cover" --output "$tmp_temp_path"
+				curl -sf --create-dirs "$cover" --output "$tmp_temp_path"
 			fi
-        fi
+		fi
 	done
 }
 
@@ -96,13 +95,13 @@ if [[ "$1" == "--song" ]]; then
 elif [[ "$1" == "--artist" ]]; then
 	get_artist
 elif [[ "$1" == "--album" ]]; then
-        get_album
+	get_album
 elif [[ "$1" == "--status" ]]; then
 	get_status
 elif [[ "$1" == "--time" ]]; then
 	get_time
 elif [[ "$1" == "--position" ]]; then
-        set_time "$2"
+	set_time "$2"
 elif [[ "$1" == "--cover" ]]; then
 	get_cover
 elif [[ "$1" == "--toggle" ]]; then
@@ -114,4 +113,3 @@ elif [[ "$1" == "--prev" ]]; then
 elif [[ "$1" == "--active" ]]; then
 	is_active
 fi
-

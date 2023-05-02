@@ -120,7 +120,7 @@
 			  :onhoverlost "${EWW_CMD} update time_rev=false"
     (box :class "module" :space-evenly "false" :orientation "h" :spacing "3" 
       (label :text clock_time :class "clock_time_class" )
-      (label :text "" :class "clock_time_sep" )
+      (label :text "󰇙" :class "clock_time_sep" )
       (label :text clock_minute :class "clock_minute_class")
 	  (revealer :transition "slideleft"
 			  :reveal time_rev
