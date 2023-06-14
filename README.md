@@ -27,7 +27,6 @@ I don't know how well `init.sh` works right now, actually run anything here at y
 
 TODO:
 
-- firefox-nightly distrib
 - pamixer to wpctl
 - https://github.com/NoiSek/Aether
 - https://github.com/catppuccin/minecraft maybe
@@ -347,6 +346,7 @@ TODO:
 
 - Firefox
 
+  - Disable incognito mode ig
   - Use duckduckgo, ublock origin, h26ify, privacy badger, stylus
   - Use https only
   - TODO automatically copy pref.js + extensions?

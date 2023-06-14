@@ -33,9 +33,9 @@
 
 (defpoll clock_time :interval "1s" "date +\%I")
 (defpoll clock_minute :interval "1s" "date +\%M")
-(defpoll clock_date :interval "1m" "date '+%d/%m'")
+(defpoll clock_date :interval "1m" "date '+%m/%d'")
 (defpoll calendar_day :interval "1m" "date '+%d'")
-(defvar calendar_month :interval "1h" "date '+%m'")
+(defpoll calendar_month :interval "1h" "date '+%m'")
 (defpoll calendar_year :interval "1h" "date '+%Y'")
 
 
