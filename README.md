@@ -346,7 +346,7 @@ TODO:
 
 - Firefox
 
-  - Disable incognito mode ig
+  - Block reddit in /etc/hosts most of the time
   - Use duckduckgo, ublock origin, h26ify, privacy badger, stylus
   - Use https only
   - TODO automatically copy pref.js + extensions?
@@ -383,7 +383,7 @@ TODO:
     - https://github.com/catppuccin/modrinth
     - https://github.com/catppuccin/duckduckgo
     - https://github.com/catppuccin/youtube
-    - https://github.com/catppuccin/reddit
+    - https://github.com/catppuccin/reddit (irrelevant)
     - https://github.com/catppuccin/proton
     - https://github.com/catppuccin/twitch
     - https://github.com/catppuccin/hacker-news
