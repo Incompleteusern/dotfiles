@@ -29,6 +29,7 @@ TODO:
 
 - pamixer to wpctl
 - https://github.com/NoiSek/Aether
+- https://wiki.archlinux.org/title/System_time#Update_timezone_every_time_NetworkManager_connects_to_a_network
 - https://github.com/catppuccin/minecraft maybe
 - https://bengarrison.me/joplin-vs-obsidian/ https://github.com/catppuccin/joplin
 - qbittorrent?

@@ -20,6 +20,7 @@ rm -rf sddm-sugar-dark
 git clone https://github.com/Incompleteusern/wallpaper && cd wallpaper
 cp wallpaper.sh ~/.scripts/wallpaper/wallpaper.sh
 cp set-wallpaper.py ~/.scripts/wallpaper/set-wallpaper.py
+cd ..
 rm -rf wallpaper
 
 # von
