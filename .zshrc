@@ -139,10 +139,10 @@ alias sleep="systemctl suspend"
 alias restart="reboot now"
 alias sl="sl -e"
 alias von="python -m von"
-alias rm="rmtrash -i"
-alias mv="mv -i"
+alias rm="rmtrash"
 alias shutdown="shutdown now"
 alias sudo='sudo '
 
 (source /usr/share/nvm/init-nvm.sh &) &> /dev/null
 
+export PATH=$PATH:/home/royce/.spicetify

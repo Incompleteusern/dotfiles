@@ -42,7 +42,6 @@ TODO:
 - https://wiki.archlinux.org/title/laptop#Hibernate_on_low_battery_level
 - Stop bundling `.sty` or something
 - Document https://wiki.archlinux.org/title/OpenSSH#Deny
-- https://www.reddit.com/r/archlinux/comments/116dd58/is_it_possible_to_default_remove_make/
 - Firewall
 - Document time sync
 - https://wiki.archlinux.org/title/Improving_performance
