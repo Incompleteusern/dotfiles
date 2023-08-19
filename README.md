@@ -31,13 +31,10 @@ TODO:
 - https://github.com/NoiSek/Aether
 - https://wiki.archlinux.org/title/System_time#Update_timezone_every_time_NetworkManager_connects_to_a_network
 - https://github.com/catppuccin/minecraft maybe
-- https://bengarrison.me/joplin-vs-obsidian/ https://github.com/catppuccin/joplin
 - qbittorrent?
 - wait for https://github.com/catppuccin/cli
-- todo obsidian documentation
-- icon theme
-- goofy driver stuff for proton
-- keepassxc krita
+- keepassxc
+- proton
 - Customize nvim
 - https://wiki.archlinux.org/title/laptop#Hibernate_on_low_battery_level
 - Stop bundling `.sty` or something
@@ -366,12 +363,13 @@ TODO:
 - Steam | `steam`
 - Vs Code | `visual-studio-code-bin`
 - VPN | `openvpn protonvpn-gui networkmanager-openvpn`
-- Spotify |`spotify-edge spotifywm spotify-adblock spicetify`
+- Spotify |`spotify-edge spotifywm spicetify`
 - Neovim | `nvim` (TODO nvimdots)
-- Intellij | `intellij-idea-community-edition`
+- Intellij | `intellij-idea-community-edition` (have ultimate somehow)
 - File Manager | `thunar gvfs rmtrash trash-cli thunar-archive-plugin thunar-media-tags-plugin thunar-volman`
 - Tor | `tor tor-browser`
 - krita | `krita`
+- joplin | `joplin`
 
 # Theming
 
@@ -389,13 +387,12 @@ TODO:
     - https://github.com/catppuccin/hacker-news
     - https://github.com/catppuccin/monkeytype
     - https://github.com/catppuccin/krita
+    - https://github.com/catppuccin/joplin
 - Through extension
-
   - https://github.com/catppuccin/firefox
   - https://github.com/catppuccin/vscode
   - https://github.com/catppuccin/jetbrains
   - https://github.com/catppuccin/vscode-icons
-
 - Through theming tool
   - https://github.com/catppuccin/gtk
   - https://github.com/catppuccin/qt5ct (extend to qt6ct)

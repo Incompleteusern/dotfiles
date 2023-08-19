@@ -86,7 +86,7 @@ yay -S cbonsai donut.c cmatrix-git sl ascii-rain-git asciiquarium fortune
 yay -S firefox-nightly-bin
 
 # others
-yay -S prismlauncher-qt5-git steam visual-studio-code-bin
+yay -S prismlauncher-qt5-git steam visual-studio-code-bin krita joplin
 
 # proton
 yay -S openvpn protonvpn-gui networkmanager-openvpn
@@ -95,7 +95,7 @@ yay -S openvpn protonvpn-gui networkmanager-openvpn
 yay -S discord-electron-bin discord-update-skip-git
 
 # spotify
-yay -S spotify spotifywm spotify-adblock-git spicetify
+yay -S spotify spotifywm spicetify
 
 # nvim
 yay -S nvim
