@@ -1,13 +1,13 @@
  ;; Variables
-(defpoll volume_percent :interval "1s" "pamixer --get-volume")
-(defpoll mic_percent :interval "1s" "pactl get-source-volume @DEFAULT_SOURCE@  | awk '{gsub(\"\%\", \"\"); print $5}'")
-(defpoll brightness_percent :interval "1s" "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+(defpoll volume_percent :interval "10s" "pamixer --get-volume")
+(defpoll mic_percent :interval "10s" "pactl get-source-volume @DEFAULT_SOURCE@  | awk '{gsub(\"\%\", \"\"); print $5}'")
+(defpoll brightness_percent :interval "10s" "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
 (defpoll battery :interval "10s" "./scripts/battery --bat")
 (defpoll battery_status :interval "10s" "./scripts/battery --bat-st")
 (defpoll memory :interval "10s" "scripts/memory")
-(defpoll memory_used_mb :interval "2s" "scripts/mem-ad used")
-(defpoll memory_total_mb :interval "2s" "scripts/mem-ad total")
-(defpoll memory_free_mb :interval "2s" "scripts/mem-ad free")
+(defpoll memory_used_mb :interval "10s" "scripts/mem-ad used")
+(defpoll memory_total_mb :interval "10s" "scripts/mem-ad total")
+(defpoll memory_free_mb :interval "10s" "scripts/mem-ad free")
 (defvar vol_reveal false)
 (defvar br_reveal false)
 (defvar music_reveal false)
@@ -18,9 +18,9 @@
 
 ;; (defvar eww "eww -c $HOME/.config/eww/bar")
 
-(defpoll COL_WLAN :interval "3s" "~/.config/eww/bar/scripts/wifi --COL")
-(defpoll ESSID_WLAN :interval "3s" "~/.config/eww/bar/scripts/wifi --ESSID")
-(defpoll WLAN_ICON :interval "3s" "~/.config/eww/bar/scripts/wifi --ICON")
+(defpoll COL_WLAN :interval "10s" "~/.config/eww/bar/scripts/wifi --COL")
+(defpoll ESSID_WLAN :interval "10s" "~/.config/eww/bar/scripts/wifi --ESSID")
+(defpoll WLAN_ICON :interval "10s" "~/.config/eww/bar/scripts/wifi --ICON")
 
 (deflisten song :initial "No Song" "bash ~/.config/eww/bar/scripts/music_info --song")
 (deflisten song_artist :initial "No Artist" "bash ~/.config/eww/bar/scripts/music_info --artist")
@@ -34,7 +34,7 @@
 (defpoll clock_time :interval "1s" "date +\%I")
 (defpoll clock_minute :interval "1s" "date +\%M")
 (defpoll clock_date :interval "1m" "date '+%m/%d'")
-(defpoll calendar_day :interval "1m" "date '+%d'")
+(defpoll calendar_day :interval "5m" "date '+%d'")
 (defpoll calendar_month :interval "1h" "date '+%m'")
 (defpoll calendar_year :interval "1h" "date '+%Y'")
 

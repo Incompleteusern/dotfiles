@@ -44,12 +44,12 @@ TODO:
 - https://wiki.archlinux.org/title/Improving_performance
 - Customize oh-my-zsh more
 - https://wiki.archlinux.org/title/Makepkg#Tips_and_tricks
+- fix sync.sh
 - Configs for desktop
   - EWW
     - Add customization if mute
 - Customize firefox + fork mozilla?
 - Test untested parts
-  - Wait till kernel 6.2 since goofy wifi
 - Switch to lightdm
 
 # Installation
