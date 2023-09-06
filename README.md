@@ -386,13 +386,12 @@ TODO:
     - https://github.com/catppuccin/twitch
     - https://github.com/catppuccin/hacker-news
     - https://github.com/catppuccin/monkeytype
-    - https://github.com/catppuccin/krita
-    - https://github.com/catppuccin/joplin
 - Through extension
   - https://github.com/catppuccin/firefox
   - https://github.com/catppuccin/vscode
   - https://github.com/catppuccin/jetbrains
   - https://github.com/catppuccin/vscode-icons
+  - https://github.com/catppuccin/joplin
 - Through theming tool
   - https://github.com/catppuccin/gtk
   - https://github.com/catppuccin/qt5ct (extend to qt6ct)
