@@ -34,7 +34,7 @@ yay -S dunst-git libnotify
 yay -S swaylockd swaylock-effects-git swayidle
 
 # font input
-yay -S fcitx5-git fcitx5-chinese-addons-git fcitx5-configtool-git fcitx5-gtk-git fcitx5-pinyin-zhwiki fcitx5-qt fcitx5-mozc
+yay -S fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx5-gtk fcitx5-pinyin-zhwiki fcitx5-qt fcitx5-mozc
 
 # app launcher thing
 yay -S rofi-lbonn-wayland-git networkmanager-dmenu-git
