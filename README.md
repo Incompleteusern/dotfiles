@@ -28,11 +28,11 @@ I don't know how well `init.sh` works right now, actually run anything here at y
 TODO:
 
 - pamixer to wpctl
+- gnome evolution too lol
 - https://github.com/NoiSek/Aether
 - https://wiki.archlinux.org/title/System_time#Update_timezone_every_time_NetworkManager_connects_to_a_network
-- https://github.com/catppuccin/minecraft maybe
 - qbittorrent?
-- wait for https://github.com/catppuccin/cli
+- wait for https://github.com/catppuccin/cli to replace the bundle of hacks I have right now
 - keepassxc
 - proton
 - Customize nvim
@@ -49,7 +49,7 @@ TODO:
   - EWW
     - Add customization if mute
 - Customize firefox + fork mozilla?
-- Test untested parts
+- Test untested parts (NEVER)
 - Switch to lightdm
 
 # Installation
