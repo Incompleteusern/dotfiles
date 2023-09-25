@@ -28,14 +28,14 @@ I don't know how well `init.sh` works right now, actually run anything here at y
 TODO:
 
 - pamixer to wpctl
+- update wallpapers to get rid of ones I don't like, your name wallpapers
 - gnome evolution too lol
 - https://github.com/NoiSek/Aether
 - https://wiki.archlinux.org/title/System_time#Update_timezone_every_time_NetworkManager_connects_to_a_network
 - qbittorrent?
 - wait for https://github.com/catppuccin/cli to replace the bundle of hacks I have right now
 - keepassxc
-- proton
-- Customize nvim
+- Customize nvim (not for now)
 - https://wiki.archlinux.org/title/laptop#Hibernate_on_low_battery_level
 - Stop bundling `.sty` or something
 - Document https://wiki.archlinux.org/title/OpenSSH#Deny
