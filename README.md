@@ -51,6 +51,7 @@ TODO:
 - Customize firefox + fork mozilla?
 - Test untested parts (NEVER)
 - Switch to lightdm
+- Get spotify to work for local files
 
 # Installation
 
