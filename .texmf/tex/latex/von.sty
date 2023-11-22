@@ -35,7 +35,7 @@ import von.api as api
 \newcommand{\@von}[2][]{%
   \pyc{entry = api.get("#2")}
   \pyc{src = "#1" or "#2"}
-  \begin{\vonenvname}[\py{(r'\href{' + entry.url + '}{' + src + '}') if entry.url is not None else src}]%
+  \begin{\vonenvname}[\py{(r'\href{' + entry.url + '}{' + src + '}') if (entry.url is not None and entry.url != "<++>") else src}]%
     \vonprehook{#2}
     \voninclude{#2}%
     \vonposthook{#2}

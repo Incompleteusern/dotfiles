@@ -28,6 +28,7 @@ I don't know how well `init.sh` works right now, actually run anything here at y
 TODO:
 
 - pamixer to wpctl
+- https://github.com/tkashkin/Adwaita-for-Steam
 - update wallpapers to get rid of ones I don't like, your name wallpapers
 - gnome evolution too lol
 - https://github.com/NoiSek/Aether
