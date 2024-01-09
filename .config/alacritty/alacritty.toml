@@ -14,8 +14,8 @@ TERM = "alacritty"
 builtin_box_drawing = true
 size = 11.0
 
-#[font.normal]
-#family = "JetBrainsMono Nerd Font"
+[font.normal]
+family = "JetBrainsMono Nerd Font"
 
 [window]
 opacity = 1.0

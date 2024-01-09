@@ -29,7 +29,7 @@
 (deflisten song_status :initial "󰁚" "bash ~/.config/eww/bar/scripts/music_info --status")
 (deflisten cover_art :initial "images/music.png" "bash ~/.config/eww/bar/scripts/music_info --cover")
 
-(defpoll player_active :interval "1s" "~/.config/eww/bar/scripts/music_info --active")
+(defpoll player_active :interval "3s" "~/.config/eww/bar/scripts/music_info --active")
 
 (defpoll clock_time :interval "1s" "date +\%I")
 (defpoll clock_minute :interval "1s" "date +\%M")

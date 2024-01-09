@@ -143,6 +143,8 @@ alias rm="rmtrash"
 alias shutdown="shutdown now"
 alias sudo='sudo '
 
+alias cppw="c++ -Wall -Wextra -Wshadow -Wconversion -Wfloat-equal -Wduplicated-cond -Wlogical-op -fsanitize=undefined"
+
 (source /usr/share/nvm/init-nvm.sh &) &> /dev/null
 
 export PATH=$PATH:/home/royce/.spicetify
