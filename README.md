@@ -28,9 +28,10 @@ I don't know how well `init.sh` works right now, actually run anything here at y
 TODO:
 
 - pamixer to wpctl
+- https://github.com/end-4/dots-hyprland/tree/illogical-impulse replace eww and try it out
 - https://github.com/tkashkin/Adwaita-for-Steam
+- im sick of the wallpaper changing, find one wall paper i love and keep it forever
 - update wallpapers to get rid of ones I don't like, your name wallpapers
-- gnome evolution too lol
 - https://github.com/NoiSek/Aether
 - https://wiki.archlinux.org/title/System_time#Update_timezone_every_time_NetworkManager_connects_to_a_network
 - qbittorrent?
