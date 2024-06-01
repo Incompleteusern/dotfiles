@@ -28,6 +28,8 @@ I don't know how well `init.sh` works right now, actually run anything here at y
 TODO:
 
 - pamixer to wpctl
+- swaylockd doesnt exist anymore sob
+- hyprlock?
 - https://github.com/end-4/dots-hyprland/tree/illogical-impulse replace eww and try it out
 - https://github.com/tkashkin/Adwaita-for-Steam
 - im sick of the wallpaper changing, find one wall paper i love and keep it forever
@@ -250,7 +252,7 @@ TODO:
 
 - Compositor | `hyprland qt5-wayland qt6-wayland`
 - XDG Integration | `xdg-utils xdg-desktop-portal-hyprland`
-- Status Bars | `eww-wayland`
+- Status Bars | `eww`
 - Wallpapers | `swww`
 - Notification System | `dunst libnotify`
 - Session Locker | `swaylockd swaylock-effects swayidle`

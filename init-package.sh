@@ -25,7 +25,7 @@ yay -S pacgraph pacman-contrib informant
 yay -S hyprland-git xdg-utils qt5-wayland qt6-wayland xdg-desktop-portal-hyprland hyprpicker-git
 
 # bars, wallpaper
-yay -S eww-wayland swww-git
+yay -S eww swww-git
 
 # notifications
 yay -S dunst-git libnotify
