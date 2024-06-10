@@ -2,7 +2,7 @@
 
 ## Files and cmd
 # FILE="/tmp/eww_launch.xyz"
-EWW="env XDG_CACHE_HOME=/tmp eww -c $HOME/.config/eww/bar"
+EWW="eww -c $HOME/.config/eww/bar"
 
 ## Run eww daemon if not running already
 if [[ ! $(pidof eww) ]]; then

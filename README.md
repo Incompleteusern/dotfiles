@@ -27,9 +27,11 @@ I don't know how well `init.sh` works right now, actually run anything here at y
 
 TODO:
 
+- update to hyprutils-git, hyprcurosr-git, hyprlang-git, hyprwayland-scanner-git:
 - pamixer to wpctl
 - swaylockd doesnt exist anymore sob
 - hyprlock?
+- document ag
 - https://github.com/end-4/dots-hyprland/tree/illogical-impulse replace eww and try it out
 - https://github.com/tkashkin/Adwaita-for-Steam
 - im sick of the wallpaper changing, find one wall paper i love and keep it forever
@@ -372,7 +374,7 @@ TODO:
 - Neovim | `nvim` (TODO nvimdots)
 - Intellij | `intellij-idea-community-edition` (have ultimate somehow)
 - File Manager | `thunar gvfs rmtrash trash-cli thunar-archive-plugin thunar-media-tags-plugin thunar-volman`
-- Tor | `tor tor-browser`
+- Tor | `tor torbrowser-launcher`
 - krita | `krita`
 - joplin | `joplin`
 

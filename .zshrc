@@ -148,3 +148,9 @@ alias cppw="c++ -Wall -Wextra -Wshadow -Wconversion -Wfloat-equal -Wduplicated-c
 (source /usr/share/nvm/init-nvm.sh &) &> /dev/null
 
 export PATH=$PATH:/home/royce/.spicetify
+
+autoload bashcompinit
+bashcompinit
+alias ofoam="source ${FOAM_INST_DIR}/OpenFOAM-11/etc/bashrc"
+
+

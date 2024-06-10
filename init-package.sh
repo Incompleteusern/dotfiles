@@ -107,7 +107,7 @@ yay -S intellij-idea-community-edition
 yay -S thunar papirus-folders-catppuccin-git gvfs rmtrash trash-cli thunar-archive-plugin thunar-media-tags-plugin thunar-volman
 
 # tor
-yay -S tor tor-browser
+yay -S tor torbrowser-launcher
 
 # THEMING
 
